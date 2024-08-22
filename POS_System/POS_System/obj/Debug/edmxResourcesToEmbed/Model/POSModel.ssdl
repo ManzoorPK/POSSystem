@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="POS_SystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Category" Type="nvarchar" MaxLength="400" />
+  </EntityType>
+  <EntityType Name="PaymentOptions">
+    <Key>
+      <PropertyRef Name="PaymentOptionsId" />
+    </Key>
+    <Property Name="PaymentOptionsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="300" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="ProductId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="300" />
+    <Property Name="Descrioption" Type="nvarchar(max)" />
+    <Property Name="SalePrice" Type="money" />
+    <Property Name="MinSalePrice" Type="money" />
+    <Property Name="WholeSalePrice" Type="money" />
+    <Property Name="RetailPrice" Type="money" />
+    <Property Name="CategoryId" Type="int" />
+    <Property Name="Code1" Type="nvarchar" MaxLength="150" />
+    <Property Name="Code2" Type="nvarchar" MaxLength="150" />
+    <Property Name="Barcode" Type="varchar" MaxLength="100" />
+    <Property Name="IsExpirable" Type="bit" />
+    <Property Name="IsActive" Type="bit" />
+    <Property Name="Picture" Type="varbinary(max)" />
+    <Property Name="TotalQuantity" Type="decimal" Precision="18" Scale="2" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Store">
+    <Key>
+      <PropertyRef Name="StoreId" />
+    </Key>
+    <Property Name="StoreId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Store" Type="nvarchar" MaxLength="300" />
+    <Property Name="IsActive" Type="bit" />
+  </EntityType>
+  <EntityType Name="StorewiseQuantity">
+    <Key>
+      <PropertyRef Name="StoreQuantityId" />
+    </Key>
+    <Property Name="StoreQuantityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="StoreId" Type="int" />
+    <Property Name="InventoryId" Type="int" />
+    <Property Name="Quantity" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SoldOut" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Balance" Type="decimal" Precision="19" Scale="2" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POS_System.dbo.StorewiseQuantityV' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="StorewiseQuantityV">
+    <Key>
+      <PropertyRef Name="StoreQuantityId" />
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="StoreQuantityId" Type="int" Nullable="false" />
+    <Property Name="StoreId" Type="int" />
+    <Property Name="Title" Type="nvarchar" MaxLength="300" />
+    <Property Name="Balance" Type="decimal" Precision="19" Scale="2" />
+    <Property Name="Quantity" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ProductId" Type="int" Nullable="false" />
+    <Property Name="Store" Type="nvarchar" MaxLength="300" />
+  </EntityType>
+  <EntityContainer Name="POS_SystemModelStoreContainer">
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PaymentOptions" EntityType="Self.PaymentOptions" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Store" EntityType="Self.Store" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StorewiseQuantity" EntityType="Self.StorewiseQuantity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="StorewiseQuantityV" EntityType="Self.StorewiseQuantityV" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [StorewiseQuantityV].[StoreQuantityId] AS [StoreQuantityId], 
+    [StorewiseQuantityV].[StoreId] AS [StoreId], 
+    [StorewiseQuantityV].[Title] AS [Title], 
+    [StorewiseQuantityV].[Balance] AS [Balance], 
+    [StorewiseQuantityV].[Quantity] AS [Quantity], 
+    [StorewiseQuantityV].[ProductId] AS [ProductId], 
+    [StorewiseQuantityV].[Store] AS [Store]
+    FROM [dbo].[StorewiseQuantityV] AS [StorewiseQuantityV]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

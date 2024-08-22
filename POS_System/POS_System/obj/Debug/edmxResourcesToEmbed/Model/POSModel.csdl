@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="POS_SystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Product">
+    <Key>
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="ProductId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Descrioption" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SalePrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="MinSalePrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CategoryId" Type="Int32" />
+    <Property Name="Code1" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Code2" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Barcode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IsExpirable" Type="Boolean" />
+    <Property Name="IsActive" Type="Boolean" />
+    <Property Name="Picture" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="WholeSalePrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="RetailPrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="TotalQuantity" Type="Decimal" Precision="18" Scale="2" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityContainer Name="POS_SystemEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Products" EntityType="Self.Product" />
+    <EntitySet Name="Categories" EntityType="POS_SystemModel.Category" />
+    <EntitySet Name="Stores" EntityType="POS_SystemModel.Store" />
+    <EntitySet Name="StorewiseQuantities" EntityType="POS_SystemModel.StorewiseQuantity" />
+    <EntitySet Name="StorewiseQuantityVs" EntityType="POS_SystemModel.StorewiseQuantityV" />
+    <EntitySet Name="PaymentOptions" EntityType="POS_SystemModel.PaymentOption" />
+  </EntityContainer>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Category1" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Store">
+    <Key>
+      <PropertyRef Name="StoreId" />
+    </Key>
+    <Property Name="StoreId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Store1" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="StorewiseQuantity">
+    <Key>
+      <PropertyRef Name="StoreQuantityId" />
+    </Key>
+    <Property Name="StoreQuantityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="StoreId" Type="Int32" />
+    <Property Name="InventoryId" Type="Int32" />
+    <Property Name="Quantity" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SoldOut" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Balance" Type="Decimal" Precision="19" Scale="2" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="StorewiseQuantityV">
+    <Key>
+      <PropertyRef Name="StoreQuantityId" />
+      <PropertyRef Name="ProductId" />
+    </Key>
+    <Property Name="StoreQuantityId" Type="Int32" Nullable="false" />
+    <Property Name="StoreId" Type="Int32" />
+    <Property Name="Title" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Balance" Type="Decimal" Precision="19" Scale="2" />
+    <Property Name="Quantity" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ProductId" Type="Int32" Nullable="false" />
+    <Property Name="Store" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PaymentOption">
+    <Key>
+      <PropertyRef Name="PaymentOptionsId" />
+    </Key>
+    <Property Name="PaymentOptionsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Title" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+</Schema>
