@@ -28,6 +28,44 @@ public class StorewiseQuantityHelper
         return obj;
     }
 
+    public List<StorewiseQuantity> GetProductQuantities(int ProductId)
+    {
+        return _Entity.StorewiseQuantities.Where(x=> x.InventoryId == ProductId).ToList();  
+    }
+
+    public void ManageStoreQuantity(int ProductId, decimal quantity)    
+    {
+        decimal Qty = quantity;
+        var obj = new StorewiseQuantityHelper().GetProductQuantities(ProductId);
+        decimal _NetQty = 0;
+        decimal _NewQty = 0;
+        foreach (var item in obj)
+        {
+
+            if (_NetQty > 0)
+                _NewQty = _NetQty;
+            else
+                _NewQty = Qty;
+
+            if (item.Balance >= _NewQty)
+            {
+                item.SoldOut = _NewQty;
+                _Entity.Entry(item).State = (item.StoreQuantityId == 0 ? EntityState.Added : EntityState.Modified);
+                _Entity.SaveChanges();
+                break;
+            }
+            else
+            {
+                if (item.Balance > 0)
+                {
+                    _NetQty = _NewQty - Convert.ToDecimal(item.Balance);
+                    item.SoldOut = item.Balance;
+                    _Entity.Entry(item).State = (item.StoreQuantityId == 0 ? EntityState.Added : EntityState.Modified);
+                    _Entity.SaveChanges();
+                }
+            }
+        }
+    }
     public List<StorewiseQuantityV> GetAllStoresQuantity(int Id)
     {
         List<StorewiseQuantityV> lst = new List<StorewiseQuantityV>();

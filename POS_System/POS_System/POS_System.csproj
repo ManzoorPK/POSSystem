@@ -77,6 +77,12 @@
     <Reference Include="TelerikCommon, Version=2022.1.222.40, Culture=neutral, PublicKeyToken=5bb2a467cbec794e" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forms\AddEditAccount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddEditAccount.Designer.cs">
+      <DependentUpon>AddEditAccount.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AddEditInventory.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -89,6 +95,12 @@
     <Compile Include="Forms\AddEditInvoiceForm.Designer.cs">
       <DependentUpon>AddEditInvoiceForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AddEditInvoicePayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddEditInvoicePayment.Designer.cs">
+      <DependentUpon>AddEditInvoicePayment.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AddEditPaymentOption.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -100,6 +112,12 @@
     </Compile>
     <Compile Include="Forms\AddEditStore.Designer.cs">
       <DependentUpon>AddEditStore.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddEditWarehouse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddEditWarehouse.Designer.cs">
+      <DependentUpon>AddEditWarehouse.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\DashboardForm.cs">
       <SubType>Form</SubType>
@@ -137,7 +155,15 @@
     <Compile Include="Forms\StoreList.Designer.cs">
       <DependentUpon>StoreList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\WarehouseList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\WarehouseList.Designer.cs">
+      <DependentUpon>WarehouseList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helpers\BarcodeHelper.cs" />
+    <Compile Include="Helpers\InvoiceItemHelper.cs" />
+    <Compile Include="Helpers\InvoicePaymentHelper.cs" />
     <Compile Include="Helpers\PaymentOptionHelper.cs" />
     <Compile Include="Helpers\CategoryHelper.cs" />
     <Compile Include="Helpers\Common.cs" />
@@ -145,9 +171,34 @@
     <Compile Include="Helpers\General.cs" />
     <Compile Include="Helpers\GridHelper.cs" />
     <Compile Include="Helpers\ProductHelper.cs" />
+    <Compile Include="Helpers\AccountHelper.cs" />
+    <Compile Include="Helpers\InvoiceHelper.cs" />
+    <Compile Include="Helpers\Templates\BottomView.cs" />
+    <Compile Include="Helpers\WarehousHelper.cs" />
     <Compile Include="Helpers\StorewiseQuantityHelper.cs" />
     <Compile Include="Helpers\StoreHelper.cs" />
+    <Compile Include="Model\Account.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Model\Category.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Invoice.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\InvoiceItem.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\InvoiceItemsV.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\InvoicePayment.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\InvoicePaymentV.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\InvoiceV.cs">
       <DependentUpon>POSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\PaymentOption.cs">
@@ -180,19 +231,36 @@
     <Compile Include="Model\StorewiseQuantityV.cs">
       <DependentUpon>POSModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Model\Warehouse.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="POS_SystemDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>POS_SystemDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\AddEditAccount.resx">
+      <DependentUpon>AddEditAccount.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddEditInventory.resx">
       <DependentUpon>AddEditInventory.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddEditInvoiceForm.resx">
       <DependentUpon>AddEditInvoiceForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddEditInvoicePayment.resx">
+      <DependentUpon>AddEditInvoicePayment.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddEditPaymentOption.resx">
       <DependentUpon>AddEditPaymentOption.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddEditStore.resx">
       <DependentUpon>AddEditStore.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddEditWarehouse.resx">
+      <DependentUpon>AddEditWarehouse.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\DashboardForm.resx">
       <DependentUpon>DashboardForm.cs</DependentUpon>
@@ -211,6 +279,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StoreList.resx">
       <DependentUpon>StoreList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\WarehouseList.resx">
+      <DependentUpon>WarehouseList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -231,6 +302,17 @@
       <DependentUpon>POSModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
+    <None Include="POS_SystemDataSet.xsc">
+      <DependentUpon>POS_SystemDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="POS_SystemDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>POS_SystemDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="POS_SystemDataSet.xss">
+      <DependentUpon>POS_SystemDataSet.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -261,6 +343,7 @@
     <None Include="Resources\1.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="bin\Debug\Images\add1.png" />
     <Content Include="Model\POSModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>POSModel.edmx</DependentUpon>

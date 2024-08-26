@@ -97,6 +97,7 @@
             this.lblDate.Size = new System.Drawing.Size(21, 25);
             this.lblDate.TabIndex = 1;
             this.lblDate.Text = "--";
+            this.lblDate.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             // 
             // radLabel1
             // 
@@ -107,6 +108,7 @@
             this.radLabel1.Size = new System.Drawing.Size(100, 25);
             this.radLabel1.TabIndex = 0;
             this.radLabel1.Text = "POS System";
+            this.radLabel1.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             // 
             // customShape1
             // 
@@ -121,7 +123,7 @@
             // 
             this.btnProducts.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnProducts.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.btnProducts.Location = new System.Drawing.Point(258, 102);
+            this.btnProducts.Location = new System.Drawing.Point(892, 100);
             this.btnProducts.Name = "btnProducts";
             // 
             // 
@@ -148,7 +150,7 @@
             // 
             this.btnAccounts.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnAccounts.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.btnAccounts.Location = new System.Drawing.Point(470, 102);
+            this.btnAccounts.Location = new System.Drawing.Point(680, 100);
             this.btnAccounts.Name = "btnAccounts";
             // 
             // 
@@ -174,7 +176,7 @@
             // 
             this.btnCashbook.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnCashbook.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.btnCashbook.Location = new System.Drawing.Point(682, 102);
+            this.btnCashbook.Location = new System.Drawing.Point(468, 100);
             this.btnCashbook.Name = "btnCashbook";
             // 
             // 
@@ -200,7 +202,7 @@
             // 
             this.btnInvoices.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnInvoices.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.btnInvoices.Location = new System.Drawing.Point(894, 102);
+            this.btnInvoices.Location = new System.Drawing.Point(256, 100);
             this.btnInvoices.Name = "btnInvoices";
             // 
             // 
@@ -226,7 +228,7 @@
             // 
             this.btnPayments.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnPayments.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.btnPayments.Location = new System.Drawing.Point(894, 185);
+            this.btnPayments.Location = new System.Drawing.Point(256, 167);
             this.btnPayments.Name = "btnPayments";
             // 
             // 
@@ -252,7 +254,7 @@
             // 
             this.btnPurchase.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnPurchase.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.btnPurchase.Location = new System.Drawing.Point(682, 185);
+            this.btnPurchase.Location = new System.Drawing.Point(468, 167);
             this.btnPurchase.Name = "btnPurchase";
             // 
             // 
@@ -279,7 +281,7 @@
             this.btnSales.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnSales.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold);
             this.btnSales.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.btnSales.Location = new System.Drawing.Point(470, 185);
+            this.btnSales.Location = new System.Drawing.Point(680, 167);
             this.btnSales.Name = "btnSales";
             // 
             // 
@@ -291,6 +293,7 @@
             this.btnSales.TabIndex = 6;
             this.btnSales.Text = "Sales";
             this.btnSales.ThemeName = "Office2010Blue";
+            this.btnSales.Click += new System.EventHandler(this.btnSales_Click);
             ((Telerik.WinControls.UI.RadButtonElement)(this.btnSales.GetChildAt(0))).Text = "Sales";
             ((Telerik.WinControls.Primitives.FillPrimitive)(this.btnSales.GetChildAt(0).GetChildAt(0))).BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(242)))), ((int)(((byte)(244)))));
             ((Telerik.WinControls.Primitives.FillPrimitive)(this.btnSales.GetChildAt(0).GetChildAt(0))).BackColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));
@@ -305,7 +308,7 @@
             // 
             this.btnrReports.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnrReports.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.btnrReports.Location = new System.Drawing.Point(258, 185);
+            this.btnrReports.Location = new System.Drawing.Point(892, 167);
             this.btnrReports.Name = "btnrReports";
             // 
             // 
@@ -346,6 +349,7 @@
             this.Controls.Add(this.radPanel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "DashboardForm";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             // 
             // 
             // 

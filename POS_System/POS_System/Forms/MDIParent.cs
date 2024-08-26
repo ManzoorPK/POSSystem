@@ -36,9 +36,6 @@ namespace POS_System
             //LoginForm login = new LoginForm();
             //login.ShowDialog();
 
-
-
-
         }
 
         public void CloseAllChildForms()
@@ -562,6 +559,20 @@ namespace POS_System
         private void radMenuItem6_Click(object sender, EventArgs e)
         {
             PaymentOptionsList frm = new PaymentOptionsList();
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void menuWarehouse_Click(object sender, EventArgs e)
+        {
+            WarehouseList frm = new WarehouseList();    
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void menuSaleInvoices_Click(object sender, EventArgs e)
+        {
+            InvoicesList frm = new InvoicesList();
             frm.MdiParent = this;
             frm.Show();
         }

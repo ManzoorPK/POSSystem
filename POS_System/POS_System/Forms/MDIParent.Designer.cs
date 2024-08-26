@@ -30,10 +30,10 @@ namespace POS_System
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition5 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition6 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition7 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition8 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition3 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition4 = new Telerik.WinControls.UI.TableViewDefinition();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MDIParent));
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.office2010BlueTheme1 = new Telerik.WinControls.Themes.Office2010BlueTheme();
@@ -101,14 +101,17 @@ namespace POS_System
             this.radCommandBar1 = new Telerik.WinControls.UI.RadCommandBar();
             this.radMenuItem4 = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuItem5 = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuSeparatorItem1 = new Telerik.WinControls.UI.RadMenuSeparatorItem();
+            this.radMenuItem6 = new Telerik.WinControls.UI.RadMenuItem();
+            this.radMenuSeparatorItem2 = new Telerik.WinControls.UI.RadMenuSeparatorItem();
+            this.menuWarehouse = new Telerik.WinControls.UI.RadMenuItem();
             this.telerikMetroTouchTheme1 = new Telerik.WinControls.Themes.TelerikMetroTouchTheme();
             this.highContrastBlackTheme1 = new Telerik.WinControls.Themes.HighContrastBlackTheme();
             this.breezeTheme1 = new Telerik.WinControls.Themes.BreezeTheme();
             this.materialTheme1 = new Telerik.WinControls.Themes.MaterialTheme();
-            this.radMenuSeparatorItem1 = new Telerik.WinControls.UI.RadMenuSeparatorItem();
-            this.radMenuItem6 = new Telerik.WinControls.UI.RadMenuItem();
-            this.radMenuSeparatorItem2 = new Telerik.WinControls.UI.RadMenuSeparatorItem();
             this.radMenu1 = new Telerik.WinControls.UI.RadMenu();
+            this.radMenuItem7 = new Telerik.WinControls.UI.RadMenuItem();
+            this.menuSaleInvoices = new Telerik.WinControls.UI.RadMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.tabForms1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
@@ -129,8 +132,8 @@ namespace POS_System
             ((System.ComponentModel.ISupportInitialize)(this.ddlSearchPO.EditorControl.MasterTemplate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radCommandBar1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radMenu1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
             // radRibbonBarGroup1
@@ -259,14 +262,17 @@ namespace POS_System
             // 
             // radLabel4
             // 
-            this.radLabel4.Location = new System.Drawing.Point(806, 13);
+            this.radLabel4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radLabel4.Location = new System.Drawing.Point(849, 13);
             this.radLabel4.Name = "radLabel4";
             this.radLabel4.Size = new System.Drawing.Size(51, 18);
             this.radLabel4.TabIndex = 24;
             this.radLabel4.Text = "Invoice #";
+            this.radLabel4.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             // 
             // ddlInvoiceNumberSearch
             // 
+            this.ddlInvoiceNumberSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ddlInvoiceNumberSearch.AutoSize = false;
             this.ddlInvoiceNumberSearch.DropDownMaxSize = new System.Drawing.Size(800, 300);
             this.ddlInvoiceNumberSearch.DropDownMinSize = new System.Drawing.Size(800, 250);
@@ -285,14 +291,15 @@ namespace POS_System
             this.ddlInvoiceNumberSearch.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.ddlInvoiceNumberSearch.EditorControl.MasterTemplate.EnableGrouping = false;
             this.ddlInvoiceNumberSearch.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.ddlInvoiceNumberSearch.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition5;
+            this.ddlInvoiceNumberSearch.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.ddlInvoiceNumberSearch.EditorControl.Name = "NestedRadGridView";
             this.ddlInvoiceNumberSearch.EditorControl.ReadOnly = true;
+            this.ddlInvoiceNumberSearch.EditorControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.ddlInvoiceNumberSearch.EditorControl.ShowGroupPanel = false;
             this.ddlInvoiceNumberSearch.EditorControl.Size = new System.Drawing.Size(240, 150);
             this.ddlInvoiceNumberSearch.EditorControl.TabIndex = 0;
             this.ddlInvoiceNumberSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ddlInvoiceNumberSearch.Location = new System.Drawing.Point(863, 8);
+            this.ddlInvoiceNumberSearch.Location = new System.Drawing.Point(643, 9);
             this.ddlInvoiceNumberSearch.Name = "ddlInvoiceNumberSearch";
             this.ddlInvoiceNumberSearch.Size = new System.Drawing.Size(200, 24);
             this.ddlInvoiceNumberSearch.TabIndex = 23;
@@ -302,14 +309,17 @@ namespace POS_System
             // 
             // radLabel3
             // 
-            this.radLabel3.Location = new System.Drawing.Point(514, 13);
+            this.radLabel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radLabel3.Location = new System.Drawing.Point(1112, 13);
             this.radLabel3.Name = "radLabel3";
             this.radLabel3.Size = new System.Drawing.Size(68, 18);
             this.radLabel3.TabIndex = 22;
             this.radLabel3.Text = "Cust. Ledger";
+            this.radLabel3.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             // 
             // ddlCustomer
             // 
+            this.ddlCustomer.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ddlCustomer.AutoSize = false;
             this.ddlCustomer.DropDownMaxSize = new System.Drawing.Size(800, 300);
             this.ddlCustomer.DropDownMinSize = new System.Drawing.Size(800, 250);
@@ -328,14 +338,15 @@ namespace POS_System
             this.ddlCustomer.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.ddlCustomer.EditorControl.MasterTemplate.EnableGrouping = false;
             this.ddlCustomer.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.ddlCustomer.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition6;
+            this.ddlCustomer.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition2;
             this.ddlCustomer.EditorControl.Name = "NestedRadGridView";
             this.ddlCustomer.EditorControl.ReadOnly = true;
+            this.ddlCustomer.EditorControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.ddlCustomer.EditorControl.ShowGroupPanel = false;
             this.ddlCustomer.EditorControl.Size = new System.Drawing.Size(240, 150);
             this.ddlCustomer.EditorControl.TabIndex = 0;
             this.ddlCustomer.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ddlCustomer.Location = new System.Drawing.Point(588, 9);
+            this.ddlCustomer.Location = new System.Drawing.Point(906, 9);
             this.ddlCustomer.Name = "ddlCustomer";
             this.ddlCustomer.Size = new System.Drawing.Size(200, 24);
             this.ddlCustomer.TabIndex = 21;
@@ -345,6 +356,7 @@ namespace POS_System
             // 
             // ddlSupLedgers
             // 
+            this.ddlSupLedgers.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ddlSupLedgers.DropDownMaxSize = new System.Drawing.Size(800, 400);
             this.ddlSupLedgers.DropDownMinSize = new System.Drawing.Size(800, 250);
             // 
@@ -362,14 +374,15 @@ namespace POS_System
             this.ddlSupLedgers.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.ddlSupLedgers.EditorControl.MasterTemplate.EnableGrouping = false;
             this.ddlSupLedgers.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.ddlSupLedgers.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition7;
+            this.ddlSupLedgers.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition3;
             this.ddlSupLedgers.EditorControl.Name = "NestedRadGridView";
             this.ddlSupLedgers.EditorControl.ReadOnly = true;
+            this.ddlSupLedgers.EditorControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.ddlSupLedgers.EditorControl.ShowGroupPanel = false;
             this.ddlSupLedgers.EditorControl.Size = new System.Drawing.Size(240, 150);
             this.ddlSupLedgers.EditorControl.TabIndex = 0;
             this.ddlSupLedgers.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ddlSupLedgers.Location = new System.Drawing.Point(74, 10);
+            this.ddlSupLedgers.Location = new System.Drawing.Point(1429, 9);
             this.ddlSupLedgers.MaximumSize = new System.Drawing.Size(800, 0);
             this.ddlSupLedgers.Name = "ddlSupLedgers";
             // 
@@ -385,14 +398,17 @@ namespace POS_System
             // 
             // radLabel2
             // 
-            this.radLabel2.Location = new System.Drawing.Point(6, 13);
+            this.radLabel2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radLabel2.Location = new System.Drawing.Point(1635, 13);
             this.radLabel2.Name = "radLabel2";
             this.radLabel2.Size = new System.Drawing.Size(65, 18);
             this.radLabel2.TabIndex = 2;
             this.radLabel2.Text = "Sup. Ledger";
+            this.radLabel2.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             // 
             // ddlSearchPO
             // 
+            this.ddlSearchPO.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.ddlSearchPO.DropDownMaxSize = new System.Drawing.Size(700, 400);
             this.ddlSearchPO.DropDownMinSize = new System.Drawing.Size(700, 0);
             // 
@@ -410,14 +426,15 @@ namespace POS_System
             this.ddlSearchPO.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.ddlSearchPO.EditorControl.MasterTemplate.EnableGrouping = false;
             this.ddlSearchPO.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.ddlSearchPO.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition8;
+            this.ddlSearchPO.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition4;
             this.ddlSearchPO.EditorControl.Name = "NestedRadGridView";
             this.ddlSearchPO.EditorControl.ReadOnly = true;
+            this.ddlSearchPO.EditorControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.ddlSearchPO.EditorControl.ShowGroupPanel = false;
             this.ddlSearchPO.EditorControl.Size = new System.Drawing.Size(240, 150);
             this.ddlSearchPO.EditorControl.TabIndex = 0;
             this.ddlSearchPO.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ddlSearchPO.Location = new System.Drawing.Point(307, 9);
+            this.ddlSearchPO.Location = new System.Drawing.Point(1186, 9);
             this.ddlSearchPO.Name = "ddlSearchPO";
             this.ddlSearchPO.Size = new System.Drawing.Size(200, 24);
             this.ddlSearchPO.TabIndex = 1;
@@ -428,12 +445,13 @@ namespace POS_System
             // 
             // radLabel1
             // 
-            this.radLabel1.Location = new System.Drawing.Point(275, 13);
+            this.radLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.radLabel1.Location = new System.Drawing.Point(1392, 13);
             this.radLabel1.Name = "radLabel1";
             this.radLabel1.Size = new System.Drawing.Size(31, 18);
             this.radLabel1.TabIndex = 0;
             this.radLabel1.Text = "PO #";
-            this.radLabel1.TextAlignment = System.Drawing.ContentAlignment.TopLeft;
+            this.radLabel1.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             // 
             // commandBarButton1
             // 
@@ -822,7 +840,8 @@ namespace POS_System
             this.radMenuItem5,
             this.radMenuSeparatorItem1,
             this.radMenuItem6,
-            this.radMenuSeparatorItem2});
+            this.radMenuSeparatorItem2,
+            this.menuWarehouse});
             this.radMenuItem4.Name = "radMenuItem4";
             this.radMenuItem4.Text = "Settings";
             // 
@@ -850,11 +869,11 @@ namespace POS_System
             this.radMenuSeparatorItem2.Text = "radMenuSeparatorItem2";
             this.radMenuSeparatorItem2.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // MDIParent
+            // menuWarehouse
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1712, 447);
+            this.menuWarehouse.Name = "menuWarehouse";
+            this.menuWarehouse.Text = "My Warehouses";
+            this.menuWarehouse.Click += new System.EventHandler(this.menuWarehouse_Click);
             // 
             // radMenu1
             // 
@@ -863,13 +882,33 @@ namespace POS_System
             this.radMenu1.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.radMenuItem1,
             this.radMenuItem3,
-            this.radMenuItem4});
+            this.radMenuItem4,
+            this.radMenuItem7});
             this.radMenu1.Location = new System.Drawing.Point(0, 0);
             this.radMenu1.Name = "radMenu1";
             this.radMenu1.Padding = new System.Windows.Forms.Padding(2, 2, 0, 0);
             this.radMenu1.Size = new System.Drawing.Size(1712, 26);
             this.radMenu1.TabIndex = 1;
             this.radMenu1.ThemeName = "Office2010Blue";
+            // 
+            // radMenuItem7
+            // 
+            this.radMenuItem7.Items.AddRange(new Telerik.WinControls.RadItem[] {
+            this.menuSaleInvoices});
+            this.radMenuItem7.Name = "radMenuItem7";
+            this.radMenuItem7.Text = "Invoices";
+            // 
+            // menuSaleInvoices
+            // 
+            this.menuSaleInvoices.Name = "menuSaleInvoices";
+            this.menuSaleInvoices.Text = "Sales Invoices";
+            this.menuSaleInvoices.Click += new System.EventHandler(this.menuSaleInvoices_Click);
+            // 
+            // MDIParent
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.ClientSize = new System.Drawing.Size(1712, 447);
             this.Controls.Add(this.tabForms1);
             this.Controls.Add(this.radPanel1);
             this.Controls.Add(this.radCommandBar1);
@@ -878,6 +917,7 @@ namespace POS_System
             this.IsMdiContainer = true;
             this.KeyPreview = true;
             this.Name = "MDIParent";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             // 
             // 
             // 
@@ -991,6 +1031,9 @@ namespace POS_System
         private Telerik.WinControls.UI.RadMenuItem radMenuItem6;
         private Telerik.WinControls.UI.RadMenuSeparatorItem radMenuSeparatorItem2;
         private Telerik.WinControls.UI.RadMenu radMenu1;
+        private Telerik.WinControls.UI.RadMenuItem menuWarehouse;
+        private Telerik.WinControls.UI.RadMenuItem radMenuItem7;
+        private Telerik.WinControls.UI.RadMenuItem menuSaleInvoices;
     }
 }
 

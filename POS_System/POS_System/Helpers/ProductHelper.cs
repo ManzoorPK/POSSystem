@@ -7,17 +7,17 @@ using System.Linq;
 public class ProductHelper
 {
     POS_SystemEntities _Entity = new POS_SystemEntities();
-    public bool SaveEditProduct(Product model)
+    public Product SaveEditProduct(Product model)
     {
         try
         {
             _Entity.Entry(model).State = (model.ProductId == 0 ? EntityState.Added : EntityState.Modified);
             _Entity.SaveChanges();
-            return true;
+            return model;
         }
         catch (Exception ex)
         {
-            return false;
+            return null;
         }
     }
 

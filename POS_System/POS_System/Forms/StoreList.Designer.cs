@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             this.dgInventories = new Telerik.WinControls.UI.RadGridView();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
@@ -66,21 +64,10 @@
             this.dgInventories.MasterTemplate.AllowDeleteRow = false;
             this.dgInventories.MasterTemplate.AllowEditRow = false;
             this.dgInventories.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn1.FieldName = "InventoryId";
-            gridViewTextBoxColumn1.HeaderText = "column1";
-            gridViewTextBoxColumn1.IsVisible = false;
-            gridViewTextBoxColumn1.Name = "colCategoryId";
-            gridViewTextBoxColumn2.FieldName = "Inventory";
-            gridViewTextBoxColumn2.HeaderText = "Item";
-            gridViewTextBoxColumn2.Name = "Category";
-            gridViewTextBoxColumn2.Width = 957;
-            this.dgInventories.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn1,
-            gridViewTextBoxColumn2});
             this.dgInventories.MasterTemplate.EnableFiltering = true;
             this.dgInventories.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.dgInventories.Name = "dgInventories";
-            this.dgInventories.Size = new System.Drawing.Size(979, 477);
+            this.dgInventories.Size = new System.Drawing.Size(1286, 477);
             this.dgInventories.TabIndex = 11;
             this.dgInventories.ThemeName = "Office2010Blue";
             this.dgInventories.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.dgInventories_CommandCellClick);
@@ -98,14 +85,15 @@
             this.radGroupBox1.HeaderText = "";
             this.radGroupBox1.Location = new System.Drawing.Point(0, 0);
             this.radGroupBox1.Name = "radGroupBox1";
-            this.radGroupBox1.Size = new System.Drawing.Size(979, 46);
+            this.radGroupBox1.Size = new System.Drawing.Size(1286, 46);
             this.radGroupBox1.TabIndex = 10;
             this.radGroupBox1.ThemeName = "Office2010Blue";
             // 
             // radButtonPrint
             // 
+            this.radButtonPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radButtonPrint.BackColor = System.Drawing.Color.White;
-            this.radButtonPrint.Location = new System.Drawing.Point(168, 10);
+            this.radButtonPrint.Location = new System.Drawing.Point(986, 9);
             this.radButtonPrint.Name = "radButtonPrint";
             this.radButtonPrint.Size = new System.Drawing.Size(161, 28);
             this.radButtonPrint.TabIndex = 4;
@@ -117,7 +105,7 @@
             this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTitle.Font = new System.Drawing.Font("Tahoma", 12F);
             this.lblTitle.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblTitle.Location = new System.Drawing.Point(462, 14);
+            this.lblTitle.Location = new System.Drawing.Point(616, 14);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(79, 23);
             this.lblTitle.TabIndex = 2;
@@ -126,8 +114,9 @@
             // 
             // radButton2
             // 
+            this.radButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radButton2.BackColor = System.Drawing.Color.White;
-            this.radButton2.Location = new System.Drawing.Point(332, 10);
+            this.radButton2.Location = new System.Drawing.Point(1150, 9);
             this.radButton2.Name = "radButton2";
             this.radButton2.Size = new System.Drawing.Size(124, 28);
             this.radButton2.TabIndex = 1;
@@ -137,11 +126,12 @@
             // 
             // radButton1
             // 
+            this.radButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radButton1.BackColor = System.Drawing.Color.White;
             this.radButton1.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
             this.radButton1.ImageKey = "299068_add_sign_icon.png";
             this.radButton1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.radButton1.Location = new System.Drawing.Point(5, 10);
+            this.radButton1.Location = new System.Drawing.Point(823, 9);
             this.radButton1.Name = "radButton1";
             this.radButton1.Size = new System.Drawing.Size(161, 28);
             this.radButton1.TabIndex = 0;
@@ -153,7 +143,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(979, 523);
+            this.ClientSize = new System.Drawing.Size(1286, 523);
             this.Controls.Add(this.dgInventories);
             this.Controls.Add(this.radGroupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;

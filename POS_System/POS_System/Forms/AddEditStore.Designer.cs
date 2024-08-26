@@ -61,7 +61,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label1.Location = new System.Drawing.Point(18, 45);
+            this.label1.Location = new System.Drawing.Point(644, 45);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 19);
             this.label1.TabIndex = 43;
@@ -71,7 +71,7 @@
             // 
             this.radButtonCancel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.radButtonCancel.BackColor = System.Drawing.Color.White;
-            this.radButtonCancel.Location = new System.Drawing.Point(538, 74);
+            this.radButtonCancel.Location = new System.Drawing.Point(240, 74);
             this.radButtonCancel.Name = "radButtonCancel";
             this.radButtonCancel.Size = new System.Drawing.Size(94, 32);
             this.radButtonCancel.TabIndex = 42;
@@ -83,11 +83,11 @@
             // 
             this.radButtonSave.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.radButtonSave.BackColor = System.Drawing.Color.White;
-            this.radButtonSave.Location = new System.Drawing.Point(361, 74);
+            this.radButtonSave.Location = new System.Drawing.Point(63, 74);
             this.radButtonSave.Name = "radButtonSave";
             this.radButtonSave.Size = new System.Drawing.Size(171, 32);
             this.radButtonSave.TabIndex = 41;
-            this.radButtonSave.Text = "Save Changes (F2)";
+            this.radButtonSave.Text = "Save Changes";
             this.radButtonSave.ThemeName = "Office2010Blue";
             this.radButtonSave.Click += new System.EventHandler(this.radButtonSave_Click);
             // 
@@ -113,6 +113,7 @@
             this.lblTitle.Size = new System.Drawing.Size(115, 23);
             this.lblTitle.TabIndex = 2;
             this.lblTitle.Text = "Add new Store";
+            this.lblTitle.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             this.lblTitle.ThemeName = "Office2010Blue";
             // 
             // AddEditStore
@@ -128,6 +129,7 @@
             this.Controls.Add(this.radGroupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "AddEditStore";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             // 
             // 
             // 

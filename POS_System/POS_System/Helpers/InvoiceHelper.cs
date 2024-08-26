@@ -1,0 +1,54 @@
+﻿
+using POS_System.Model;
+using System;
+using System.Collections.Generic;
+using System.Data.Entity;
+using System.Linq;
+
+public class InvoiceHelper
+{
+    POS_SystemEntities _Entity = new POS_SystemEntities();
+    public Invoice SaveEditInvoice(Invoice model)
+    {
+        try
+        {
+            _Entity.Entry(model).State = (model.InvoiceId == 0 ? EntityState.Added : EntityState.Modified);
+            _Entity.SaveChanges();
+            return model;
+        }
+        catch (Exception ex)
+        {
+            return null;
+        }
+    }
+
+    public Invoice GetInvoiceById(int Id)
+    {
+        Invoice obj = _Entity.Invoices.Where(x => x.InvoiceId == Id).FirstOrDefault();
+        return obj;
+    }
+
+    public List<InvoiceV> GetAllInvoices()
+    {
+        var lst = _Entity.InvoiceVs.ToList();
+        return lst;
+    }
+
+    public bool DeleteInvoice(int Id)
+    {
+        try
+        {
+            Invoice obj = _Entity.Invoices.Where(x => x.InvoiceId == Id).FirstOrDefault();
+            _Entity.Entry(obj).State = EntityState.Deleted;
+            _Entity.SaveChanges();
+            return true;
+        }
+        catch (Exception ex)
+        {
+            return false;
+        }
+    }
+
+
+}
+

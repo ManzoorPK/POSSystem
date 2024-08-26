@@ -1,11 +1,72 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="POS_SystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Accounts">
+    <Key>
+      <PropertyRef Name="AccountId" />
+    </Key>
+    <Property Name="AccountId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AccountCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Title" Type="nvarchar" MaxLength="500" />
+    <Property Name="Email" Type="nvarchar" MaxLength="150" />
+    <Property Name="CellNo" Type="nvarchar" MaxLength="150" />
+    <Property Name="Address" Type="nvarchar" MaxLength="500" />
+    <Property Name="Credit" Type="money" />
+    <Property Name="Debit" Type="money" />
+    <Property Name="OpenBalance" Type="money" />
+    <Property Name="Type" Type="nvarchar" MaxLength="100" />
+    <Property Name="CreatedOn" Type="datetime" />
+  </EntityType>
   <EntityType Name="Category">
     <Key>
       <PropertyRef Name="CategoryId" />
     </Key>
     <Property Name="CategoryId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Category" Type="nvarchar" MaxLength="400" />
+  </EntityType>
+  <EntityType Name="Invoice">
+    <Key>
+      <PropertyRef Name="InvoiceId" />
+    </Key>
+    <Property Name="InvoiceId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="AccountId" Type="int" />
+    <Property Name="TotalPayment" Type="decimal" Precision="18" Scale="2" StoreGeneratedPattern="Computed" />
+    <Property Name="Paid" Type="decimal" Precision="18" Scale="2" StoreGeneratedPattern="Computed" />
+    <Property Name="PaymentMethodId" Type="int" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="Discount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="DiscountAmount" Type="money" />
+    <Property Name="Additional" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="AdditionalAmount" Type="money" />
+    <Property Name="Balance" Type="decimal" Precision="18" Scale="2" StoreGeneratedPattern="Computed" />
+    <Property Name="FinalTotal" Type="decimal" Precision="18" Scale="2" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="InvoiceItems">
+    <Key>
+      <PropertyRef Name="InvoiceItemId" />
+    </Key>
+    <Property Name="InvoiceItemId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InvoiceId" Type="int" />
+    <Property Name="ProductId" Type="int" />
+    <Property Name="StoreId" Type="int" />
+    <Property Name="SalePrice" Type="money" />
+    <Property Name="Qty" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Total" Type="decimal" Precision="38" Scale="6" StoreGeneratedPattern="Computed" />
+    <Property Name="CreatedOn" Type="datetime" />
+  </EntityType>
+  <EntityType Name="InvoicePayments">
+    <Key>
+      <PropertyRef Name="InvoicePaymentId" />
+    </Key>
+    <Property Name="InvoicePaymentId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="InvoiceId" Type="int" />
+    <Property Name="PaymentMethodId" Type="int" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="Total" Type="money" />
+    <Property Name="Paid" Type="money" />
+    <Property Name="Balance" Type="money" StoreGeneratedPattern="Computed" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="500" />
   </EntityType>
   <EntityType Name="PaymentOptions">
     <Key>
@@ -50,9 +111,89 @@
     <Property Name="StoreQuantityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="StoreId" Type="int" />
     <Property Name="InventoryId" Type="int" />
+    <Property Name="WarehousId" Type="int" />
     <Property Name="Quantity" Type="decimal" Precision="18" Scale="2" />
     <Property Name="SoldOut" Type="decimal" Precision="18" Scale="2" />
     <Property Name="Balance" Type="decimal" Precision="19" Scale="2" StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="Warehouse">
+    <Key>
+      <PropertyRef Name="WarehouseId" />
+    </Key>
+    <Property Name="WarehouseId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Warehouse" Type="nvarchar" MaxLength="500" />
+    <Property Name="Address" Type="nvarchar(max)" />
+    <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="Notes" Type="nvarchar(max)" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POS_System.dbo.InvoiceItemsV' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="InvoiceItemsV">
+    <Key>
+      <PropertyRef Name="InvoiceItemId" />
+    </Key>
+    <Property Name="InvoiceItemId" Type="int" Nullable="false" />
+    <Property Name="InvoiceId" Type="int" />
+    <Property Name="ProductId" Type="int" />
+    <Property Name="SalePrice" Type="money" />
+    <Property Name="Qty" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Total" Type="decimal" Precision="38" Scale="6" />
+    <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="Title" Type="nvarchar" MaxLength="300" />
+    <Property Name="Descrioption" Type="nvarchar(max)" />
+    <Property Name="Barcode" Type="varchar" MaxLength="100" />
+    <Property Name="IsExpirable" Type="bit" />
+    <Property Name="Code1" Type="nvarchar" MaxLength="150" />
+    <Property Name="Code2" Type="nvarchar" MaxLength="150" />
+    <Property Name="StoreId" Type="int" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POS_System.dbo.InvoicePaymentV' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="InvoicePaymentV">
+    <Key>
+      <PropertyRef Name="InvoicePaymentId" />
+      <PropertyRef Name="PaymentOptionsId" />
+    </Key>
+    <Property Name="InvoicePaymentId" Type="int" Nullable="false" />
+    <Property Name="InvoiceId" Type="int" />
+    <Property Name="PaymentOptionsId" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar" MaxLength="300" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="Total" Type="money" />
+    <Property Name="Paid" Type="money" />
+    <Property Name="Balance" Type="money" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="500" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'POS_System.dbo.InvoiceV' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="InvoiceV">
+    <Key>
+      <PropertyRef Name="InvoiceId" />
+    </Key>
+    <Property Name="InvoiceId" Type="int" Nullable="false" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="Title" Type="nvarchar" MaxLength="500" />
+    <Property Name="Type" Type="nvarchar" MaxLength="50" />
+    <Property Name="AccountCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="AccountType" Type="nvarchar" MaxLength="100" />
+    <Property Name="PaymentMethod" Type="nvarchar" MaxLength="300" />
+    <Property Name="PaymentMethodId" Type="int" />
+    <Property Name="Email" Type="nvarchar" MaxLength="150" />
+    <Property Name="CellNo" Type="nvarchar" MaxLength="150" />
+    <Property Name="Address" Type="nvarchar" MaxLength="500" />
+    <Property Name="Credit" Type="money" />
+    <Property Name="Debit" Type="money" />
+    <Property Name="OpenBalance" Type="money" />
+    <Property Name="AccountId" Type="int" />
+    <Property Name="TotalPayment" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Paid" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Balance" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Discount" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="DiscountAmount" Type="money" />
+    <Property Name="Additional" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="AdditionalAmount" Type="money" />
+    <Property Name="FinalTotal" Type="decimal" Precision="18" Scale="2" />
   </EntityType>
   <!--Errors Found During Generation:
 warning 6002: The table/view 'POS_System.dbo.StorewiseQuantityV' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -68,13 +209,77 @@ warning 6002: The table/view 'POS_System.dbo.StorewiseQuantityV' does not have a
     <Property Name="Quantity" Type="decimal" Precision="18" Scale="2" />
     <Property Name="ProductId" Type="int" Nullable="false" />
     <Property Name="Store" Type="nvarchar" MaxLength="300" />
+    <Property Name="WarehousId" Type="int" />
   </EntityType>
   <EntityContainer Name="POS_SystemModelStoreContainer">
+    <EntitySet Name="Accounts" EntityType="Self.Accounts" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Invoice" EntityType="Self.Invoice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InvoiceItems" EntityType="Self.InvoiceItems" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InvoicePayments" EntityType="Self.InvoicePayments" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PaymentOptions" EntityType="Self.PaymentOptions" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Store" EntityType="Self.Store" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="StorewiseQuantity" EntityType="Self.StorewiseQuantity" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Warehouse" EntityType="Self.Warehouse" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InvoiceItemsV" EntityType="Self.InvoiceItemsV" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [InvoiceItemsV].[InvoiceItemId] AS [InvoiceItemId], 
+    [InvoiceItemsV].[InvoiceId] AS [InvoiceId], 
+    [InvoiceItemsV].[ProductId] AS [ProductId], 
+    [InvoiceItemsV].[SalePrice] AS [SalePrice], 
+    [InvoiceItemsV].[Qty] AS [Qty], 
+    [InvoiceItemsV].[Total] AS [Total], 
+    [InvoiceItemsV].[CreatedOn] AS [CreatedOn], 
+    [InvoiceItemsV].[Title] AS [Title], 
+    [InvoiceItemsV].[Descrioption] AS [Descrioption], 
+    [InvoiceItemsV].[Barcode] AS [Barcode], 
+    [InvoiceItemsV].[IsExpirable] AS [IsExpirable], 
+    [InvoiceItemsV].[Code1] AS [Code1], 
+    [InvoiceItemsV].[Code2] AS [Code2], 
+    [InvoiceItemsV].[StoreId] AS [StoreId]
+    FROM [dbo].[InvoiceItemsV] AS [InvoiceItemsV]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="InvoicePaymentV" EntityType="Self.InvoicePaymentV" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [InvoicePaymentV].[InvoicePaymentId] AS [InvoicePaymentId], 
+    [InvoicePaymentV].[InvoiceId] AS [InvoiceId], 
+    [InvoicePaymentV].[PaymentOptionsId] AS [PaymentOptionsId], 
+    [InvoicePaymentV].[Title] AS [Title], 
+    [InvoicePaymentV].[Date] AS [Date], 
+    [InvoicePaymentV].[Total] AS [Total], 
+    [InvoicePaymentV].[Paid] AS [Paid], 
+    [InvoicePaymentV].[Balance] AS [Balance], 
+    [InvoicePaymentV].[Remarks] AS [Remarks]
+    FROM [dbo].[InvoicePaymentV] AS [InvoicePaymentV]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="InvoiceV" EntityType="Self.InvoiceV" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [InvoiceV].[InvoiceId] AS [InvoiceId], 
+    [InvoiceV].[Date] AS [Date], 
+    [InvoiceV].[Title] AS [Title], 
+    [InvoiceV].[Type] AS [Type], 
+    [InvoiceV].[AccountCode] AS [AccountCode], 
+    [InvoiceV].[AccountType] AS [AccountType], 
+    [InvoiceV].[PaymentMethod] AS [PaymentMethod], 
+    [InvoiceV].[PaymentMethodId] AS [PaymentMethodId], 
+    [InvoiceV].[Email] AS [Email], 
+    [InvoiceV].[CellNo] AS [CellNo], 
+    [InvoiceV].[Address] AS [Address], 
+    [InvoiceV].[Credit] AS [Credit], 
+    [InvoiceV].[Debit] AS [Debit], 
+    [InvoiceV].[OpenBalance] AS [OpenBalance], 
+    [InvoiceV].[AccountId] AS [AccountId], 
+    [InvoiceV].[TotalPayment] AS [TotalPayment], 
+    [InvoiceV].[Paid] AS [Paid], 
+    [InvoiceV].[Balance] AS [Balance], 
+    [InvoiceV].[Discount] AS [Discount], 
+    [InvoiceV].[DiscountAmount] AS [DiscountAmount], 
+    [InvoiceV].[Additional] AS [Additional], 
+    [InvoiceV].[AdditionalAmount] AS [AdditionalAmount], 
+    [InvoiceV].[FinalTotal] AS [FinalTotal]
+    FROM [dbo].[InvoiceV] AS [InvoiceV]</DefiningQuery>
+    </EntitySet>
     <EntitySet Name="StorewiseQuantityV" EntityType="Self.StorewiseQuantityV" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 
     [StorewiseQuantityV].[StoreQuantityId] AS [StoreQuantityId], 
@@ -83,7 +288,8 @@ warning 6002: The table/view 'POS_System.dbo.StorewiseQuantityV' does not have a
     [StorewiseQuantityV].[Balance] AS [Balance], 
     [StorewiseQuantityV].[Quantity] AS [Quantity], 
     [StorewiseQuantityV].[ProductId] AS [ProductId], 
-    [StorewiseQuantityV].[Store] AS [Store]
+    [StorewiseQuantityV].[Store] AS [Store], 
+    [StorewiseQuantityV].[WarehousId] AS [WarehousId]
     FROM [dbo].[StorewiseQuantityV] AS [StorewiseQuantityV]</DefiningQuery>
     </EntitySet>
   </EntityContainer>

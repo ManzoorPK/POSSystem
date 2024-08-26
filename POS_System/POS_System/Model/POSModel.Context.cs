@@ -31,5 +31,13 @@ namespace POS_System.Model
         public virtual DbSet<StorewiseQuantity> StorewiseQuantities { get; set; }
         public virtual DbSet<StorewiseQuantityV> StorewiseQuantityVs { get; set; }
         public virtual DbSet<PaymentOption> PaymentOptions { get; set; }
+        public virtual DbSet<Warehouse> Warehouses { get; set; }
+        public virtual DbSet<Account> Accounts { get; set; }
+        public virtual DbSet<InvoiceItem> InvoiceItems { get; set; }
+        public virtual DbSet<InvoiceItemsV> InvoiceItemsVs { get; set; }
+        public virtual DbSet<InvoicePayment> InvoicePayments { get; set; }
+        public virtual DbSet<InvoicePaymentV> InvoicePaymentVs { get; set; }
+        public virtual DbSet<Invoice> Invoices { get; set; }
+        public virtual DbSet<InvoiceV> InvoiceVs { get; set; }
     }
 }

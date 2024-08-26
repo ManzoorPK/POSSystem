@@ -1,4 +1,5 @@
-﻿using System;
+﻿using POS_System.Forms;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -36,6 +37,7 @@ namespace POS_System
             new GridHelper().SetButton(btnSales, "payment.png", 50, 50);
             new GridHelper().SetButton(btnPurchase, "addproduct.png", 50, 50);
             new GridHelper().SetButton(btnPayments, "payment.png", 50, 50);
+
         }
 
         private void DashboardForm_Activated(object sender, EventArgs e)
@@ -56,6 +58,14 @@ namespace POS_System
         private void btnProducts_Click(object sender, EventArgs e)
         {
             InventoriesList frm = new InventoriesList("");
+            frm.MdiParent = this.MdiParent;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
+
+        private void btnSales_Click(object sender, EventArgs e)
+        {
+            AddEditInvoiceForm frm = new AddEditInvoiceForm();
             frm.MdiParent = this.MdiParent;
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();

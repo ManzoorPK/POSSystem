@@ -1,4 +1,5 @@
 ﻿
+using POS_System.Forms;
 using POS_System.Model;
 using System;
 using System.Collections.Generic;
@@ -23,6 +24,7 @@ namespace POS_System
         private int InventoryID = 0;
         private InventoriesList IL;
         private MDIParent _MDIParent;
+        private AddEditInvoiceForm AIE;
         public AddEditInventory(InventoriesList _IL, int _InventoryID, MDIParent mDIParent = null)
         {
             InitializeComponent();
@@ -30,7 +32,11 @@ namespace POS_System
             InventoryID = _InventoryID;
             _MDIParent = mDIParent;
         }
-
+        public AddEditInventory(AddEditInvoiceForm _aie, string type="Invoice")
+        {
+            InitializeComponent();
+            AIE = _aie; 
+        }
         public AddEditInventory()
         {
             InitializeComponent();
@@ -39,6 +45,8 @@ namespace POS_System
 
         private void AddEditInventory_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'pOS_SystemDataSet.Warehouse' table. You can move, or remove it, as needed.
+            this.warehouseTableAdapter.Fill(this.pOS_SystemDataSet.Warehouse);
             FillList();
 
             if (InventoryID > 0)
@@ -77,7 +85,7 @@ namespace POS_System
 
             foreach (var item in obj)
             {
-                dgStores.Rows.Add(item.StoreQuantityId, item.Store, item.Quantity, item.StoreId);
+                dgStores.Rows.Add(item.StoreQuantityId, item.Store, item.WarehousId, item.Quantity, item.StoreId);
             }
 
             dgStores.TableElement.RowHeight = 25;
@@ -86,8 +94,9 @@ namespace POS_System
             if (dgStores.Rows.Count > 0)
             {
                 dgStores.Columns[0].IsVisible = false;
-                dgStores.Columns[3].IsVisible = false;
+                dgStores.Columns[4].IsVisible = false;
                 dgStores.Columns[2].ReadOnly = false;
+                dgStores.Columns[3].ReadOnly = false;
 
                 dgStores.Columns[1].ReadOnly = true;
 
@@ -153,12 +162,14 @@ namespace POS_System
         {
             foreach (GridViewRowInfo obj in dgStores.Rows)
             {
+
                 var res = new StorewiseQuantityHelper().SaveEditStorewiseQty(new StorewiseQuantity
                 {
                     StoreQuantityId = obj.Cells[0].Value == null ? 0 : Convert.ToInt32(obj.Cells[0].Value),
-                    StoreId = Convert.ToInt32(obj.Cells[3].Value),
+                    StoreId = Convert.ToInt32(obj.Cells[4].Value),
                     InventoryId = InventoryID,
-                    Quantity = Convert.ToDecimal(obj.Cells[2].Value)
+                    Quantity = Convert.ToDecimal(obj.Cells[3].Value),
+                    WarehousId = Convert.ToInt32(obj.Cells[2].Value)
                 });
             }
         }
@@ -236,7 +247,7 @@ namespace POS_System
                 }
             }
             var res = new ProductHelper().SaveEditProduct(obj);
-            if (res == true)
+            if (res != null)
             {
                 SaveStorewiseQty();
 
@@ -246,13 +257,21 @@ namespace POS_System
                     this.Close();
 
                 if (IL != null)
+                {
                     IL.LoadInventories();
+                    MessageBox.Show("Item changes saved successfully.");
+                }
 
+                if (AIE != null)
+                {
+                    AIE.LoadProducts(res.ProductId);
+                    this.Close();
+                }
 
-                MessageBox.Show("Item changes saved successfully.");
+               
             }
 
-            if (res == false)
+            if (res == null)
             {
                 MessageBox.Show("An error occured while saving Item");
             }
@@ -470,6 +489,11 @@ namespace POS_System
         {
             if (txtBarcode.Text == "")
                 txtBarcode.Text = new BarcodeHelper().GenerateBarcode();
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

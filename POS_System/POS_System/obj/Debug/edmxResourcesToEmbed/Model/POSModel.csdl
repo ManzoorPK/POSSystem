@@ -27,6 +27,14 @@
     <EntitySet Name="StorewiseQuantities" EntityType="POS_SystemModel.StorewiseQuantity" />
     <EntitySet Name="StorewiseQuantityVs" EntityType="POS_SystemModel.StorewiseQuantityV" />
     <EntitySet Name="PaymentOptions" EntityType="POS_SystemModel.PaymentOption" />
+    <EntitySet Name="Warehouses" EntityType="POS_SystemModel.Warehouse" />
+    <EntitySet Name="Accounts" EntityType="POS_SystemModel.Account" />
+    <EntitySet Name="InvoiceItems" EntityType="POS_SystemModel.InvoiceItem" />
+    <EntitySet Name="InvoiceItemsVs" EntityType="POS_SystemModel.InvoiceItemsV" />
+    <EntitySet Name="InvoicePayments" EntityType="POS_SystemModel.InvoicePayment" />
+    <EntitySet Name="InvoicePaymentVs" EntityType="POS_SystemModel.InvoicePaymentV" />
+    <EntitySet Name="Invoices" EntityType="POS_SystemModel.Invoice" />
+    <EntitySet Name="InvoiceVs" EntityType="POS_SystemModel.InvoiceV" />
   </EntityContainer>
   <EntityType Name="Category">
     <Key>
@@ -53,6 +61,7 @@
     <Property Name="Quantity" Type="Decimal" Precision="18" Scale="2" />
     <Property Name="SoldOut" Type="Decimal" Precision="18" Scale="2" />
     <Property Name="Balance" Type="Decimal" Precision="19" Scale="2" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="WarehousId" Type="Int32" />
   </EntityType>
   <EntityType Name="StorewiseQuantityV">
     <Key>
@@ -66,6 +75,7 @@
     <Property Name="Quantity" Type="Decimal" Precision="18" Scale="2" />
     <Property Name="ProductId" Type="Int32" Nullable="false" />
     <Property Name="Store" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="WarehousId" Type="Int32" />
   </EntityType>
   <EntityType Name="PaymentOption">
     <Key>
@@ -74,5 +84,139 @@
     <Property Name="PaymentOptionsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Title" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
     <Property Name="IsActive" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="Warehouse">
+    <Key>
+      <PropertyRef Name="WarehouseId" />
+    </Key>
+    <Property Name="WarehouseId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Warehouse1" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Account">
+    <Key>
+      <PropertyRef Name="AccountId" />
+    </Key>
+    <Property Name="AccountId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AccountCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="CellNo" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Credit" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Debit" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="OpenBalance" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Type" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="InvoiceItem">
+    <Key>
+      <PropertyRef Name="InvoiceItemId" />
+    </Key>
+    <Property Name="InvoiceItemId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InvoiceId" Type="Int32" />
+    <Property Name="ProductId" Type="Int32" />
+    <Property Name="SalePrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Qty" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Total" Type="Decimal" Precision="38" Scale="6" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="StoreId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="InvoiceItemsV">
+    <Key>
+      <PropertyRef Name="InvoiceItemId" />
+    </Key>
+    <Property Name="InvoiceItemId" Type="Int32" Nullable="false" />
+    <Property Name="InvoiceId" Type="Int32" />
+    <Property Name="ProductId" Type="Int32" />
+    <Property Name="SalePrice" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Qty" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Total" Type="Decimal" Precision="38" Scale="6" />
+    <Property Name="CreatedOn" Type="DateTime" Precision="3" />
+    <Property Name="Title" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Descrioption" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Barcode" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IsExpirable" Type="Boolean" />
+    <Property Name="Code1" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Code2" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="StoreId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="InvoicePayment">
+    <Key>
+      <PropertyRef Name="InvoicePaymentId" />
+    </Key>
+    <Property Name="InvoicePaymentId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="InvoiceId" Type="Int32" />
+    <Property Name="PaymentMethodId" Type="Int32" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="Total" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Paid" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Balance" Type="Decimal" Precision="19" Scale="4" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="InvoicePaymentV">
+    <Key>
+      <PropertyRef Name="InvoicePaymentId" />
+      <PropertyRef Name="PaymentOptionsId" />
+    </Key>
+    <Property Name="InvoicePaymentId" Type="Int32" Nullable="false" />
+    <Property Name="InvoiceId" Type="Int32" />
+    <Property Name="PaymentOptionsId" Type="Int32" Nullable="false" />
+    <Property Name="Title" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="Total" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Paid" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Balance" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="Invoice">
+    <Key>
+      <PropertyRef Name="InvoiceId" />
+    </Key>
+    <Property Name="InvoiceId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="AccountId" Type="Int32" />
+    <Property Name="TotalPayment" Type="Decimal" Precision="18" Scale="2" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Paid" Type="Decimal" Precision="18" Scale="2" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="Balance" Type="Decimal" Precision="18" Scale="2" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="PaymentMethodId" Type="Int32" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="UserId" Type="Int32" />
+    <Property Name="Discount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="DiscountAmount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Additional" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdditionalAmount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FinalTotal" Type="Decimal" Precision="18" Scale="2" annotation:StoreGeneratedPattern="Computed" />
+  </EntityType>
+  <EntityType Name="InvoiceV">
+    <Key>
+      <PropertyRef Name="InvoiceId" />
+    </Key>
+    <Property Name="InvoiceId" Type="Int32" Nullable="false" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="Title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Type" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AccountCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="AccountType" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="PaymentMethod" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
+    <Property Name="PaymentMethodId" Type="Int32" />
+    <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="CellNo" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Address" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Credit" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Debit" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="OpenBalance" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="AccountId" Type="Int32" />
+    <Property Name="TotalPayment" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Paid" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Balance" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Discount" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="DiscountAmount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Additional" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="AdditionalAmount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="FinalTotal" Type="Decimal" Precision="18" Scale="2" />
   </EntityType>
 </Schema>

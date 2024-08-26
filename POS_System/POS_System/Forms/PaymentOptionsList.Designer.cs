@@ -100,8 +100,9 @@
             // 
             // radButton2
             // 
+            this.radButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radButton2.BackColor = System.Drawing.Color.White;
-            this.radButton2.Location = new System.Drawing.Point(203, 10);
+            this.radButton2.Location = new System.Drawing.Point(1317, 9);
             this.radButton2.Name = "radButton2";
             this.radButton2.Size = new System.Drawing.Size(124, 28);
             this.radButton2.TabIndex = 1;
@@ -111,11 +112,12 @@
             // 
             // radButton1
             // 
+            this.radButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radButton1.BackColor = System.Drawing.Color.White;
             this.radButton1.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
             this.radButton1.ImageKey = "299068_add_sign_icon.png";
             this.radButton1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.radButton1.Location = new System.Drawing.Point(5, 10);
+            this.radButton1.Location = new System.Drawing.Point(1119, 9);
             this.radButton1.Name = "radButton1";
             this.radButton1.Size = new System.Drawing.Size(194, 28);
             this.radButton1.TabIndex = 0;

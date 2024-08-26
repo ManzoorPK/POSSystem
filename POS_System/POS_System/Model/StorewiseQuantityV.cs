@@ -21,5 +21,6 @@ namespace POS_System.Model
         public Nullable<decimal> Quantity { get; set; }
         public int ProductId { get; set; }
         public string Store { get; set; }
+        public Nullable<int> WarehousId { get; set; }
     }
 }

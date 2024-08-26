@@ -1,14 +1,14 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\My Products\\POS_System\\",
+  "WorkspaceRootPath": "D:\\My Products\\POSSystem\\POS_System\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{794BBF90-EAAA-497F-AC8C-802B3A8827E4}|POS_System\\POS_System.csproj|d:\\my products\\pos_system\\pos_system\\forms\\addeditinventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{794BBF90-EAAA-497F-AC8C-802B3A8827E4}|POS_System\\POS_System.csproj|solutionrelative:pos_system\\forms\\addeditinventory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{794BBF90-EAAA-497F-AC8C-802B3A8827E4}|POS_System\\POS_System.csproj|d:\\my products\\possystem\\pos_system\\pos_system\\forms\\addeditinvoiceform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{794BBF90-EAAA-497F-AC8C-802B3A8827E4}|POS_System\\POS_System.csproj|solutionrelative:pos_system\\forms\\addeditinvoiceform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{794BBF90-EAAA-497F-AC8C-802B3A8827E4}|POS_System\\POS_System.csproj|d:\\my products\\pos_system\\pos_system\\helpers\\barcodehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{794BBF90-EAAA-497F-AC8C-802B3A8827E4}|POS_System\\POS_System.csproj|solutionrelative:pos_system\\helpers\\barcodehelper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{794BBF90-EAAA-497F-AC8C-802B3A8827E4}|POS_System\\POS_System.csproj|d:\\my products\\possystem\\pos_system\\pos_system\\forms\\storelist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{794BBF90-EAAA-497F-AC8C-802B3A8827E4}|POS_System\\POS_System.csproj|solutionrelative:pos_system\\forms\\storelist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 17,
+          "SelectedChildIndex": 18,
           "Children": [
             {
               "$type": "Bookmark",
@@ -90,27 +90,28 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AddEditInventory.cs [Design]",
-              "DocumentMoniker": "D:\\My Products\\POS_System\\POS_System\\Forms\\AddEditInventory.cs",
-              "RelativeDocumentMoniker": "POS_System\\Forms\\AddEditInventory.cs",
-              "ToolTip": "D:\\My Products\\POS_System\\POS_System\\Forms\\AddEditInventory.cs [Design]",
-              "RelativeToolTip": "POS_System\\Forms\\AddEditInventory.cs [Design]",
+              "DocumentIndex": 1,
+              "Title": "StoreList.cs",
+              "DocumentMoniker": "D:\\My Products\\POSSystem\\POS_System\\POS_System\\Forms\\StoreList.cs",
+              "RelativeDocumentMoniker": "POS_System\\Forms\\StoreList.cs",
+              "ToolTip": "D:\\My Products\\POSSystem\\POS_System\\POS_System\\Forms\\StoreList.cs",
+              "RelativeToolTip": "POS_System\\Forms\\StoreList.cs",
+              "ViewState": "AQIAAEEAAAAAAAAAAAAIwGQAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-22T12:13:39.415Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2024-08-26T06:44:11.869Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "BarcodeHelper.cs",
-              "DocumentMoniker": "D:\\My Products\\POS_System\\POS_System\\Helpers\\BarcodeHelper.cs",
-              "RelativeDocumentMoniker": "POS_System\\Helpers\\BarcodeHelper.cs",
-              "ToolTip": "D:\\My Products\\POS_System\\POS_System\\Helpers\\BarcodeHelper.cs",
-              "RelativeToolTip": "POS_System\\Helpers\\BarcodeHelper.cs",
-              "ViewState": "AQIAAAQAAAAAAAAAAAAAAAwAAAAmAAAA",
+              "DocumentIndex": 0,
+              "Title": "AddEditInvoiceForm.cs",
+              "DocumentMoniker": "D:\\My Products\\POSSystem\\POS_System\\POS_System\\Forms\\AddEditInvoiceForm.cs",
+              "RelativeDocumentMoniker": "POS_System\\Forms\\AddEditInvoiceForm.cs",
+              "ToolTip": "D:\\My Products\\POSSystem\\POS_System\\POS_System\\Forms\\AddEditInvoiceForm.cs",
+              "RelativeToolTip": "POS_System\\Forms\\AddEditInvoiceForm.cs",
+              "ViewState": "AQIAAI8BAAAAAAAAAAAqwJwBAABHAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-08-22T12:07:01.79Z",
+              "WhenOpened": "2024-08-26T06:15:27.392Z",
               "EditorCaption": ""
             }
           ]

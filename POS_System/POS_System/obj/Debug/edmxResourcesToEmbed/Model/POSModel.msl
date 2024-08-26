@@ -42,6 +42,7 @@
     <EntitySetMapping Name="StorewiseQuantities">
       <EntityTypeMapping TypeName="POS_SystemModel.StorewiseQuantity">
         <MappingFragment StoreEntitySet="StorewiseQuantity">
+          <ScalarProperty Name="WarehousId" ColumnName="WarehousId" />
           <ScalarProperty Name="Balance" ColumnName="Balance" />
           <ScalarProperty Name="SoldOut" ColumnName="SoldOut" />
           <ScalarProperty Name="Quantity" ColumnName="Quantity" />
@@ -54,6 +55,7 @@
     <EntitySetMapping Name="StorewiseQuantityVs">
       <EntityTypeMapping TypeName="POS_SystemModel.StorewiseQuantityV">
         <MappingFragment StoreEntitySet="StorewiseQuantityV">
+          <ScalarProperty Name="WarehousId" ColumnName="WarehousId" />
           <ScalarProperty Name="Store" ColumnName="Store" />
           <ScalarProperty Name="ProductId" ColumnName="ProductId" />
           <ScalarProperty Name="Quantity" ColumnName="Quantity" />
@@ -70,6 +72,147 @@
           <ScalarProperty Name="IsActive" ColumnName="IsActive" />
           <ScalarProperty Name="Title" ColumnName="Title" />
           <ScalarProperty Name="PaymentOptionsId" ColumnName="PaymentOptionsId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Warehouses">
+      <EntityTypeMapping TypeName="POS_SystemModel.Warehouse">
+        <MappingFragment StoreEntitySet="Warehouse">
+          <ScalarProperty Name="Notes" ColumnName="Notes" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Warehouse1" ColumnName="Warehouse" />
+          <ScalarProperty Name="WarehouseId" ColumnName="WarehouseId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Accounts">
+      <EntityTypeMapping TypeName="POS_SystemModel.Account">
+        <MappingFragment StoreEntitySet="Accounts">
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="OpenBalance" ColumnName="OpenBalance" />
+          <ScalarProperty Name="Debit" ColumnName="Debit" />
+          <ScalarProperty Name="Credit" ColumnName="Credit" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="CellNo" ColumnName="CellNo" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InvoiceItems">
+      <EntityTypeMapping TypeName="POS_SystemModel.InvoiceItem">
+        <MappingFragment StoreEntitySet="InvoiceItems">
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="SalePrice" ColumnName="SalePrice" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="InvoiceId" ColumnName="InvoiceId" />
+          <ScalarProperty Name="InvoiceItemId" ColumnName="InvoiceItemId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InvoiceItemsVs">
+      <EntityTypeMapping TypeName="POS_SystemModel.InvoiceItemsV">
+        <MappingFragment StoreEntitySet="InvoiceItemsV">
+          <ScalarProperty Name="StoreId" ColumnName="StoreId" />
+          <ScalarProperty Name="Code2" ColumnName="Code2" />
+          <ScalarProperty Name="Code1" ColumnName="Code1" />
+          <ScalarProperty Name="IsExpirable" ColumnName="IsExpirable" />
+          <ScalarProperty Name="Barcode" ColumnName="Barcode" />
+          <ScalarProperty Name="Descrioption" ColumnName="Descrioption" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="SalePrice" ColumnName="SalePrice" />
+          <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+          <ScalarProperty Name="InvoiceId" ColumnName="InvoiceId" />
+          <ScalarProperty Name="InvoiceItemId" ColumnName="InvoiceItemId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InvoicePayments">
+      <EntityTypeMapping TypeName="POS_SystemModel.InvoicePayment">
+        <MappingFragment StoreEntitySet="InvoicePayments">
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="Paid" ColumnName="Paid" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="PaymentMethodId" ColumnName="PaymentMethodId" />
+          <ScalarProperty Name="InvoiceId" ColumnName="InvoiceId" />
+          <ScalarProperty Name="InvoicePaymentId" ColumnName="InvoicePaymentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InvoicePaymentVs">
+      <EntityTypeMapping TypeName="POS_SystemModel.InvoicePaymentV">
+        <MappingFragment StoreEntitySet="InvoicePaymentV">
+          <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="Paid" ColumnName="Paid" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="PaymentOptionsId" ColumnName="PaymentOptionsId" />
+          <ScalarProperty Name="InvoiceId" ColumnName="InvoiceId" />
+          <ScalarProperty Name="InvoicePaymentId" ColumnName="InvoicePaymentId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Invoices">
+      <EntityTypeMapping TypeName="POS_SystemModel.Invoice">
+        <MappingFragment StoreEntitySet="Invoice">
+          <ScalarProperty Name="FinalTotal" ColumnName="FinalTotal" />
+          <ScalarProperty Name="AdditionalAmount" ColumnName="AdditionalAmount" />
+          <ScalarProperty Name="Additional" ColumnName="Additional" />
+          <ScalarProperty Name="DiscountAmount" ColumnName="DiscountAmount" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="PaymentMethodId" ColumnName="PaymentMethodId" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="Paid" ColumnName="Paid" />
+          <ScalarProperty Name="TotalPayment" ColumnName="TotalPayment" />
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="InvoiceId" ColumnName="InvoiceId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="InvoiceVs">
+      <EntityTypeMapping TypeName="POS_SystemModel.InvoiceV">
+        <MappingFragment StoreEntitySet="InvoiceV">
+          <ScalarProperty Name="FinalTotal" ColumnName="FinalTotal" />
+          <ScalarProperty Name="AdditionalAmount" ColumnName="AdditionalAmount" />
+          <ScalarProperty Name="Additional" ColumnName="Additional" />
+          <ScalarProperty Name="DiscountAmount" ColumnName="DiscountAmount" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="Paid" ColumnName="Paid" />
+          <ScalarProperty Name="TotalPayment" ColumnName="TotalPayment" />
+          <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+          <ScalarProperty Name="OpenBalance" ColumnName="OpenBalance" />
+          <ScalarProperty Name="Debit" ColumnName="Debit" />
+          <ScalarProperty Name="Credit" ColumnName="Credit" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="CellNo" ColumnName="CellNo" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="PaymentMethodId" ColumnName="PaymentMethodId" />
+          <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
+          <ScalarProperty Name="AccountType" ColumnName="AccountType" />
+          <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+          <ScalarProperty Name="Type" ColumnName="Type" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Date" ColumnName="Date" />
+          <ScalarProperty Name="InvoiceId" ColumnName="InvoiceId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

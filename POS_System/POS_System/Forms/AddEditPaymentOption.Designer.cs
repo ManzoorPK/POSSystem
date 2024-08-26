@@ -52,7 +52,7 @@
             this.txtTitle.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.txtTitle.BackColor = System.Drawing.Color.White;
             this.txtTitle.Font = new System.Drawing.Font("Segoe UI", 13F);
-            this.txtTitle.Location = new System.Drawing.Point(100, 39);
+            this.txtTitle.Location = new System.Drawing.Point(67, 39);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.Size = new System.Drawing.Size(359, 29);
             this.txtTitle.TabIndex = 44;
@@ -63,7 +63,7 @@
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label1.Location = new System.Drawing.Point(60, 45);
+            this.label1.Location = new System.Drawing.Point(432, 45);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(34, 19);
             this.label1.TabIndex = 48;
@@ -73,7 +73,7 @@
             // 
             this.radButtonCancel.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.radButtonCancel.BackColor = System.Drawing.Color.White;
-            this.radButtonCancel.Location = new System.Drawing.Point(365, 74);
+            this.radButtonCancel.Location = new System.Drawing.Point(245, 74);
             this.radButtonCancel.Name = "radButtonCancel";
             this.radButtonCancel.Size = new System.Drawing.Size(94, 32);
             this.radButtonCancel.TabIndex = 47;
@@ -85,11 +85,11 @@
             // 
             this.radButtonSave.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.radButtonSave.BackColor = System.Drawing.Color.White;
-            this.radButtonSave.Location = new System.Drawing.Point(188, 74);
+            this.radButtonSave.Location = new System.Drawing.Point(68, 74);
             this.radButtonSave.Name = "radButtonSave";
             this.radButtonSave.Size = new System.Drawing.Size(171, 32);
             this.radButtonSave.TabIndex = 46;
-            this.radButtonSave.Text = "Save Changes (F2)";
+            this.radButtonSave.Text = "Save Changes";
             this.radButtonSave.ThemeName = "Office2010Blue";
             this.radButtonSave.Click += new System.EventHandler(this.radButtonSave_Click);
             // 
@@ -115,11 +115,12 @@
             this.lblTitle.Size = new System.Drawing.Size(193, 23);
             this.lblTitle.TabIndex = 2;
             this.lblTitle.Text = "Add new Payment Option";
+            this.lblTitle.TextAlignment = System.Drawing.ContentAlignment.TopRight;
             this.lblTitle.ThemeName = "Office2010Blue";
             // 
             // chkActive
             // 
-            this.chkActive.Location = new System.Drawing.Point(100, 80);
+            this.chkActive.Location = new System.Drawing.Point(361, 74);
             this.chkActive.Name = "chkActive";
             this.chkActive.Size = new System.Drawing.Size(65, 18);
             this.chkActive.TabIndex = 49;
@@ -139,6 +140,7 @@
             this.Controls.Add(this.radGroupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "AddEditPaymentOption";
+            this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             // 
             // 
             // 

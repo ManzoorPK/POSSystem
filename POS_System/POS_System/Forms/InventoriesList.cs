@@ -202,17 +202,10 @@ namespace POS_System
         {
             dgStores.Rows.Clear();
             var obj = new StorewiseQuantityHelper().GetAllStoresQuantity(InventoryID);
-            var _Data = from a in obj
-                        select new
-                        {
-                            a.StoreQuantityId,
-                            Store = a.Store,
-                            Qty = Common.GetAsMoneyWithComma(a.Quantity)
-                        };
-
+           
             foreach (var item in obj)
             {
-                dgStores.Rows.Add(item.StoreQuantityId, item.Store, item.Quantity, item.StoreId);
+                dgStores.Rows.Add(item.StoreQuantityId, item.Store, item.WarehousId == null ? "" : (item.WarehousId == 0 ? "" : new WarehouseHelper().GetWarehouseById(Convert.ToInt32(item.WarehousId)).Warehouse1),  item.Quantity, item.StoreId);
             }
 
             dgStores.TableElement.RowHeight = 30;
@@ -221,9 +214,9 @@ namespace POS_System
             if (dgStores.Rows.Count > 0)
             {
                 dgStores.Columns[0].IsVisible = false;
-                dgStores.Columns[3].IsVisible = false;
-                dgStores.Columns[2].ReadOnly = true;
-                dgStores.Columns[1].ReadOnly = true;
+                dgStores.Columns[4].IsVisible = false;
+                dgStores.Columns[2].ReadOnly = false;
+                dgStores.Columns[3].ReadOnly = false;
 
             }
             new GridHelper().SetGridHeaderAlignment(dgStores, ContentAlignment.MiddleLeft);

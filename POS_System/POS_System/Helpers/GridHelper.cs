@@ -39,6 +39,15 @@ public class GridHelper
             command.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
             command.Tag = "Edit";
         }
+        if (col.name == "btnEditIconOnly")
+        {
+            command.Image = General.ResizePicture("edit1.png", col.icon_Width, col.icon_Height);
+            command.ImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+
+            command.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            command.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            command.Tag = "Edit";
+        }
         if (col.name == "btnOpen")
         {
             command.Image = General.ResizePicture("session.png", col.icon_Width, col.icon_Height);
@@ -54,7 +63,12 @@ public class GridHelper
             command.ImageAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             command.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
         }
-
+        if (col.name == "btnDeleteIconOnly")
+        {
+            command.Image = General.ResizePicture("del1.png", col.icon_Width, col.icon_Height);
+            command.ImageAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+            command.TextAlignment = System.Drawing.ContentAlignment.MiddleCenter;
+        }
         return command;
     }
 
@@ -117,15 +131,24 @@ public class GridHelper
         }
     }
 
+ 
     public void SetButton(RadButton btn, string imageName, int width = 20, int height = 20)
     {
         btn.Image = General.ResizePicture(imageName, width, height);
         btn.ImageAlignment = ContentAlignment.MiddleLeft;
         //btn.TextAlignment = ContentAlignment.MiddleCenter;
+        btn.Padding = new Padding(0, 0, 10, 0);
+
+    }
+    public void SetInnerButton(RadButtonElement btn, string imageName, int width = 20, int height = 20)
+    {
+        btn.Image = General.ResizePicture(imageName, width, height);
+        btn.ImageAlignment = ContentAlignment.MiddleLeft;
+        //btn.TextAlignment = ContentAlignment.MiddleCenter;
+        btn.Size = new Size(width, 400);
         btn.Padding = new Padding(10, 0, 0, 0);
 
     }
-
     public void SetButtonDashboard(RadButton btn, string imageName, int width = 20, int height = 20)
     {
         btn.Image = General.ResizePicture(imageName, width, height);

@@ -28,6 +28,7 @@ namespace POS_System.Forms
             this.Text = lblTitle.Text;
             this.WindowState = FormWindowState.Maximized;
             LoadMyStores();
+            //dgInventories.RightToLeft = RightToLeft.Yes;    
         }
         public void LoadMyStores()
         {

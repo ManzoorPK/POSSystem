@@ -34,10 +34,15 @@ namespace POS_System
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn4 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
             Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn5 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn6 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
+            this.txtSearch = new Telerik.WinControls.UI.RadTextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.ddlCategory = new Telerik.WinControls.UI.RadDropDownList();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.radButtonPrint = new Telerik.WinControls.UI.RadButton();
@@ -54,12 +59,10 @@ namespace POS_System
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.dgStores = new Telerik.WinControls.UI.RadGridView();
-            this.label2 = new System.Windows.Forms.Label();
-            this.ddlCategory = new Telerik.WinControls.UI.RadDropDownList();
-            this.label3 = new System.Windows.Forms.Label();
-            this.txtSearch = new Telerik.WinControls.UI.RadTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSearch)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddlCategory)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radButtonPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.lblTitle)).BeginInit();
@@ -71,8 +74,6 @@ namespace POS_System
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgStores)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgStores.MasterTemplate)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ddlCategory)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -98,12 +99,60 @@ namespace POS_System
             this.radGroupBox1.TabIndex = 8;
             this.radGroupBox1.ThemeName = "Office2010Blue";
             // 
+            // txtSearch
+            // 
+            this.txtSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtSearch.BackColor = System.Drawing.Color.White;
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.txtSearch.Location = new System.Drawing.Point(997, 8);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(199, 29);
+            this.txtSearch.TabIndex = 74;
+            this.txtSearch.ThemeName = "Office2010Blue";
+            this.txtSearch.Visible = false;
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label3.Location = new System.Drawing.Point(944, 11);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(49, 19);
+            this.label3.TabIndex = 73;
+            this.label3.Text = "Search";
+            this.label3.Visible = false;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label2.Location = new System.Drawing.Point(1264, 10);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(65, 19);
+            this.label2.TabIndex = 72;
+            this.label2.Text = "Category";
+            // 
+            // ddlCategory
+            // 
+            this.ddlCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.ddlCategory.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.ddlCategory.BackColor = System.Drawing.Color.White;
+            this.ddlCategory.DropDownAnimationEnabled = true;
+            this.ddlCategory.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.ddlCategory.Location = new System.Drawing.Point(1335, 8);
+            this.ddlCategory.Name = "ddlCategory";
+            this.ddlCategory.Size = new System.Drawing.Size(184, 27);
+            this.ddlCategory.TabIndex = 71;
+            this.ddlCategory.ThemeName = "Office2010Blue";
+            this.ddlCategory.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.ddlCategory_SelectedIndexChanged);
+            // 
             // panel3
             // 
-            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.DodgerBlue;
             this.panel3.Controls.Add(this.label1);
-            this.panel3.Location = new System.Drawing.Point(1594, 0);
+            this.panel3.Location = new System.Drawing.Point(-1, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(386, 46);
             this.panel3.TabIndex = 5;
@@ -122,8 +171,9 @@ namespace POS_System
             // 
             // radButtonPrint
             // 
+            this.radButtonPrint.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radButtonPrint.BackColor = System.Drawing.Color.White;
-            this.radButtonPrint.Location = new System.Drawing.Point(168, 10);
+            this.radButtonPrint.Location = new System.Drawing.Point(1688, 8);
             this.radButtonPrint.Name = "radButtonPrint";
             this.radButtonPrint.Size = new System.Drawing.Size(161, 28);
             this.radButtonPrint.TabIndex = 4;
@@ -145,8 +195,9 @@ namespace POS_System
             // 
             // radButton2
             // 
+            this.radButton2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radButton2.BackColor = System.Drawing.Color.White;
-            this.radButton2.Location = new System.Drawing.Point(332, 10);
+            this.radButton2.Location = new System.Drawing.Point(1852, 8);
             this.radButton2.Name = "radButton2";
             this.radButton2.Size = new System.Drawing.Size(124, 28);
             this.radButton2.TabIndex = 1;
@@ -156,11 +207,12 @@ namespace POS_System
             // 
             // radButton1
             // 
+            this.radButton1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.radButton1.BackColor = System.Drawing.Color.White;
             this.radButton1.ImageAlignment = System.Drawing.ContentAlignment.TopCenter;
             this.radButton1.ImageKey = "299068_add_sign_icon.png";
             this.radButton1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.radButton1.Location = new System.Drawing.Point(5, 10);
+            this.radButton1.Location = new System.Drawing.Point(1525, 8);
             this.radButton1.Name = "radButton1";
             this.radButton1.Size = new System.Drawing.Size(161, 28);
             this.radButton1.TabIndex = 0;
@@ -187,14 +239,14 @@ namespace POS_System
             gridViewTextBoxColumn2.FieldName = "Inventory";
             gridViewTextBoxColumn2.HeaderText = "Item";
             gridViewTextBoxColumn2.Name = "Category";
-            gridViewTextBoxColumn2.Width = 1575;
+            gridViewTextBoxColumn2.Width = 1572;
             this.dgInventories.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn1,
             gridViewTextBoxColumn2});
             this.dgInventories.MasterTemplate.EnableFiltering = true;
             this.dgInventories.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.dgInventories.Name = "dgInventories";
-            this.dgInventories.Size = new System.Drawing.Size(1597, 602);
+            this.dgInventories.Size = new System.Drawing.Size(1594, 602);
             this.dgInventories.TabIndex = 9;
             this.dgInventories.ThemeName = "Office2010Blue";
             this.dgInventories.SelectionChanging += new Telerik.WinControls.UI.GridViewSelectionCancelEventHandler(this.dgInventories_SelectionChanging);
@@ -202,20 +254,18 @@ namespace POS_System
             // 
             // panel1
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.Controls.Add(this.dgInventories);
-            this.panel1.Location = new System.Drawing.Point(0, 46);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel1.Location = new System.Drawing.Point(386, 46);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1597, 602);
+            this.panel1.Size = new System.Drawing.Size(1594, 602);
             this.panel1.TabIndex = 10;
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.dgStores);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel2.Location = new System.Drawing.Point(1594, 46);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 46);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(386, 602);
             this.panel2.TabIndex = 11;
@@ -231,6 +281,7 @@ namespace POS_System
             // 
             this.dgStores.MasterTemplate.AllowAddNewRow = false;
             this.dgStores.MasterTemplate.AllowDeleteRow = false;
+            this.dgStores.MasterTemplate.AllowEditRow = false;
             this.dgStores.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             gridViewTextBoxColumn3.HeaderText = "Id";
             gridViewTextBoxColumn3.IsVisible = false;
@@ -238,18 +289,22 @@ namespace POS_System
             gridViewTextBoxColumn3.Width = 868;
             gridViewTextBoxColumn4.HeaderText = "Store";
             gridViewTextBoxColumn4.Name = "ColStore";
-            gridViewTextBoxColumn4.Width = 145;
+            gridViewTextBoxColumn4.Width = 128;
+            gridViewTextBoxColumn5.HeaderText = "Warehouse";
+            gridViewTextBoxColumn5.Name = "ColWarehouse";
+            gridViewTextBoxColumn5.Width = 99;
             gridViewDecimalColumn1.HeaderText = "Qty";
             gridViewDecimalColumn1.Name = "ColQty";
-            gridViewDecimalColumn1.Width = 96;
-            gridViewTextBoxColumn5.HeaderText = "StoreId";
-            gridViewTextBoxColumn5.Name = "ColStoreId";
-            gridViewTextBoxColumn5.Width = 125;
+            gridViewDecimalColumn1.Width = 85;
+            gridViewTextBoxColumn6.HeaderText = "StoreId";
+            gridViewTextBoxColumn6.Name = "ColStoreId";
+            gridViewTextBoxColumn6.Width = 55;
             this.dgStores.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
             gridViewTextBoxColumn3,
             gridViewTextBoxColumn4,
+            gridViewTextBoxColumn5,
             gridViewDecimalColumn1,
-            gridViewTextBoxColumn5});
+            gridViewTextBoxColumn6});
             this.dgStores.MasterTemplate.EnableFiltering = true;
             this.dgStores.MasterTemplate.ViewDefinition = tableViewDefinition2;
             this.dgStores.Name = "dgStores";
@@ -257,62 +312,13 @@ namespace POS_System
             this.dgStores.TabIndex = 13;
             this.dgStores.ThemeName = "Office2010Blue";
             // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label2.Location = new System.Drawing.Point(1329, 13);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(65, 19);
-            this.label2.TabIndex = 72;
-            this.label2.Text = "Category";
-            // 
-            // ddlCategory
-            // 
-            this.ddlCategory.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.ddlCategory.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-            this.ddlCategory.BackColor = System.Drawing.Color.White;
-            this.ddlCategory.DropDownAnimationEnabled = true;
-            this.ddlCategory.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.ddlCategory.Location = new System.Drawing.Point(1395, 10);
-            this.ddlCategory.Name = "ddlCategory";
-            this.ddlCategory.Size = new System.Drawing.Size(184, 27);
-            this.ddlCategory.TabIndex = 71;
-            this.ddlCategory.ThemeName = "Office2010Blue";
-            this.ddlCategory.SelectedIndexChanged += new Telerik.WinControls.UI.Data.PositionChangedEventHandler(this.ddlCategory_SelectedIndexChanged);
-            // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label3.Location = new System.Drawing.Point(1074, 13);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(49, 19);
-            this.label3.TabIndex = 73;
-            this.label3.Text = "Search";
-            this.label3.Visible = false;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtSearch.BackColor = System.Drawing.Color.White;
-            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 13F);
-            this.txtSearch.Location = new System.Drawing.Point(1126, 9);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(199, 29);
-            this.txtSearch.TabIndex = 74;
-            this.txtSearch.ThemeName = "Office2010Blue";
-            this.txtSearch.Visible = false;
-            // 
             // InventoriesList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1980, 648);
-            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.radGroupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.KeyPreview = true;
@@ -328,6 +334,8 @@ namespace POS_System
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.txtSearch)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ddlCategory)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radButtonPrint)).EndInit();
@@ -340,8 +348,6 @@ namespace POS_System
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgStores.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgStores)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.ddlCategory)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
