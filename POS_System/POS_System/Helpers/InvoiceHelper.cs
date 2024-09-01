@@ -12,6 +12,7 @@ public class InvoiceHelper
     {
         try
         {
+
             _Entity.Entry(model).State = (model.InvoiceId == 0 ? EntityState.Added : EntityState.Modified);
             _Entity.SaveChanges();
             return model;
@@ -30,10 +31,14 @@ public class InvoiceHelper
 
     public List<InvoiceV> GetAllInvoices()
     {
-        var lst = _Entity.InvoiceVs.ToList();
+        var lst = _Entity.InvoiceVs.Where(x=>x.InvoiceType == "Sales Invoice").ToList();
         return lst;
     }
-
+    public List<InvoiceV> GetAllSalesReturnInvoices()
+    {
+        var lst = _Entity.InvoiceVs.Where(x => x.InvoiceType == "Sales Return Invoice").ToList();
+        return lst;
+    }
     public bool DeleteInvoice(int Id)
     {
         try

@@ -65,7 +65,15 @@ namespace POS_System
 
         private void btnSales_Click(object sender, EventArgs e)
         {
-            AddEditInvoiceForm frm = new AddEditInvoiceForm();
+            AddEditInvoiceForm frm = new AddEditInvoiceForm("Sales Invoice");
+            frm.MdiParent = this.MdiParent;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.Show();
+        }
+
+        private void btnPurchase_Click(object sender, EventArgs e)
+        {
+            AddEditPurchaseForm frm = new AddEditPurchaseForm();
             frm.MdiParent = this.MdiParent;
             frm.WindowState = FormWindowState.Maximized;
             frm.Show();

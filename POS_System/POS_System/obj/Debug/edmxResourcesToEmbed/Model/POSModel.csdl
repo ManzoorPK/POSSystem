@@ -124,6 +124,7 @@
     <Property Name="Total" Type="Decimal" Precision="38" Scale="6" annotation:StoreGeneratedPattern="Computed" />
     <Property Name="CreatedOn" Type="DateTime" Precision="3" />
     <Property Name="StoreId" Type="Int32" />
+    <Property Name="IsReturned" Type="Boolean" />
   </EntityType>
   <EntityType Name="InvoiceItemsV">
     <Key>
@@ -143,6 +144,7 @@
     <Property Name="Code1" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
     <Property Name="Code2" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
     <Property Name="StoreId" Type="Int32" />
+    <Property Name="IsReturned" Type="Boolean" />
   </EntityType>
   <EntityType Name="InvoicePayment">
     <Key>
@@ -190,6 +192,7 @@
     <Property Name="Additional" Type="Decimal" Precision="18" Scale="2" />
     <Property Name="AdditionalAmount" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="FinalTotal" Type="Decimal" Precision="18" Scale="2" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="InvoiceType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="InvoiceV">
     <Key>
@@ -218,5 +221,6 @@
     <Property Name="Additional" Type="Decimal" Precision="18" Scale="2" />
     <Property Name="AdditionalAmount" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="FinalTotal" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="InvoiceType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

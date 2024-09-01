@@ -13,7 +13,7 @@
         <EntityTypeShape EntityType="POS_SystemModel.PaymentOption" Width="1.5" PointX="4" PointY="3.25" />
         <EntityTypeShape EntityType="POS_SystemModel.Warehouse" Width="1.5" PointX="5.625" PointY="3.375" />
         <EntityTypeShape EntityType="POS_SystemModel.Account" Width="1.5" PointX="7.25" PointY="0.75" />
-        <EntityTypeShape EntityType="POS_SystemModel.InvoiceItem" Width="1.5" PointX="8.875" PointY="4.375" />
+        <EntityTypeShape EntityType="POS_SystemModel.InvoiceItem" Width="1.5" PointX="8.875" PointY="4.75" />
         <EntityTypeShape EntityType="POS_SystemModel.InvoiceItemsV" Width="1.5" PointX="7.25" PointY="4" />
         <EntityTypeShape EntityType="POS_SystemModel.InvoicePayment" Width="1.75" PointX="12.125" PointY="0.75" />
         <EntityTypeShape EntityType="POS_SystemModel.InvoicePaymentV" Width="1.75" PointX="12.125" PointY="3.375" />

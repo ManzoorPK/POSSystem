@@ -107,6 +107,12 @@
     <Compile Include="Forms\AddEditPaymentOption.Designer.cs">
       <DependentUpon>AddEditPaymentOption.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AddEditPurchaseForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddEditPurchaseForm.Designer.cs">
+      <DependentUpon>AddEditPurchaseForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AddEditStore.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,12 @@
     </Compile>
     <Compile Include="Forms\InventoriesList.Designer.cs">
       <DependentUpon>InventoriesList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\InvoicesFormWizard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\InvoicesFormWizard.Designer.cs">
+      <DependentUpon>InvoicesFormWizard.cs</DependentUpon>
     </Compile>
     <Compile Include="Forms\InvoicesList.cs">
       <SubType>Form</SubType>
@@ -256,6 +268,9 @@
     <EmbeddedResource Include="Forms\AddEditPaymentOption.resx">
       <DependentUpon>AddEditPaymentOption.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddEditPurchaseForm.resx">
+      <DependentUpon>AddEditPurchaseForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddEditStore.resx">
       <DependentUpon>AddEditStore.cs</DependentUpon>
     </EmbeddedResource>
@@ -267,6 +282,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\InventoriesList.resx">
       <DependentUpon>InventoriesList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\InvoicesFormWizard.resx">
+      <DependentUpon>InvoicesFormWizard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\InvoicesList.resx">
       <DependentUpon>InvoicesList.cs</DependentUpon>

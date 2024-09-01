@@ -1,4 +1,5 @@
-﻿using System;
+﻿using POS_System.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,14 +19,18 @@ namespace POS_System.Forms
     {
         decimal MinPrice = 0;
         int InvoiceID = 0;
+        int CustomerID = 0;
         decimal _AQty = 0;
         decimal _TotalPayables = 0;
         decimal _TotalBalance = 0;
         decimal _DiscountAmount = 0;
         decimal _AdditionalAmount = 0;
         bool SaveOnlyInvoice = false;
+        bool IsReturnItems = false;
+
+        string InvoiceType;
         InvoicesList IL;
-        public AddEditInvoiceForm(InvoicesList iL, int _InvoiceId)
+        public AddEditInvoiceForm(InvoicesList iL, int _InvoiceId, string invoiceType)
         {
             InitializeComponent();
             dtInvoiceDate.Value = DateTime.Now;
@@ -34,14 +39,16 @@ namespace POS_System.Forms
             this.ClientSize = new System.Drawing.Size(w, h);
             IL = iL;
             InvoiceID = _InvoiceId;
+            InvoiceType = invoiceType;
         }
-        public AddEditInvoiceForm()
+        public AddEditInvoiceForm(string invoiceType)
         {
             InitializeComponent();
             dtInvoiceDate.Value = DateTime.Now;
             int h = Screen.PrimaryScreen.WorkingArea.Height;
             int w = Screen.PrimaryScreen.WorkingArea.Width;
             this.ClientSize = new System.Drawing.Size(w, h);
+            InvoiceType = invoiceType;
 
         }
         private void AddEditInvoiceForm_Load(object sender, EventArgs e)
@@ -60,6 +67,22 @@ namespace POS_System.Forms
             new GridHelper().SetButton(radButtonSave, "save.png", 15, 15);
             new GridHelper().SetButton(radButtonCancel, "back.png", 15, 15);
 
+            if (InvoiceType == "Sales Invoice")
+            {
+                lblTitle.Text = "Sales Invoice";
+                btnAddPayment.Visible = true;
+                btnReturnWizard.Visible = false;
+            }
+
+            if (InvoiceType == "Sales Return Invoice")
+            {
+                lblTitle.Text = "Sales Return Invoice";
+                btnAddPayment.Visible = false;
+                btnReturnWizard.Visible = true;
+                dgInvoicePayments.Visible = false;
+            }
+
+            this.Text = lblTitle.Text;
 
             if (InvoiceID > 0)
                 LoadInvoiceItems();
@@ -83,7 +106,7 @@ namespace POS_System.Forms
                 lblDis.Text = Common.GetAsMoneyWithComma(_DiscountAmount);
 
                 var _Total = _TotalPayables + (txtTotalPrice.Text == "" ? 0 : Convert.ToDecimal(txtTotalPrice.Text)) - _DiscountAmount + _AdditionalAmount;
-                lblTotalPay.Text =  Common.GetAsMoneyWithComma(_Total); 
+                lblTotalPay.Text = Common.GetAsMoneyWithComma(_Total);
                 //var _TotB = _TotalBalance + (txtTotalPrice.Text == "" ? 0 : Convert.ToDecimal(txtTotalPrice.Text)) - _DiscountAmount + _AdditionalAmount;
                 //lblBalance.Text = Common.GetAsMoneyWithComma(_TotB);
             }
@@ -99,7 +122,7 @@ namespace POS_System.Forms
                 _AdditionalAmount = (_Discount / 100) * (_TotalPayables + (txtTotalPrice.Text == "" ? 0 : Convert.ToDecimal(txtTotalPrice.Text)));
 
                 lblAdditional.Text = Common.GetAsMoneyWithComma(_AdditionalAmount);
-                var _Total = _TotalPayables  + (txtTotalPrice.Text == "" ? 0 : Convert.ToDecimal(txtTotalPrice.Text)) - _DiscountAmount + _AdditionalAmount;
+                var _Total = _TotalPayables + (txtTotalPrice.Text == "" ? 0 : Convert.ToDecimal(txtTotalPrice.Text)) - _DiscountAmount + _AdditionalAmount;
                 lblTotalPay.Text = Common.GetAsMoneyWithComma(_Total);
                 //var _TotB = _TotalBalance +   (_Discount / 100 * (txtTotalPrice.Text == "" ? 0 : Convert.ToDecimal(txtTotalPrice.Text)));
                 //lblBalance.Text = Common.GetAsMoneyWithComma(_TotB);
@@ -110,23 +133,23 @@ namespace POS_System.Forms
             var obj = new InvoiceHelper().GetInvoiceById(InvoiceID);
             if (obj != null)
             {
-               
 
                 lblTotal.Text = Common.GetAsMoneyWithComma(obj.TotalPayment);
                 lblTotalPay.Text = Common.GetAsMoneyWithComma(obj.FinalTotal);
                 lblTotalPaid.Text = Common.GetAsMoneyWithComma(obj.Paid);
                 lblBalance.Text = Common.GetAsMoneyWithComma(obj.Balance);
-                _TotalPayables = Convert.ToDecimal( obj.TotalPayment);
+                _TotalPayables = Convert.ToDecimal(obj.TotalPayment);
                 _TotalBalance = Convert.ToDecimal(obj.Balance);
 
                 CalculateDiscount();
-                CalculateAdditional();  
+                CalculateAdditional();
 
-                txtAdditional.Text = obj.Additional == null ? "" :Common.GetAsMoneyWithComma( obj.Additional).ToString();
-                txtDis.Text = obj.Discount == null ? "" : Common.GetAsMoneyWithComma( obj.Discount).ToString();
-                lblAdditional.Text = obj.AdditionalAmount == null ? "0" :Common.GetAsMoneyWithComma( obj.AdditionalAmount).ToString();   
-                lblDis.Text = obj.DiscountAmount == null ? "0" : Common.GetAsMoneyWithComma( obj.DiscountAmount).ToString();
+                txtAdditional.Text = obj.Additional == null ? "" : Common.GetAsMoneyWithComma(obj.Additional).ToString();
+                txtDis.Text = obj.Discount == null ? "" : Common.GetAsMoneyWithComma(obj.Discount).ToString();
+                lblAdditional.Text = obj.AdditionalAmount == null ? "0" : Common.GetAsMoneyWithComma(obj.AdditionalAmount).ToString();
+                lblDis.Text = obj.DiscountAmount == null ? "0" : Common.GetAsMoneyWithComma(obj.DiscountAmount).ToString();
 
+                
 
                 if (obj.Balance == obj.FinalTotal)
                 {
@@ -150,7 +173,12 @@ namespace POS_System.Forms
                     }
                 }
 
-               
+                if (InvoiceType.Contains("Return"))
+                {
+                    lblStatus.Text = "Pay Back";
+                    lblStatus.ForeColor = Color.OrangeRed;
+                }
+
                 ddlCustomer.SelectedValue = Convert.ToInt32(obj.AccountId);
                 this.Text = "Sales Invoice | Inv # :" + obj.InvoiceId.ToString();
                 dtInvoiceDate.Value = Convert.ToDateTime(obj.Date);
@@ -159,10 +187,10 @@ namespace POS_System.Forms
 
             LoadInvoicePayments();
 
-            if (InvoiceID > 0)
-                btnAddItem.Enabled = true;
-            else
-                btnAddItem.Enabled = false;
+            //if (InvoiceID > 0)
+            //    btnAddItem.Enabled = true;
+            //else
+            //    btnAddItem.Enabled = false;
 
 
         }
@@ -232,12 +260,11 @@ namespace POS_System.Forms
             var obj = new AccountHelper().GetAccountById(Id);
             if (obj != null)
             {
-                //txtAddress.Text = obj.Address;
+                CustomerID = obj.AccountId;
                 txtMobNo.Text = obj.CellNo;
                 txtCode.Text = obj.AccountCode;
             }
         }
-
         void GetProductDetails(int Id)
         {
             txtSalePrice.Text = "";
@@ -255,7 +282,6 @@ namespace POS_System.Forms
                 _AQty = Convert.ToDecimal(obj.TotalQuantity);
             }
         }
-
         void CalculateTotal()
         {
             decimal _SalePrice = 0;
@@ -273,7 +299,7 @@ namespace POS_System.Forms
         {
 
             var cust = new AccountHelper().GetAllAccounts();
-            cust.Insert(0, new Model.Account { Title = "" });
+            cust.Insert(0, new Model.Account { Title = "Guest Customer", AccountId = -1 });
 
             ddlCustomer.DataSource = cust;
             this.ddlCustomer.AutoFilter = true;
@@ -299,6 +325,8 @@ namespace POS_System.Forms
             ddlCustomer.Columns[10].IsVisible = false;
             ddlCustomer.Columns[1].HeaderText = "Code";
             ddlCustomer.Columns[1].Width = 160;
+
+            ddlCustomer.SelectedValue = -1;
 
             if (Id > 0)
             {
@@ -364,8 +392,6 @@ namespace POS_System.Forms
             }
 
         }
-
-
         private void ddlCustomer_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -374,7 +400,6 @@ namespace POS_System.Forms
             }
             catch { }
         }
-
         private void ddlProducts_SelectedIndexChanged(object sender, EventArgs e)
         {
             try
@@ -384,7 +409,6 @@ namespace POS_System.Forms
             }
             catch { }
         }
-
         private void txtSalePrice_TextChanged(object sender, EventArgs e)
         {
             CalculateTotal();
@@ -401,7 +425,9 @@ namespace POS_System.Forms
 
         public void LoadInvoiceItems()
         {
+
             dgItems.Columns.Clear();
+
             var obj = new InvoiceItemHelper().GetAllInvoicesItems(InvoiceID);
             var _Data = from a in obj
                         select new
@@ -429,7 +455,7 @@ namespace POS_System.Forms
             //new GridHelper().SetButton(radButton2, "back.png");
         }
         void SaveInvoice()
-        
+
         {
             if (InvoiceID == 0)
                 InvoiceID = new InvoiceHelper().SaveEditInvoice(new Model.Invoice
@@ -441,7 +467,8 @@ namespace POS_System.Forms
                     Discount = txtDis.Text == "" ? 0 : Convert.ToDecimal(txtDis.Text),
                     DiscountAmount = _DiscountAmount,
                     Additional = txtAdditional.Text == "" ? 0 : Convert.ToDecimal(txtAdditional.Text),
-                    AdditionalAmount = _AdditionalAmount
+                    AdditionalAmount = _AdditionalAmount,
+                    InvoiceType = InvoiceType
 
                 }).InvoiceId;
             else
@@ -456,9 +483,11 @@ namespace POS_System.Forms
                     Discount = txtDis.Text == "" ? 0 : Convert.ToDecimal(txtDis.Text),
                     DiscountAmount = _DiscountAmount,
                     Additional = txtAdditional.Text == "" ? 0 : Convert.ToDecimal(txtAdditional.Text),
-                    AdditionalAmount = _AdditionalAmount
+                    AdditionalAmount = _AdditionalAmount,
+                    InvoiceType = InvoiceType
                 });
             }
+
 
             if (SaveOnlyInvoice == false)
             {
@@ -472,14 +501,17 @@ namespace POS_System.Forms
                     Qty = Convert.ToDecimal(txtQty.Text),
                     StoreId = new StorewiseQuantityHelper().GetAllStoresQuantity(Convert.ToInt32(ddlProducts.SelectedValue)).Take(1).FirstOrDefault().StoreId,
                 });
-                new StorewiseQuantityHelper().ManageStoreQuantity(Convert.ToInt32(ddlProducts.SelectedValue), Convert.ToDecimal(txtQty.Text));
+                if (!InvoiceType.Contains("Return"))
+                    new StorewiseQuantityHelper().ManageStoreQuantity(Convert.ToInt32(ddlProducts.SelectedValue), Convert.ToDecimal(txtQty.Text));
+                //else
+                //    new StorewiseQuantityHelper().ReturnQuantity(Convert.ToInt32(ddlProducts.SelectedValue), Convert.ToDecimal(txtQty.Text), InvoiceType);
             }
             LoadInvoiceDetails();
             ResetForm();
 
         }
 
-       
+
         void ResetForm()
         {
             txtSalePrice.Text = "";
@@ -488,9 +520,24 @@ namespace POS_System.Forms
             txtQty.Text = "";
             txtTotalPrice.Text = "";
             ddlProducts.Focus();
+
         }
         private void btnAddItem_Click(object sender, EventArgs e)
         {
+            if (InvoiceType.Contains("Return"))
+            {
+                if (IsReturnItems == true)
+                {
+                    MessageBox.Show("Invoice Items or Full Invoice been selected to return.");
+                    return;
+                }
+            }
+            if (CustomerID == 0)
+            {
+                MessageBox.Show("Select Customer First!");
+                ddlCustomer.Focus();
+                return;
+            }
             if (txtSalePrice.Text == "")
             {
                 MessageBox.Show("Enter Sale Price!");
@@ -530,7 +577,6 @@ namespace POS_System.Forms
                     if (dialogResult == DialogResult.Yes)
                     {
                         SaveInvoice();
-                       
                         LoadInvoiceItems();
                     }
                 }
@@ -554,6 +600,18 @@ namespace POS_System.Forms
 
         private void btnAddPayment_Click(object sender, EventArgs e)
         {
+            //if (CustomerID == 0)
+            //{
+            //    MessageBox.Show("Select Customer First!");
+            //    ddlCustomer.Focus();
+            //    return;
+            //}
+            if (_TotalPayables == 0)
+            {
+                MessageBox.Show("Invoice Dont have any payment yet.!");
+                ddlCustomer.Focus();
+                return;
+            }
             AddEditInvoicePayment frm = new AddEditInvoicePayment(this, InvoiceID);
             frm.ShowDialog();
         }
@@ -566,7 +624,7 @@ namespace POS_System.Forms
                 e.Handled = true;
             }
 
-            
+
         }
 
         private void txtQty_KeyPress(object sender, KeyPressEventArgs e)
@@ -577,7 +635,7 @@ namespace POS_System.Forms
                 e.Handled = true;
             }
 
-             
+
         }
 
         private void txtAdditional_KeyPress(object sender, KeyPressEventArgs e)
@@ -588,7 +646,7 @@ namespace POS_System.Forms
                 e.Handled = true;
             }
 
-             
+
         }
 
         private void txtDis_KeyPress(object sender, KeyPressEventArgs e)
@@ -599,13 +657,13 @@ namespace POS_System.Forms
                 e.Handled = true;
             }
 
-            
+
         }
 
-    
+
         private void txtDis_TextChanged(object sender, EventArgs e)
         {
-            CalculateDiscount();    
+            CalculateDiscount();
         }
 
         private void txtAdditional_TextChanged(object sender, EventArgs e)
@@ -615,10 +673,67 @@ namespace POS_System.Forms
 
         private void radButtonSave_Click(object sender, EventArgs e)
         {
+
+            if (CustomerID == 0)
+            {
+                MessageBox.Show("Select Customer First!");
+                ddlCustomer.Focus();
+                return;
+            }
+
+
+
             SaveOnlyInvoice = true;
             SaveInvoice();
+            if (InvoiceType.Contains("Return"))
+            {
+                foreach (GridViewRowInfo item in dgItems.Rows.ToList())
+                {
+                    int _ProductId = Convert.ToInt32(item.Cells[6].Value);
+                    int _InvoiceID = item.Cells[1].Value == null ? 0 : Convert.ToInt32(item.Cells[1].Value);
+
+                    var ob = new InvoiceItemHelper().GetInvoiceItemById(Convert.ToInt32(item.Cells[0].Value));
+                    //if (_InvoiceID > 0)
+                    //{
+                    //    var _item = new InvoiceItemHelper().GetInvoiceSingleItemById(Convert.ToInt32(item.Cells[0].Value));
+                    //    _item.IsReturned = true;
+                    //    var updateitem = new InvoiceItemHelper().SaveEditInvoiceItem(_item);
+
+                    //    var itm = new InvoiceItemHelper().SaveEditInvoiceItem(new Model.InvoiceItem
+                    //    {
+                    //        InvoiceItemId = 0,
+                    //        CreatedOn = DateTime.Now,
+                    //        InvoiceId = InvoiceID,
+                    //        ProductId = _ProductId,
+                    //        SalePrice = Convert.ToDecimal(item.Cells[3].Value),
+                    //        Qty = Convert.ToDecimal(item.Cells[4].Value),
+                    //        IsReturned = true,
+                    //        StoreId = new StorewiseQuantityHelper().GetAllStoresQuantity(_ProductId).Take(1).FirstOrDefault().StoreId,
+                    //    });
+
+                    //}
+                    //else
+                    //{
+                        var itm = new InvoiceItemHelper().SaveEditInvoiceItem(new Model.InvoiceItem
+                        {
+                            InvoiceItemId = Convert.ToInt32(item.Cells[0].Value),
+                            CreatedOn = DateTime.Now,
+                            InvoiceId = InvoiceID,
+                            ProductId = _ProductId,
+                            SalePrice = Convert.ToDecimal(item.Cells[3].Value),
+                            Qty = Convert.ToDecimal(item.Cells[4].Value),
+                            IsReturned = true,
+                            StoreId = new StorewiseQuantityHelper().GetAllStoresQuantity(_ProductId).Take(1).FirstOrDefault().StoreId,
+                        });
+                    //}
+                    if (ob.IsReturned == null || ob.IsReturned == false)
+                        new StorewiseQuantityHelper().ReturnQuantity(_ProductId, Convert.ToDecimal(item.Cells[4].Value), InvoiceType);
+
+                }
+            }
             LoadInvoiceDetails();
             SaveOnlyInvoice = false;
+            IsReturnItems = false;
             MessageBox.Show("Invoice Changes Saved Successfully");
         }
 
@@ -628,17 +743,17 @@ namespace POS_System.Forms
             int _Id = Convert.ToInt32((sender as GridCommandCellElement).Value);
 
             //MessageBox.Show(_Index.ToString());
-            
+
             if (_Index == 5)
             {
                 DialogResult dialogResult = MessageBox.Show("Are you sure you want to DELETE?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    var obj = new InvoiceItemHelper().DeleteInvoiceItem(_Id);
+                    var obj = new InvoiceItemHelper().DeleteInvoiceItem(_Id, InvoiceType);
                     if (obj == true)
                     {
                         LoadInvoiceDetails();
-                        LoadInvoiceItems(); 
+                        LoadInvoiceItems();
                         LoadInvoicePayments();
                         MessageBox.Show("Item has been deleted from invoice.");
                     }
@@ -649,6 +764,66 @@ namespace POS_System.Forms
                 }
 
             }
+        }
+
+        private void btnReturnWizard_Click(object sender, EventArgs e)
+        {
+            InvoicesFormWizard frm = new InvoicesFormWizard(this);
+            frm.ShowDialog();
+        }
+
+        public void GetItemsToReturn(List<int> ItemIds)
+        {
+            decimal _Total = 0;
+            IsReturnItems = true;
+            List<InvoiceItemsV> items = new List<InvoiceItemsV>();
+            foreach (var id in ItemIds)
+            {
+                var obj = new InvoiceItemHelper().GetInvoiceItemById(id);
+                items.Add(obj);
+                _Total += Convert.ToDecimal( obj.Total);
+            }
+
+            dgItems.Columns.Clear();
+            var objV = items;
+            var _Data = from a in objV
+                        select new
+                        {
+                            a.InvoiceItemId,
+                            a.InvoiceId,
+                            Item = a.Title,
+                            SPrice = "-" + Common.GetAsMoneyWithComma(a.SalePrice),
+                            Qty = "-" + Common.GetAsMoneyWithComma(a.Qty),
+                            Total = "-" + Common.GetAsMoneyWithComma(a.Total),
+                            a.ProductId
+                        };
+
+            dgItems.DataSource = _Data;
+            //dgItems.Columns.Add(new GridHelper().AddCommandButton(new CommandButton("btnEdit", "", 100, "InvoiceItemId", 30, 13)));
+            //dgItems.Columns.Add(new GridHelper().AddCommandButton(new CommandButton("btnDelete", "", 100, "InvoiceItemId", 16, 16)));
+            dgItems.TableElement.RowHeight = 20;
+            dgItems.CellFormatting += new CellFormattingEventHandler(new GridHelper().GridCellFormatting);
+
+            if (dgItems.Rows.Count > 0)
+            {
+                dgItems.Columns[0].IsVisible = false;
+                dgItems.Columns[1].IsVisible = false;
+                dgItems.Columns[6].IsVisible = false;
+            }
+
+            new GridHelper().SetGridHeaderAlignment(dgItems, ContentAlignment.MiddleLeft);
+
+            lblTotal.Text = "-" + Common.GetAsMoneyWithComma( _Total).ToString();
+            lblTotalPay.Text = "-" + Common.GetAsMoneyWithComma(_Total).ToString();
+            lblStatus.Text = "Pay Back";
+            lblStatus.ForeColor = Color.OrangeRed;
+
+        }
+
+        private void radButton1_Click(object sender, EventArgs e)
+        {
+            IsReturnItems = false;
+            dgItems.DataSource = null;   
         }
     }
 }

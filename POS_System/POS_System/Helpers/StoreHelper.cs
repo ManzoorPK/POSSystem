@@ -39,6 +39,7 @@ public class StoreHelper
         try
         {
             Store obj = _Entity.Stores.Where(x => x.StoreId == Id).FirstOrDefault();
+           
             _Entity.Entry(obj).State = EntityState.Deleted;
             _Entity.SaveChanges();
             return true;

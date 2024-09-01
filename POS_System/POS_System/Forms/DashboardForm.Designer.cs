@@ -266,6 +266,7 @@
             this.btnPurchase.TabIndex = 7;
             this.btnPurchase.Text = "Purchase";
             this.btnPurchase.ThemeName = "Office2010Blue";
+            this.btnPurchase.Click += new System.EventHandler(this.btnPurchase_Click);
             ((Telerik.WinControls.UI.RadButtonElement)(this.btnPurchase.GetChildAt(0))).Text = "Purchase";
             ((Telerik.WinControls.Primitives.FillPrimitive)(this.btnPurchase.GetChildAt(0).GetChildAt(0))).BackColor2 = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(239)))), ((int)(((byte)(249)))));
             ((Telerik.WinControls.Primitives.FillPrimitive)(this.btnPurchase.GetChildAt(0).GetChildAt(0))).BackColor3 = System.Drawing.Color.FromArgb(((int)(((byte)(249)))), ((int)(((byte)(247)))), ((int)(((byte)(247)))));

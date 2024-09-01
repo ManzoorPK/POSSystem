@@ -107,6 +107,7 @@
     <EntitySetMapping Name="InvoiceItems">
       <EntityTypeMapping TypeName="POS_SystemModel.InvoiceItem">
         <MappingFragment StoreEntitySet="InvoiceItems">
+          <ScalarProperty Name="IsReturned" ColumnName="IsReturned" />
           <ScalarProperty Name="StoreId" ColumnName="StoreId" />
           <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
           <ScalarProperty Name="Total" ColumnName="Total" />
@@ -121,6 +122,7 @@
     <EntitySetMapping Name="InvoiceItemsVs">
       <EntityTypeMapping TypeName="POS_SystemModel.InvoiceItemsV">
         <MappingFragment StoreEntitySet="InvoiceItemsV">
+          <ScalarProperty Name="IsReturned" ColumnName="IsReturned" />
           <ScalarProperty Name="StoreId" ColumnName="StoreId" />
           <ScalarProperty Name="Code2" ColumnName="Code2" />
           <ScalarProperty Name="Code1" ColumnName="Code1" />
@@ -170,6 +172,7 @@
     <EntitySetMapping Name="Invoices">
       <EntityTypeMapping TypeName="POS_SystemModel.Invoice">
         <MappingFragment StoreEntitySet="Invoice">
+          <ScalarProperty Name="InvoiceType" ColumnName="InvoiceType" />
           <ScalarProperty Name="FinalTotal" ColumnName="FinalTotal" />
           <ScalarProperty Name="AdditionalAmount" ColumnName="AdditionalAmount" />
           <ScalarProperty Name="Additional" ColumnName="Additional" />
@@ -190,6 +193,7 @@
     <EntitySetMapping Name="InvoiceVs">
       <EntityTypeMapping TypeName="POS_SystemModel.InvoiceV">
         <MappingFragment StoreEntitySet="InvoiceV">
+          <ScalarProperty Name="InvoiceType" ColumnName="InvoiceType" />
           <ScalarProperty Name="FinalTotal" ColumnName="FinalTotal" />
           <ScalarProperty Name="AdditionalAmount" ColumnName="AdditionalAmount" />
           <ScalarProperty Name="Additional" ColumnName="Additional" />

@@ -105,7 +105,7 @@
             this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblTitle.Font = new System.Drawing.Font("Tahoma", 12F);
             this.lblTitle.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.lblTitle.Location = new System.Drawing.Point(765, 14);
+            this.lblTitle.Location = new System.Drawing.Point(653, 12);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(110, 23);
             this.lblTitle.TabIndex = 2;
@@ -137,6 +137,7 @@
             this.radButton1.TabIndex = 0;
             this.radButton1.Text = "New Furniture";
             this.radButton1.ThemeName = "Office2010Blue";
+            this.radButton1.Click += new System.EventHandler(this.radButton1_Click);
             // 
             // InvoicesList
             // 

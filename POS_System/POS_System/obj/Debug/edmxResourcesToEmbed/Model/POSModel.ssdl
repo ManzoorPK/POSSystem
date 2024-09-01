@@ -41,6 +41,7 @@
     <Property Name="AdditionalAmount" Type="money" />
     <Property Name="Balance" Type="decimal" Precision="18" Scale="2" StoreGeneratedPattern="Computed" />
     <Property Name="FinalTotal" Type="decimal" Precision="18" Scale="2" StoreGeneratedPattern="Computed" />
+    <Property Name="InvoiceType" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="InvoiceItems">
     <Key>
@@ -54,6 +55,7 @@
     <Property Name="Qty" Type="decimal" Precision="18" Scale="2" />
     <Property Name="Total" Type="decimal" Precision="38" Scale="6" StoreGeneratedPattern="Computed" />
     <Property Name="CreatedOn" Type="datetime" />
+    <Property Name="IsReturned" Type="bit" />
   </EntityType>
   <EntityType Name="InvoicePayments">
     <Key>
@@ -147,6 +149,7 @@ warning 6002: The table/view 'POS_System.dbo.InvoiceItemsV' does not have a prim
     <Property Name="Code1" Type="nvarchar" MaxLength="150" />
     <Property Name="Code2" Type="nvarchar" MaxLength="150" />
     <Property Name="StoreId" Type="int" />
+    <Property Name="IsReturned" Type="bit" />
   </EntityType>
   <!--Errors Found During Generation:
 warning 6002: The table/view 'POS_System.dbo.InvoicePaymentV' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -194,6 +197,7 @@ warning 6002: The table/view 'POS_System.dbo.InvoiceV' does not have a primary k
     <Property Name="Additional" Type="decimal" Precision="18" Scale="2" />
     <Property Name="AdditionalAmount" Type="money" />
     <Property Name="FinalTotal" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="InvoiceType" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <!--Errors Found During Generation:
 warning 6002: The table/view 'POS_System.dbo.StorewiseQuantityV' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -237,7 +241,8 @@ warning 6002: The table/view 'POS_System.dbo.StorewiseQuantityV' does not have a
     [InvoiceItemsV].[IsExpirable] AS [IsExpirable], 
     [InvoiceItemsV].[Code1] AS [Code1], 
     [InvoiceItemsV].[Code2] AS [Code2], 
-    [InvoiceItemsV].[StoreId] AS [StoreId]
+    [InvoiceItemsV].[StoreId] AS [StoreId], 
+    [InvoiceItemsV].[IsReturned] AS [IsReturned]
     FROM [dbo].[InvoiceItemsV] AS [InvoiceItemsV]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="InvoicePaymentV" EntityType="Self.InvoicePaymentV" store:Type="Views" store:Schema="dbo">
@@ -277,7 +282,8 @@ warning 6002: The table/view 'POS_System.dbo.StorewiseQuantityV' does not have a
     [InvoiceV].[DiscountAmount] AS [DiscountAmount], 
     [InvoiceV].[Additional] AS [Additional], 
     [InvoiceV].[AdditionalAmount] AS [AdditionalAmount], 
-    [InvoiceV].[FinalTotal] AS [FinalTotal]
+    [InvoiceV].[FinalTotal] AS [FinalTotal], 
+    [InvoiceV].[InvoiceType] AS [InvoiceType]
     FROM [dbo].[InvoiceV] AS [InvoiceV]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="StorewiseQuantityV" EntityType="Self.StorewiseQuantityV" store:Type="Views" store:Schema="dbo">
