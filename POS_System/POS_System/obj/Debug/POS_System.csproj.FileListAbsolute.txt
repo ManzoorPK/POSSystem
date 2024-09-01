@@ -94,3 +94,5 @@ D:\My Products\POSSystem\POS_System\POS_System\obj\Debug\POS_System.Forms.AddEdi
 D:\My Products\POSSystem\POS_System\POS_System\obj\Debug\POS_System.Forms.WarehouseList.resources
 D:\My Products\POSSystem\POS_System\POS_System\obj\Debug\POS_System.Forms.AddEditAccount.resources
 D:\My Products\POSSystem\POS_System\POS_System\obj\Debug\POS_System.Forms.AddEditInvoicePayment.resources
+D:\My Products\POSSystem\POS_System\POS_System\obj\Debug\POS_System.Forms.InvoicesFormWizard.resources
+D:\My Products\POSSystem\POS_System\POS_System\obj\Debug\POS_System.Forms.AddEditPurchaseForm.resources

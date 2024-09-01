@@ -46,6 +46,7 @@
           <Property Name="AdditionalAmount" Type="money" />
           <Property Name="Balance" Type="decimal" Precision="18" Scale="2" StoreGeneratedPattern="Computed" />
           <Property Name="FinalTotal" Type="decimal" Precision="18" Scale="2" StoreGeneratedPattern="Computed" />
+          <Property Name="InvoiceType" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="InvoiceItems">
           <Key>
@@ -59,6 +60,7 @@
           <Property Name="Qty" Type="decimal" Precision="18" Scale="2" />
           <Property Name="Total" Type="decimal" Precision="38" Scale="6" StoreGeneratedPattern="Computed" />
           <Property Name="CreatedOn" Type="datetime" />
+          <Property Name="IsReturned" Type="bit" />
         </EntityType>
         <EntityType Name="InvoicePayments">
           <Key>
@@ -132,6 +134,16 @@
           <Property Name="Email" Type="nvarchar" MaxLength="50" />
           <Property Name="Notes" Type="nvarchar(max)" />
         </EntityType>
+        <EntityType Name="WarehouseWiseQuantity">
+          <Key>
+            <PropertyRef Name="WarehouseQuantityId" />
+          </Key>
+          <Property Name="WarehouseQuantityId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="InvoiceItemId" Type="int" />
+          <Property Name="WarehouseId" Type="int" />
+          <Property Name="ProductId" Type="int" />
+          <Property Name="Quantity" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'POS_System.dbo.InvoiceItemsV' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="InvoiceItemsV">
@@ -152,6 +164,7 @@ warning 6002: The table/view 'POS_System.dbo.InvoiceItemsV' does not have a prim
           <Property Name="Code1" Type="nvarchar" MaxLength="150" />
           <Property Name="Code2" Type="nvarchar" MaxLength="150" />
           <Property Name="StoreId" Type="int" />
+          <Property Name="IsReturned" Type="bit" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'POS_System.dbo.InvoicePaymentV' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -199,6 +212,7 @@ warning 6002: The table/view 'POS_System.dbo.InvoiceV' does not have a primary k
           <Property Name="Additional" Type="decimal" Precision="18" Scale="2" />
           <Property Name="AdditionalAmount" Type="money" />
           <Property Name="FinalTotal" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="InvoiceType" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'POS_System.dbo.StorewiseQuantityV' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -227,6 +241,7 @@ warning 6002: The table/view 'POS_System.dbo.StorewiseQuantityV' does not have a
           <EntitySet Name="Store" EntityType="Self.Store" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="StorewiseQuantity" EntityType="Self.StorewiseQuantity" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Warehouse" EntityType="Self.Warehouse" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WarehouseWiseQuantity" EntityType="Self.WarehouseWiseQuantity" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="InvoiceItemsV" EntityType="Self.InvoiceItemsV" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [InvoiceItemsV].[InvoiceItemId] AS [InvoiceItemId], 
@@ -242,7 +257,8 @@ warning 6002: The table/view 'POS_System.dbo.StorewiseQuantityV' does not have a
     [InvoiceItemsV].[IsExpirable] AS [IsExpirable], 
     [InvoiceItemsV].[Code1] AS [Code1], 
     [InvoiceItemsV].[Code2] AS [Code2], 
-    [InvoiceItemsV].[StoreId] AS [StoreId]
+    [InvoiceItemsV].[StoreId] AS [StoreId], 
+    [InvoiceItemsV].[IsReturned] AS [IsReturned]
     FROM [dbo].[InvoiceItemsV] AS [InvoiceItemsV]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="InvoicePaymentV" EntityType="Self.InvoicePaymentV" store:Type="Views" store:Schema="dbo">
@@ -282,7 +298,8 @@ warning 6002: The table/view 'POS_System.dbo.StorewiseQuantityV' does not have a
     [InvoiceV].[DiscountAmount] AS [DiscountAmount], 
     [InvoiceV].[Additional] AS [Additional], 
     [InvoiceV].[AdditionalAmount] AS [AdditionalAmount], 
-    [InvoiceV].[FinalTotal] AS [FinalTotal]
+    [InvoiceV].[FinalTotal] AS [FinalTotal], 
+    [InvoiceV].[InvoiceType] AS [InvoiceType]
     FROM [dbo].[InvoiceV] AS [InvoiceV]</DefiningQuery>
           </EntitySet>
           <EntitySet Name="StorewiseQuantityV" EntityType="Self.StorewiseQuantityV" store:Type="Views" store:Schema="dbo">
@@ -337,6 +354,7 @@ warning 6002: The table/view 'POS_System.dbo.StorewiseQuantityV' does not have a
           <EntitySet Name="InvoicePaymentVs" EntityType="POS_SystemModel.InvoicePaymentV" />
           <EntitySet Name="Invoices" EntityType="POS_SystemModel.Invoice" />
           <EntitySet Name="InvoiceVs" EntityType="POS_SystemModel.InvoiceV" />
+          <EntitySet Name="WarehouseWiseQuantities" EntityType="POS_SystemModel.WarehouseWiseQuantity" />
         </EntityContainer>
         <EntityType Name="Category">
           <Key>
@@ -426,6 +444,7 @@ warning 6002: The table/view 'POS_System.dbo.StorewiseQuantityV' does not have a
           <Property Name="Total" Type="Decimal" Precision="38" Scale="6" annotation:StoreGeneratedPattern="Computed" />
           <Property Name="CreatedOn" Type="DateTime" Precision="3" />
           <Property Name="StoreId" Type="Int32" />
+          <Property Name="IsReturned" Type="Boolean" />
         </EntityType>
         <EntityType Name="InvoiceItemsV">
           <Key>
@@ -445,6 +464,7 @@ warning 6002: The table/view 'POS_System.dbo.StorewiseQuantityV' does not have a
           <Property Name="Code1" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="Code2" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
           <Property Name="StoreId" Type="Int32" />
+          <Property Name="IsReturned" Type="Boolean" />
         </EntityType>
         <EntityType Name="InvoicePayment">
           <Key>
@@ -492,6 +512,7 @@ warning 6002: The table/view 'POS_System.dbo.StorewiseQuantityV' does not have a
           <Property Name="Additional" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="AdditionalAmount" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="FinalTotal" Type="Decimal" Precision="18" Scale="2" annotation:StoreGeneratedPattern="Computed" />
+          <Property Name="InvoiceType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="InvoiceV">
           <Key>
@@ -520,6 +541,17 @@ warning 6002: The table/view 'POS_System.dbo.StorewiseQuantityV' does not have a
           <Property Name="Additional" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="AdditionalAmount" Type="Decimal" Precision="19" Scale="4" />
           <Property Name="FinalTotal" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="InvoiceType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="WarehouseWiseQuantity">
+          <Key>
+            <PropertyRef Name="WarehouseQuantityId" />
+          </Key>
+          <Property Name="WarehouseQuantityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="WarehouseId" Type="Int32" />
+          <Property Name="ProductId" Type="Int32" />
+          <Property Name="Quantity" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="InvoiceItemId" Type="Int32" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -633,6 +665,7 @@ warning 6002: The table/view 'POS_System.dbo.StorewiseQuantityV' does not have a
           <EntitySetMapping Name="InvoiceItems">
             <EntityTypeMapping TypeName="POS_SystemModel.InvoiceItem">
               <MappingFragment StoreEntitySet="InvoiceItems">
+                <ScalarProperty Name="IsReturned" ColumnName="IsReturned" />
                 <ScalarProperty Name="StoreId" ColumnName="StoreId" />
                 <ScalarProperty Name="CreatedOn" ColumnName="CreatedOn" />
                 <ScalarProperty Name="Total" ColumnName="Total" />
@@ -647,6 +680,7 @@ warning 6002: The table/view 'POS_System.dbo.StorewiseQuantityV' does not have a
           <EntitySetMapping Name="InvoiceItemsVs">
             <EntityTypeMapping TypeName="POS_SystemModel.InvoiceItemsV">
               <MappingFragment StoreEntitySet="InvoiceItemsV">
+                <ScalarProperty Name="IsReturned" ColumnName="IsReturned" />
                 <ScalarProperty Name="StoreId" ColumnName="StoreId" />
                 <ScalarProperty Name="Code2" ColumnName="Code2" />
                 <ScalarProperty Name="Code1" ColumnName="Code1" />
@@ -696,6 +730,7 @@ warning 6002: The table/view 'POS_System.dbo.StorewiseQuantityV' does not have a
           <EntitySetMapping Name="Invoices">
             <EntityTypeMapping TypeName="POS_SystemModel.Invoice">
               <MappingFragment StoreEntitySet="Invoice">
+                <ScalarProperty Name="InvoiceType" ColumnName="InvoiceType" />
                 <ScalarProperty Name="FinalTotal" ColumnName="FinalTotal" />
                 <ScalarProperty Name="AdditionalAmount" ColumnName="AdditionalAmount" />
                 <ScalarProperty Name="Additional" ColumnName="Additional" />
@@ -716,6 +751,7 @@ warning 6002: The table/view 'POS_System.dbo.StorewiseQuantityV' does not have a
           <EntitySetMapping Name="InvoiceVs">
             <EntityTypeMapping TypeName="POS_SystemModel.InvoiceV">
               <MappingFragment StoreEntitySet="InvoiceV">
+                <ScalarProperty Name="InvoiceType" ColumnName="InvoiceType" />
                 <ScalarProperty Name="FinalTotal" ColumnName="FinalTotal" />
                 <ScalarProperty Name="AdditionalAmount" ColumnName="AdditionalAmount" />
                 <ScalarProperty Name="Additional" ColumnName="Additional" />
@@ -739,6 +775,17 @@ warning 6002: The table/view 'POS_System.dbo.StorewiseQuantityV' does not have a
                 <ScalarProperty Name="Title" ColumnName="Title" />
                 <ScalarProperty Name="Date" ColumnName="Date" />
                 <ScalarProperty Name="InvoiceId" ColumnName="InvoiceId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="WarehouseWiseQuantities">
+            <EntityTypeMapping TypeName="POS_SystemModel.WarehouseWiseQuantity">
+              <MappingFragment StoreEntitySet="WarehouseWiseQuantity">
+                <ScalarProperty Name="InvoiceItemId" ColumnName="InvoiceItemId" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="ProductId" ColumnName="ProductId" />
+                <ScalarProperty Name="WarehouseId" ColumnName="WarehouseId" />
+                <ScalarProperty Name="WarehouseQuantityId" ColumnName="WarehouseQuantityId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

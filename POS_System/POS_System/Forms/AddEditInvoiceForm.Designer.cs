@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition9 = new Telerik.WinControls.UI.TableViewDefinition();
             Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
             Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition3 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition4 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition10 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem5 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem6 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition11 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition12 = new Telerik.WinControls.UI.TableViewDefinition();
             this.telerikMetroTouchTheme1 = new Telerik.WinControls.Themes.TelerikMetroTouchTheme();
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             this.materialBlueGreyTheme1 = new Telerik.WinControls.Themes.MaterialBlueGreyTheme();
@@ -67,7 +67,7 @@
             this.txtMobNo = new Telerik.WinControls.UI.RadTextBoxControl();
             this.label4 = new System.Windows.Forms.Label();
             this.radGroupBox2 = new Telerik.WinControls.UI.RadGroupBox();
-            this.radLabel1 = new Telerik.WinControls.UI.RadLabel();
+            this.lblTitle = new Telerik.WinControls.UI.RadLabel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgItems = new Telerik.WinControls.UI.RadGridView();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -76,7 +76,8 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.dgInvoicePayments = new Telerik.WinControls.UI.RadGridView();
-            this.panel7 = new System.Windows.Forms.Panel();
+            this.pnlPayment = new System.Windows.Forms.Panel();
+            this.btnReturnWizard = new Telerik.WinControls.UI.RadButton();
             this.btnAddPayment = new Telerik.WinControls.UI.RadButton();
             this.panel6 = new System.Windows.Forms.Panel();
             this.txtAdditional = new Telerik.WinControls.UI.RadTextBox();
@@ -95,6 +96,7 @@
             this.label12 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
+            this.radButton1 = new Telerik.WinControls.UI.RadButton();
             ((System.ComponentModel.ISupportInitialize)(this.ddlCustomer)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlCustomer.EditorControl)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlCustomer.EditorControl.MasterTemplate)).BeginInit();
@@ -115,7 +117,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.txtMobNo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox2)).BeginInit();
             this.radGroupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblTitle)).BeginInit();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgItems.MasterTemplate)).BeginInit();
@@ -126,12 +128,14 @@
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgInvoicePayments)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgInvoicePayments.MasterTemplate)).BeginInit();
-            this.panel7.SuspendLayout();
+            this.pnlPayment.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.btnReturnWizard)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddPayment)).BeginInit();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtAdditional)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDis)).BeginInit();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -168,7 +172,7 @@
             this.ddlCustomer.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.ddlCustomer.EditorControl.MasterTemplate.EnableGrouping = false;
             this.ddlCustomer.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.ddlCustomer.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition1;
+            this.ddlCustomer.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition9;
             this.ddlCustomer.EditorControl.Name = "NestedRadGridView";
             this.ddlCustomer.EditorControl.ReadOnly = true;
             this.ddlCustomer.EditorControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -272,10 +276,10 @@
             this.ddlPaymentMethod.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
             this.ddlPaymentMethod.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.ddlPaymentMethod.ForeColor = System.Drawing.Color.Black;
-            radListDataItem1.Text = "Regular";
-            radListDataItem2.Text = "Whole Sale";
-            this.ddlPaymentMethod.Items.Add(radListDataItem1);
-            this.ddlPaymentMethod.Items.Add(radListDataItem2);
+            radListDataItem3.Text = "Regular";
+            radListDataItem4.Text = "Whole Sale";
+            this.ddlPaymentMethod.Items.Add(radListDataItem3);
+            this.ddlPaymentMethod.Items.Add(radListDataItem4);
             this.ddlPaymentMethod.Location = new System.Drawing.Point(892, 66);
             this.ddlPaymentMethod.Name = "ddlPaymentMethod";
             this.ddlPaymentMethod.Size = new System.Drawing.Size(157, 36);
@@ -371,7 +375,7 @@
             this.ddlProducts.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.ddlProducts.EditorControl.MasterTemplate.EnableGrouping = false;
             this.ddlProducts.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.ddlProducts.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition2;
+            this.ddlProducts.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition10;
             this.ddlProducts.EditorControl.Name = "NestedRadGridView";
             this.ddlProducts.EditorControl.ReadOnly = true;
             this.ddlProducts.EditorControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -490,10 +494,10 @@
             this.ddlInvoiceType.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
             this.ddlInvoiceType.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.ddlInvoiceType.ForeColor = System.Drawing.Color.Black;
-            radListDataItem3.Text = "Regular";
-            radListDataItem4.Text = "Whole Sale";
-            this.ddlInvoiceType.Items.Add(radListDataItem3);
-            this.ddlInvoiceType.Items.Add(radListDataItem4);
+            radListDataItem5.Text = "Regular";
+            radListDataItem6.Text = "Whole Sale";
+            this.ddlInvoiceType.Items.Add(radListDataItem5);
+            this.ddlInvoiceType.Items.Add(radListDataItem6);
             this.ddlInvoiceType.Location = new System.Drawing.Point(893, 15);
             this.ddlInvoiceType.Name = "ddlInvoiceType";
             this.ddlInvoiceType.Size = new System.Drawing.Size(123, 27);
@@ -571,7 +575,7 @@
             // radGroupBox2
             // 
             this.radGroupBox2.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
-            this.radGroupBox2.Controls.Add(this.radLabel1);
+            this.radGroupBox2.Controls.Add(this.lblTitle);
             this.radGroupBox2.Dock = System.Windows.Forms.DockStyle.Top;
             this.radGroupBox2.HeaderText = "";
             this.radGroupBox2.Location = new System.Drawing.Point(0, 0);
@@ -580,18 +584,18 @@
             this.radGroupBox2.TabIndex = 73;
             this.radGroupBox2.ThemeName = "TelerikMetroTouch";
             // 
-            // radLabel1
+            // lblTitle
             // 
-            this.radLabel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.radLabel1.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.radLabel1.ForeColor = System.Drawing.SystemColors.ControlText;
-            this.radLabel1.Location = new System.Drawing.Point(996, 5);
-            this.radLabel1.Name = "radLabel1";
-            this.radLabel1.Size = new System.Drawing.Size(103, 23);
-            this.radLabel1.TabIndex = 2;
-            this.radLabel1.Text = "Sales Invoice";
-            this.radLabel1.TextAlignment = System.Drawing.ContentAlignment.TopRight;
-            this.radLabel1.ThemeName = "Office2010Blue";
+            this.lblTitle.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblTitle.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.lblTitle.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.lblTitle.Location = new System.Drawing.Point(996, 5);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(103, 23);
+            this.lblTitle.TabIndex = 2;
+            this.lblTitle.Text = "Sales Invoice";
+            this.lblTitle.TextAlignment = System.Drawing.ContentAlignment.TopRight;
+            this.lblTitle.ThemeName = "Office2010Blue";
             // 
             // panel3
             // 
@@ -617,7 +621,7 @@
             this.dgItems.MasterTemplate.AllowEditRow = false;
             this.dgItems.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             this.dgItems.MasterTemplate.EnableFiltering = true;
-            this.dgItems.MasterTemplate.ViewDefinition = tableViewDefinition3;
+            this.dgItems.MasterTemplate.ViewDefinition = tableViewDefinition11;
             this.dgItems.Name = "dgItems";
             this.dgItems.Size = new System.Drawing.Size(1796, 635);
             this.dgItems.TabIndex = 12;
@@ -669,7 +673,7 @@
             // panel5
             // 
             this.panel5.Controls.Add(this.dgInvoicePayments);
-            this.panel5.Controls.Add(this.panel7);
+            this.panel5.Controls.Add(this.pnlPayment);
             this.panel5.Controls.Add(this.panel6);
             this.panel5.Controls.Add(this.panel4);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -691,21 +695,34 @@
             this.dgInvoicePayments.MasterTemplate.AllowEditRow = false;
             this.dgInvoicePayments.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             this.dgInvoicePayments.MasterTemplate.EnableFiltering = true;
-            this.dgInvoicePayments.MasterTemplate.ViewDefinition = tableViewDefinition4;
+            this.dgInvoicePayments.MasterTemplate.ViewDefinition = tableViewDefinition12;
             this.dgInvoicePayments.Name = "dgInvoicePayments";
             this.dgInvoicePayments.Size = new System.Drawing.Size(388, 359);
             this.dgInvoicePayments.TabIndex = 13;
             this.dgInvoicePayments.ThemeName = "Office2010Blue";
             // 
-            // panel7
+            // pnlPayment
             // 
-            this.panel7.BackColor = System.Drawing.Color.White;
-            this.panel7.Controls.Add(this.btnAddPayment);
-            this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(0, 285);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(388, 48);
-            this.panel7.TabIndex = 86;
+            this.pnlPayment.BackColor = System.Drawing.Color.White;
+            this.pnlPayment.Controls.Add(this.radButton1);
+            this.pnlPayment.Controls.Add(this.btnReturnWizard);
+            this.pnlPayment.Controls.Add(this.btnAddPayment);
+            this.pnlPayment.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlPayment.Location = new System.Drawing.Point(0, 285);
+            this.pnlPayment.Name = "pnlPayment";
+            this.pnlPayment.Size = new System.Drawing.Size(388, 48);
+            this.pnlPayment.TabIndex = 86;
+            // 
+            // btnReturnWizard
+            // 
+            this.btnReturnWizard.BackColor = System.Drawing.Color.White;
+            this.btnReturnWizard.Location = new System.Drawing.Point(253, 6);
+            this.btnReturnWizard.Name = "btnReturnWizard";
+            this.btnReturnWizard.Size = new System.Drawing.Size(110, 32);
+            this.btnReturnWizard.TabIndex = 85;
+            this.btnReturnWizard.Text = "Return Wizard";
+            this.btnReturnWizard.ThemeName = "Office2010Blue";
+            this.btnReturnWizard.Click += new System.EventHandler(this.btnReturnWizard_Click);
             // 
             // btnAddPayment
             // 
@@ -939,6 +956,17 @@
             this.label11.TabIndex = 0;
             this.label11.Text = "Payment History";
             // 
+            // radButton1
+            // 
+            this.radButton1.BackColor = System.Drawing.Color.White;
+            this.radButton1.Location = new System.Drawing.Point(153, 6);
+            this.radButton1.Name = "radButton1";
+            this.radButton1.Size = new System.Drawing.Size(94, 32);
+            this.radButton1.TabIndex = 13;
+            this.radButton1.Text = "Reset";
+            this.radButton1.ThemeName = "Office2010Blue";
+            this.radButton1.Click += new System.EventHandler(this.radButton1_Click);
+            // 
             // AddEditInvoiceForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -979,7 +1007,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox2)).EndInit();
             this.radGroupBox2.ResumeLayout(false);
             this.radGroupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.radLabel1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lblTitle)).EndInit();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgItems.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgItems)).EndInit();
@@ -990,13 +1018,15 @@
             this.panel5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgInvoicePayments.MasterTemplate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgInvoicePayments)).EndInit();
-            this.panel7.ResumeLayout(false);
+            this.pnlPayment.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.btnReturnWizard)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddPayment)).EndInit();
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.txtAdditional)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtDis)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -1016,7 +1046,7 @@
         private Telerik.WinControls.UI.RadTextBoxControl txtMobNo;
         private System.Windows.Forms.Label label4;
         private Telerik.WinControls.UI.RadGroupBox radGroupBox2;
-        private Telerik.WinControls.UI.RadLabel radLabel1;
+        private Telerik.WinControls.UI.RadLabel lblTitle;
         private Telerik.WinControls.UI.RadTextBoxControl txtCode;
         private System.Windows.Forms.Label label1;
         private Telerik.WinControls.UI.RadTextBox txtTotalPrice;
@@ -1046,7 +1076,7 @@
         private System.Windows.Forms.Panel panel5;
         private Telerik.WinControls.UI.RadGridView dgInvoicePayments;
         private Telerik.WinControls.UI.RadButton btnAddPayment;
-        private System.Windows.Forms.Panel panel7;
+        private System.Windows.Forms.Panel pnlPayment;
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label lblStatus;
         private System.Windows.Forms.Label label20;
@@ -1062,5 +1092,7 @@
         private System.Windows.Forms.Label label15;
         private Telerik.WinControls.UI.RadTextBox txtAdditional;
         private Telerik.WinControls.UI.RadTextBox txtDis;
+        private Telerik.WinControls.UI.RadButton btnReturnWizard;
+        private Telerik.WinControls.UI.RadButton radButton1;
     }
 }

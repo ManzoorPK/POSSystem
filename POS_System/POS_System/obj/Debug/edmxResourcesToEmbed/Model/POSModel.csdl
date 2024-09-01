@@ -35,6 +35,7 @@
     <EntitySet Name="InvoicePaymentVs" EntityType="POS_SystemModel.InvoicePaymentV" />
     <EntitySet Name="Invoices" EntityType="POS_SystemModel.Invoice" />
     <EntitySet Name="InvoiceVs" EntityType="POS_SystemModel.InvoiceV" />
+    <EntitySet Name="WarehouseWiseQuantities" EntityType="POS_SystemModel.WarehouseWiseQuantity" />
   </EntityContainer>
   <EntityType Name="Category">
     <Key>
@@ -124,6 +125,7 @@
     <Property Name="Total" Type="Decimal" Precision="38" Scale="6" annotation:StoreGeneratedPattern="Computed" />
     <Property Name="CreatedOn" Type="DateTime" Precision="3" />
     <Property Name="StoreId" Type="Int32" />
+    <Property Name="IsReturned" Type="Boolean" />
   </EntityType>
   <EntityType Name="InvoiceItemsV">
     <Key>
@@ -143,6 +145,7 @@
     <Property Name="Code1" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
     <Property Name="Code2" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
     <Property Name="StoreId" Type="Int32" />
+    <Property Name="IsReturned" Type="Boolean" />
   </EntityType>
   <EntityType Name="InvoicePayment">
     <Key>
@@ -190,6 +193,7 @@
     <Property Name="Additional" Type="Decimal" Precision="18" Scale="2" />
     <Property Name="AdditionalAmount" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="FinalTotal" Type="Decimal" Precision="18" Scale="2" annotation:StoreGeneratedPattern="Computed" />
+    <Property Name="InvoiceType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="InvoiceV">
     <Key>
@@ -218,5 +222,16 @@
     <Property Name="Additional" Type="Decimal" Precision="18" Scale="2" />
     <Property Name="AdditionalAmount" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="FinalTotal" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="InvoiceType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="WarehouseWiseQuantity">
+    <Key>
+      <PropertyRef Name="WarehouseQuantityId" />
+    </Key>
+    <Property Name="WarehouseQuantityId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="WarehouseId" Type="Int32" />
+    <Property Name="ProductId" Type="Int32" />
+    <Property Name="Quantity" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="InvoiceItemId" Type="Int32" />
   </EntityType>
 </Schema>

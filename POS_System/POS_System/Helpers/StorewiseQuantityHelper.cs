@@ -30,10 +30,32 @@ public class StorewiseQuantityHelper
 
     public List<StorewiseQuantity> GetProductQuantities(int ProductId)
     {
-        return _Entity.StorewiseQuantities.Where(x=> x.InventoryId == ProductId).ToList();  
+        return _Entity.StorewiseQuantities.Where(x => x.InventoryId == ProductId).ToList();
     }
 
-    public void ManageStoreQuantity(int ProductId, decimal quantity)    
+    public void ReturnQuantity(int ProductId, decimal quantity, string invoiceType)
+    {
+        decimal Qty = quantity;
+        var obj = new StorewiseQuantityHelper().GetProductQuantities(ProductId);
+        if (obj.Count > 0)
+        {
+            var record = obj.FirstOrDefault();
+
+            //if (invoiceType == "Sales Invoice")
+            //{
+            //    record.Quantity += quantity;
+            //}
+            //if (invoiceType == "Sales Return Invoice")
+            //{
+                record.Quantity += quantity;
+            //}
+
+            _Entity.Entry(record).State = (record.StoreQuantityId == 0 ? EntityState.Added : EntityState.Modified);
+            _Entity.SaveChanges();
+        }
+
+    }
+    public void ManageStoreQuantity(int ProductId, decimal quantity)
     {
         decimal Qty = quantity;
         var obj = new StorewiseQuantityHelper().GetProductQuantities(ProductId);
@@ -49,7 +71,7 @@ public class StorewiseQuantityHelper
 
             if (item.Balance >= _NewQty)
             {
-                item.SoldOut = _NewQty;
+                item.SoldOut += _NewQty;
                 _Entity.Entry(item).State = (item.StoreQuantityId == 0 ? EntityState.Added : EntityState.Modified);
                 _Entity.SaveChanges();
                 break;
@@ -59,7 +81,7 @@ public class StorewiseQuantityHelper
                 if (item.Balance > 0)
                 {
                     _NetQty = _NewQty - Convert.ToDecimal(item.Balance);
-                    item.SoldOut = item.Balance;
+                    item.SoldOut += item.Balance;
                     _Entity.Entry(item).State = (item.StoreQuantityId == 0 ? EntityState.Added : EntityState.Modified);
                     _Entity.SaveChanges();
                 }
@@ -84,10 +106,10 @@ public class StorewiseQuantityHelper
                 {
                     lst.Add(new StorewiseQuantityV
                     {
-                         StoreId = o.StoreId,
-                         ProductId = Id,
-                         Store = new StoreHelper().GetStoreById(o.StoreId).Store1,
-                         Quantity = 0
+                        StoreId = o.StoreId,
+                        ProductId = Id,
+                        Store = new StoreHelper().GetStoreById(o.StoreId).Store1,
+                        Quantity = 0
                     });
                 }
             }

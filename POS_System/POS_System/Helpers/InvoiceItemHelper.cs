@@ -22,23 +22,28 @@ public class InvoiceItemHelper
         }
     }
 
-    public InvoiceItem GetInvoiceItemById(int Id)
+    public InvoiceItemsV GetInvoiceItemById(int Id)
+    {
+        var obj = _Entity.InvoiceItemsVs.Where(x => x.InvoiceItemId == Id).FirstOrDefault();
+        return obj;
+    }
+    public InvoiceItem GetInvoiceSingleItemById(int Id)
     {
         var obj = _Entity.InvoiceItems.Where(x => x.InvoiceItemId == Id).FirstOrDefault();
         return obj;
     }
-
     public List<InvoiceItemsV> GetAllInvoicesItems(int InvoiceId)
     {
-        var lst = _Entity.InvoiceItemsVs.Where(x=> x.InvoiceId == InvoiceId).ToList();
+        var lst = _Entity.InvoiceItemsVs.Where(x => x.InvoiceId == InvoiceId).ToList();
         return lst;
     }
 
-    public bool DeleteInvoiceItem(int Id)
+    public bool DeleteInvoiceItem(int Id, string invoiceType)
     {
         try
         {
             InvoiceItem obj = _Entity.InvoiceItems.Where(x => x.InvoiceItemId == Id).FirstOrDefault();
+            new StorewiseQuantityHelper().ReturnQuantity(Convert.ToInt32(obj.ProductId), Convert.ToDecimal(obj.Qty), invoiceType);
             _Entity.Entry(obj).State = EntityState.Deleted;
             _Entity.SaveChanges();
             return true;

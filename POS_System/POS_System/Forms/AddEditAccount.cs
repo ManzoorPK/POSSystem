@@ -13,12 +13,20 @@ namespace POS_System.Forms
     public partial class AddEditAccount : Telerik.WinControls.UI.RadForm
     {
         AddEditInvoiceForm AI;
+        AddEditPurchaseForm AF;
         int AccountId = 0;
         string form;
         public AddEditAccount(AddEditInvoiceForm aI, int accountId, string form)
         {
             InitializeComponent();
             AI = aI;
+            AccountId = accountId;
+            this.form = form;
+        }
+        public AddEditAccount(AddEditPurchaseForm af, int accountId, string form)
+        {
+            InitializeComponent();
+            AF = af;    
             AccountId = accountId;
             this.form = form;
         }
@@ -102,6 +110,9 @@ namespace POS_System.Forms
 
                 if (AI != null)
                     AI.LoadCustomers(obj.AccountId);
+
+                if (AF != null)
+                    AF.LoadCustomers(obj.AccountId);
 
                 if (form == "Invoice")
                     this.Close();

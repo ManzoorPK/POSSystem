@@ -28,5 +28,6 @@ namespace POS_System.Model
         public string Code1 { get; set; }
         public string Code2 { get; set; }
         public Nullable<int> StoreId { get; set; }
+        public Nullable<bool> IsReturned { get; set; }
     }
 }

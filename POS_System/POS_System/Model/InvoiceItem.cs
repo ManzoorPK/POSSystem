@@ -22,5 +22,6 @@ namespace POS_System.Model
         public Nullable<decimal> Total { get; set; }
         public Nullable<System.DateTime> CreatedOn { get; set; }
         public Nullable<int> StoreId { get; set; }
+        public Nullable<bool> IsReturned { get; set; }
     }
 }

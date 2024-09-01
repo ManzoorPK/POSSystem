@@ -1,4 +1,5 @@
-﻿using System;
+﻿using POS_System.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,12 +14,14 @@ namespace POS_System.Forms
 {
     public partial class InvoicesList : Telerik.WinControls.UI.RadForm
     {
-        public InvoicesList()
+        string InvoiceType;
+        public InvoicesList(string invoiceType)
         {
             InitializeComponent();
             int h = Screen.PrimaryScreen.WorkingArea.Height;
             int w = Screen.PrimaryScreen.WorkingArea.Width;
             this.ClientSize = new System.Drawing.Size(w, h);
+            InvoiceType = invoiceType;
         }
 
         private void radButton2_Click(object sender, EventArgs e)
@@ -28,8 +31,20 @@ namespace POS_System.Forms
 
         public void LoadInvoices()
         {
+            List<InvoiceV> obj = new List<InvoiceV>();
             dgInvoices.Columns.Clear();
-            var obj = new InvoiceHelper().GetAllInvoices();
+            if (InvoiceType == "Sales Invoice")
+                obj = new InvoiceHelper().GetAllInvoices();
+
+            if (InvoiceType == "Sales Return Invoice")
+                obj = new InvoiceHelper().GetAllSalesReturnInvoices();
+
+            if (InvoiceType == "Purchase Order")
+                obj = new InvoiceHelper().GetAllPurchaseInvoices();
+
+            if (InvoiceType == "Purchase Return Invoice")
+                obj = new InvoiceHelper().GetAllSalesReturnPurchaseInvoices();
+
             var _Data = from a in obj
                         select new
                         {
@@ -38,7 +53,7 @@ namespace POS_System.Forms
                             Account = a.Title,
                             a.Email,
                             a.CellNo,
-                            Total = Common.GetAsMoneyWithComma( a.FinalTotal),
+                            Total = Common.GetAsMoneyWithComma(a.FinalTotal),
                             a.Paid,
                             a.PaymentMethod,
                             a.Type,
@@ -68,8 +83,30 @@ namespace POS_System.Forms
         private void InvoicesList_Load(object sender, EventArgs e)
         {
 
-           
-            radButton1.Text = "Add new Invoice";
+            if (InvoiceType == "Sales Invoice")
+            {
+                radButton1.Text = "Add Sales Invoice";
+                lblTitle.Text = "Sales Invoices";
+            }
+
+            if (InvoiceType == "Sales Return Invoice")
+            {
+                radButton1.Text = "Add Return Invoice";
+                lblTitle.Text = "Sales Return Invoices";
+            }
+
+            if (InvoiceType == "Purchase Order")
+            {
+                radButton1.Text = "Add PO";
+                lblTitle.Text = "Purchase Orders";
+            }
+
+            if (InvoiceType == "Purchase Return Invoice")
+            {
+                radButton1.Text = "Add Return PO";
+                lblTitle.Text = "Purchase Orders Return Invoices";
+            }
+
             this.Text = lblTitle.Text;
             this.WindowState = FormWindowState.Maximized;
             LoadInvoices();
@@ -83,28 +120,53 @@ namespace POS_System.Forms
             //MessageBox.Show(_Index.ToString());
             if (_Index == 10)
             {
-                AddEditInvoiceForm frm = new AddEditInvoiceForm(this, _Id);
-                frm.MdiParent = this.MdiParent;
-                frm.Show();
+                if (InvoiceType != "Purchase Order")
+                {
+                    AddEditInvoiceForm frm = new AddEditInvoiceForm(this, _Id, InvoiceType);
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                }
+                else
+                {
+                    AddEditPurchaseForm frm = new AddEditPurchaseForm(this, _Id, InvoiceType);
+                    frm.MdiParent = this.MdiParent;
+                    frm.Show();
+                }
             }
 
             if (_Index == 11)
             {
-                DialogResult dialogResult = MessageBox.Show("Are you sure you want to DELETE?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    var obj = new StoreHelper().DeleteStore(_Id);
-                    if (obj == true)
-                    {
-                        LoadInvoices();
-                        MessageBox.Show("Invoice has been deleted.");
-                    }
-                    if (obj == false)
-                    {
-                        MessageBox.Show("An error occured while deleting Invoice.");
-                    }
-                }
+                //DialogResult dialogResult = MessageBox.Show("Are you sure you want to DELETE?", "Delete", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                //if (dialogResult == DialogResult.Yes)
+                //{
+                //    var obj = new StoreHelper().DeleteStore(_Id);
+                //    if (obj == true)
+                //    {
+                //        LoadInvoices();
+                //        MessageBox.Show("Invoice has been deleted.");
+                //    }
+                //    if (obj == false)
+                //    {
+                //        MessageBox.Show("An error occured while deleting Invoice.");
+                //    }
+                //}
 
+            }
+        }
+
+        private void radButton1_Click(object sender, EventArgs e)
+        {
+            if (InvoiceType != "Purchase Order")
+            {
+                AddEditInvoiceForm frm = new AddEditInvoiceForm(this, 0, InvoiceType);
+                frm.MdiParent = this.MdiParent;
+                frm.Show();
+            }
+            else
+            {
+                AddEditPurchaseForm frm = new AddEditPurchaseForm(this, 0, InvoiceType);
+                frm.MdiParent = this.MdiParent;
+                frm.Show();
             }
         }
     }

@@ -30,12 +30,12 @@ namespace POS_System
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn25 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn26 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.GridViewComboBoxColumn gridViewComboBoxColumn9 = new Telerik.WinControls.UI.GridViewComboBoxColumn();
-            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn9 = new Telerik.WinControls.UI.GridViewDecimalColumn();
-            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn27 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition9 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn1 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn2 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.GridViewComboBoxColumn gridViewComboBoxColumn1 = new Telerik.WinControls.UI.GridViewComboBoxColumn();
+            Telerik.WinControls.UI.GridViewDecimalColumn gridViewDecimalColumn1 = new Telerik.WinControls.UI.GridViewDecimalColumn();
+            Telerik.WinControls.UI.GridViewTextBoxColumn gridViewTextBoxColumn3 = new Telerik.WinControls.UI.GridViewTextBoxColumn();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
             this.warehouseBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.pOS_SystemDataSet = new POS_System.POS_SystemDataSet();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
@@ -60,14 +60,14 @@ namespace POS_System
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.radButton1 = new Telerik.WinControls.UI.RadButton();
             this.radButton2 = new Telerik.WinControls.UI.RadButton();
-            this.txtCode2 = new Telerik.WinControls.UI.RadTextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.txtCode1 = new Telerik.WinControls.UI.RadTextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.txtBarcode = new Telerik.WinControls.UI.RadTextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtOtherCode = new Telerik.WinControls.UI.RadTextBox();
+            this.txtBarcode = new Telerik.WinControls.UI.RadTextBox();
+            this.txtCode2 = new Telerik.WinControls.UI.RadTextBox();
+            this.label5 = new System.Windows.Forms.Label();
+            this.txtCode1 = new Telerik.WinControls.UI.RadTextBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.txtOtherCode = new Telerik.WinControls.UI.RadTextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.ddlCategory = new Telerik.WinControls.UI.RadDropDownList();
             this.label2 = new System.Windows.Forms.Label();
@@ -104,9 +104,9 @@ namespace POS_System
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBarcode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCode2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCode1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtBarcode)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOtherCode)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ddlCategory)).BeginInit();
@@ -259,7 +259,7 @@ namespace POS_System
             this.radPageView1.Controls.Add(this.radPageViewPage2);
             this.radPageView1.Location = new System.Drawing.Point(12, 299);
             this.radPageView1.Name = "radPageView1";
-            this.radPageView1.SelectedPage = this.radPageViewPage2;
+            this.radPageView1.SelectedPage = this.radPageViewPage1;
             this.radPageView1.Size = new System.Drawing.Size(1005, 300);
             this.radPageView1.TabIndex = 43;
             this.radPageView1.ThemeName = "Office2010Blue";
@@ -364,49 +364,16 @@ namespace POS_System
             this.radButton2.Text = "...";
             this.radButton2.ThemeName = "TelerikMetroTouch";
             // 
-            // txtCode2
+            // label3
             // 
-            this.txtCode2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtCode2.BackColor = System.Drawing.Color.White;
-            this.txtCode2.Font = new System.Drawing.Font("Segoe UI", 13F);
-            this.txtCode2.Location = new System.Drawing.Point(13, 113);
-            this.txtCode2.Name = "txtCode2";
-            this.txtCode2.Size = new System.Drawing.Size(211, 29);
-            this.txtCode2.TabIndex = 44;
-            this.txtCode2.ThemeName = "Office2010Blue";
-            // 
-            // label7
-            // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label7.Location = new System.Drawing.Point(230, 119);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(53, 19);
-            this.label7.TabIndex = 43;
-            this.label7.Text = "Code 2";
-            // 
-            // txtCode1
-            // 
-            this.txtCode1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtCode1.BackColor = System.Drawing.Color.White;
-            this.txtCode1.Font = new System.Drawing.Font("Segoe UI", 13F);
-            this.txtCode1.Location = new System.Drawing.Point(13, 78);
-            this.txtCode1.Name = "txtCode1";
-            this.txtCode1.Size = new System.Drawing.Size(211, 29);
-            this.txtCode1.TabIndex = 42;
-            this.txtCode1.ThemeName = "Office2010Blue";
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label5.Location = new System.Drawing.Point(230, 84);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 19);
-            this.label5.TabIndex = 41;
-            this.label5.Text = "Code 1";
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label3.Location = new System.Drawing.Point(230, 49);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(58, 19);
+            this.label3.TabIndex = 39;
+            this.label3.Text = "Barcode";
             // 
             // txtBarcode
             // 
@@ -419,27 +386,49 @@ namespace POS_System
             this.txtBarcode.TabIndex = 40;
             this.txtBarcode.ThemeName = "Office2010Blue";
             // 
-            // label3
+            // txtCode2
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label3.Location = new System.Drawing.Point(230, 49);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 19);
-            this.label3.TabIndex = 39;
-            this.label3.Text = "Barcode";
+            this.txtCode2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtCode2.BackColor = System.Drawing.Color.White;
+            this.txtCode2.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.txtCode2.Location = new System.Drawing.Point(13, 113);
+            this.txtCode2.Name = "txtCode2";
+            this.txtCode2.Size = new System.Drawing.Size(211, 29);
+            this.txtCode2.TabIndex = 44;
+            this.txtCode2.ThemeName = "Office2010Blue";
             // 
-            // txtOtherCode
+            // label5
             // 
-            this.txtOtherCode.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtOtherCode.BackColor = System.Drawing.Color.White;
-            this.txtOtherCode.Font = new System.Drawing.Font("Segoe UI", 13F);
-            this.txtOtherCode.Location = new System.Drawing.Point(65, 151);
-            this.txtOtherCode.Name = "txtOtherCode";
-            this.txtOtherCode.Size = new System.Drawing.Size(159, 29);
-            this.txtOtherCode.TabIndex = 46;
-            this.txtOtherCode.ThemeName = "Office2010Blue";
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label5.Location = new System.Drawing.Point(230, 84);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 19);
+            this.label5.TabIndex = 41;
+            this.label5.Text = "Code 1";
+            // 
+            // txtCode1
+            // 
+            this.txtCode1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtCode1.BackColor = System.Drawing.Color.White;
+            this.txtCode1.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.txtCode1.Location = new System.Drawing.Point(13, 78);
+            this.txtCode1.Name = "txtCode1";
+            this.txtCode1.Size = new System.Drawing.Size(211, 29);
+            this.txtCode1.TabIndex = 42;
+            this.txtCode1.ThemeName = "Office2010Blue";
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label7.Location = new System.Drawing.Point(230, 119);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(53, 19);
+            this.label7.TabIndex = 43;
+            this.label7.Text = "Code 2";
             // 
             // label8
             // 
@@ -451,6 +440,17 @@ namespace POS_System
             this.label8.Size = new System.Drawing.Size(81, 19);
             this.label8.TabIndex = 45;
             this.label8.Text = "Other Code";
+            // 
+            // txtOtherCode
+            // 
+            this.txtOtherCode.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtOtherCode.BackColor = System.Drawing.Color.White;
+            this.txtOtherCode.Font = new System.Drawing.Font("Segoe UI", 13F);
+            this.txtOtherCode.Location = new System.Drawing.Point(65, 151);
+            this.txtOtherCode.Name = "txtOtherCode";
+            this.txtOtherCode.Size = new System.Drawing.Size(159, 29);
+            this.txtOtherCode.TabIndex = 46;
+            this.txtOtherCode.ThemeName = "Office2010Blue";
             // 
             // groupBox1
             // 
@@ -509,33 +509,33 @@ namespace POS_System
             this.dgStores.MasterTemplate.AllowAddNewRow = false;
             this.dgStores.MasterTemplate.AllowDeleteRow = false;
             this.dgStores.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
-            gridViewTextBoxColumn25.HeaderText = "Id";
-            gridViewTextBoxColumn25.IsVisible = false;
-            gridViewTextBoxColumn25.Name = "ColId";
-            gridViewTextBoxColumn25.Width = 868;
-            gridViewTextBoxColumn26.HeaderText = "Store";
-            gridViewTextBoxColumn26.Name = "ColStore";
-            gridViewTextBoxColumn26.Width = 222;
-            gridViewComboBoxColumn9.DataSource = this.warehouseBindingSource;
-            gridViewComboBoxColumn9.DisplayMember = "Warehouse";
-            gridViewComboBoxColumn9.HeaderText = "Warehouse";
-            gridViewComboBoxColumn9.Name = "Warehouse";
-            gridViewComboBoxColumn9.ValueMember = "WarehouseId";
-            gridViewComboBoxColumn9.Width = 282;
-            gridViewDecimalColumn9.HeaderText = "Qty";
-            gridViewDecimalColumn9.Name = "ColQty";
-            gridViewDecimalColumn9.Width = 140;
-            gridViewTextBoxColumn27.HeaderText = "StoreId";
-            gridViewTextBoxColumn27.Name = "ColStoreId";
-            gridViewTextBoxColumn27.Width = 318;
+            gridViewTextBoxColumn1.HeaderText = "Id";
+            gridViewTextBoxColumn1.IsVisible = false;
+            gridViewTextBoxColumn1.Name = "ColId";
+            gridViewTextBoxColumn1.Width = 868;
+            gridViewTextBoxColumn2.HeaderText = "Store";
+            gridViewTextBoxColumn2.Name = "ColStore";
+            gridViewTextBoxColumn2.Width = 222;
+            gridViewComboBoxColumn1.DataSource = this.warehouseBindingSource;
+            gridViewComboBoxColumn1.DisplayMember = "Warehouse";
+            gridViewComboBoxColumn1.HeaderText = "Warehouse";
+            gridViewComboBoxColumn1.Name = "Warehouse";
+            gridViewComboBoxColumn1.ValueMember = "WarehouseId";
+            gridViewComboBoxColumn1.Width = 282;
+            gridViewDecimalColumn1.HeaderText = "Qty";
+            gridViewDecimalColumn1.Name = "ColQty";
+            gridViewDecimalColumn1.Width = 140;
+            gridViewTextBoxColumn3.HeaderText = "StoreId";
+            gridViewTextBoxColumn3.Name = "ColStoreId";
+            gridViewTextBoxColumn3.Width = 318;
             this.dgStores.MasterTemplate.Columns.AddRange(new Telerik.WinControls.UI.GridViewDataColumn[] {
-            gridViewTextBoxColumn25,
-            gridViewTextBoxColumn26,
-            gridViewComboBoxColumn9,
-            gridViewDecimalColumn9,
-            gridViewTextBoxColumn27});
+            gridViewTextBoxColumn1,
+            gridViewTextBoxColumn2,
+            gridViewComboBoxColumn1,
+            gridViewDecimalColumn1,
+            gridViewTextBoxColumn3});
             this.dgStores.MasterTemplate.EnableFiltering = true;
-            this.dgStores.MasterTemplate.ViewDefinition = tableViewDefinition9;
+            this.dgStores.MasterTemplate.ViewDefinition = tableViewDefinition1;
             this.dgStores.Name = "dgStores";
             this.dgStores.Size = new System.Drawing.Size(981, 204);
             this.dgStores.TabIndex = 12;
@@ -713,9 +713,9 @@ namespace POS_System
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radButton1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.radButton2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.txtBarcode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCode2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtCode1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.txtBarcode)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.txtOtherCode)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

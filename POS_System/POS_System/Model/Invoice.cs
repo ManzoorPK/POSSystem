@@ -28,5 +28,6 @@ namespace POS_System.Model
         public Nullable<decimal> Additional { get; set; }
         public Nullable<decimal> AdditionalAmount { get; set; }
         public Nullable<decimal> FinalTotal { get; set; }
+        public string InvoiceType { get; set; }
     }
 }

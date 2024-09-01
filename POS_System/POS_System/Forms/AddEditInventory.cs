@@ -25,6 +25,7 @@ namespace POS_System
         private InventoriesList IL;
         private MDIParent _MDIParent;
         private AddEditInvoiceForm AIE;
+        private AddEditPurchaseForm AF;
         public AddEditInventory(InventoriesList _IL, int _InventoryID, MDIParent mDIParent = null)
         {
             InitializeComponent();
@@ -36,6 +37,11 @@ namespace POS_System
         {
             InitializeComponent();
             AIE = _aie; 
+        }
+        public AddEditInventory(AddEditPurchaseForm af, string type = "Purchase")
+        {
+            InitializeComponent();
+            AF = af;
         }
         public AddEditInventory()
         {
@@ -267,8 +273,12 @@ namespace POS_System
                     AIE.LoadProducts(res.ProductId);
                     this.Close();
                 }
+                if (AF != null)
+                {
+                    AF.LoadProducts(res.ProductId);
+                    this.Close();
+                }
 
-               
             }
 
             if (res == null)
