@@ -223,6 +223,7 @@
     <Property Name="AdditionalAmount" Type="Decimal" Precision="19" Scale="4" />
     <Property Name="FinalTotal" Type="Decimal" Precision="18" Scale="2" />
     <Property Name="InvoiceType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+<<<<<<< HEAD
   </EntityType>
   <EntityType Name="WarehouseWiseQuantity">
     <Key>
@@ -233,5 +234,7 @@
     <Property Name="ProductId" Type="Int32" />
     <Property Name="Quantity" Type="Decimal" Precision="18" Scale="2" />
     <Property Name="InvoiceItemId" Type="Int32" />
+=======
+>>>>>>> 098309e356e61a35e52288eb7f7af42ead4f8c0e
   </EntityType>
 </Schema>

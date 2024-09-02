@@ -30,10 +30,17 @@ namespace POS_System
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+<<<<<<< HEAD
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition13 = new Telerik.WinControls.UI.TableViewDefinition();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition14 = new Telerik.WinControls.UI.TableViewDefinition();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition15 = new Telerik.WinControls.UI.TableViewDefinition();
             Telerik.WinControls.UI.TableViewDefinition tableViewDefinition16 = new Telerik.WinControls.UI.TableViewDefinition();
+=======
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition9 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition10 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition11 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition12 = new Telerik.WinControls.UI.TableViewDefinition();
+>>>>>>> 098309e356e61a35e52288eb7f7af42ead4f8c0e
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MDIParent));
             this.toolTip = new System.Windows.Forms.ToolTip(this.components);
             this.office2010BlueTheme1 = new Telerik.WinControls.Themes.Office2010BlueTheme();
@@ -114,10 +121,13 @@ namespace POS_System
             this.menuSaleInvoices = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuSeparatorItem3 = new Telerik.WinControls.UI.RadMenuSeparatorItem();
             this.menuSalesInvoice = new Telerik.WinControls.UI.RadMenuItem();
+<<<<<<< HEAD
             this.radMenuSeparatorItem4 = new Telerik.WinControls.UI.RadMenuSeparatorItem();
             this.radMenuPurchase = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuRetPurchase = new Telerik.WinControls.UI.RadMenuItem();
             this.radMenuSeparatorItem5 = new Telerik.WinControls.UI.RadMenuSeparatorItem();
+=======
+>>>>>>> 098309e356e61a35e52288eb7f7af42ead4f8c0e
             ((System.ComponentModel.ISupportInitialize)(this.tabForms1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.radPanel1)).BeginInit();
             this.radPanel1.SuspendLayout();
@@ -297,7 +307,11 @@ namespace POS_System
             this.ddlInvoiceNumberSearch.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.ddlInvoiceNumberSearch.EditorControl.MasterTemplate.EnableGrouping = false;
             this.ddlInvoiceNumberSearch.EditorControl.MasterTemplate.ShowFilteringRow = false;
+<<<<<<< HEAD
             this.ddlInvoiceNumberSearch.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition13;
+=======
+            this.ddlInvoiceNumberSearch.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition9;
+>>>>>>> 098309e356e61a35e52288eb7f7af42ead4f8c0e
             this.ddlInvoiceNumberSearch.EditorControl.Name = "NestedRadGridView";
             this.ddlInvoiceNumberSearch.EditorControl.ReadOnly = true;
             this.ddlInvoiceNumberSearch.EditorControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -344,7 +358,11 @@ namespace POS_System
             this.ddlCustomer.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.ddlCustomer.EditorControl.MasterTemplate.EnableGrouping = false;
             this.ddlCustomer.EditorControl.MasterTemplate.ShowFilteringRow = false;
+<<<<<<< HEAD
             this.ddlCustomer.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition14;
+=======
+            this.ddlCustomer.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition10;
+>>>>>>> 098309e356e61a35e52288eb7f7af42ead4f8c0e
             this.ddlCustomer.EditorControl.Name = "NestedRadGridView";
             this.ddlCustomer.EditorControl.ReadOnly = true;
             this.ddlCustomer.EditorControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -380,7 +398,11 @@ namespace POS_System
             this.ddlSupLedgers.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.ddlSupLedgers.EditorControl.MasterTemplate.EnableGrouping = false;
             this.ddlSupLedgers.EditorControl.MasterTemplate.ShowFilteringRow = false;
+<<<<<<< HEAD
             this.ddlSupLedgers.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition15;
+=======
+            this.ddlSupLedgers.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition11;
+>>>>>>> 098309e356e61a35e52288eb7f7af42ead4f8c0e
             this.ddlSupLedgers.EditorControl.Name = "NestedRadGridView";
             this.ddlSupLedgers.EditorControl.ReadOnly = true;
             this.ddlSupLedgers.EditorControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -432,7 +454,11 @@ namespace POS_System
             this.ddlSearchPO.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.ddlSearchPO.EditorControl.MasterTemplate.EnableGrouping = false;
             this.ddlSearchPO.EditorControl.MasterTemplate.ShowFilteringRow = false;
+<<<<<<< HEAD
             this.ddlSearchPO.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition16;
+=======
+            this.ddlSearchPO.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition12;
+>>>>>>> 098309e356e61a35e52288eb7f7af42ead4f8c0e
             this.ddlSearchPO.EditorControl.Name = "NestedRadGridView";
             this.ddlSearchPO.EditorControl.ReadOnly = true;
             this.ddlSearchPO.EditorControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -902,11 +928,15 @@ namespace POS_System
             this.radMenuItem7.Items.AddRange(new Telerik.WinControls.RadItem[] {
             this.menuSaleInvoices,
             this.radMenuSeparatorItem3,
+<<<<<<< HEAD
             this.menuSalesInvoice,
             this.radMenuSeparatorItem4,
             this.radMenuPurchase,
             this.radMenuRetPurchase,
             this.radMenuSeparatorItem5});
+=======
+            this.menuSalesInvoice});
+>>>>>>> 098309e356e61a35e52288eb7f7af42ead4f8c0e
             this.radMenuItem7.Name = "radMenuItem7";
             this.radMenuItem7.Text = "Invoices";
             // 
@@ -928,6 +958,7 @@ namespace POS_System
             this.menuSalesInvoice.Text = "Return Sales Invoice";
             this.menuSalesInvoice.Click += new System.EventHandler(this.menuSalesInvoice_Click);
             // 
+<<<<<<< HEAD
             // radMenuSeparatorItem4
             // 
             this.radMenuSeparatorItem4.Name = "radMenuSeparatorItem4";
@@ -952,6 +983,8 @@ namespace POS_System
             this.radMenuSeparatorItem5.Text = "radMenuSeparatorItem5";
             this.radMenuSeparatorItem5.TextAlignment = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+=======
+>>>>>>> 098309e356e61a35e52288eb7f7af42ead4f8c0e
             // MDIParent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1084,10 +1117,13 @@ namespace POS_System
         private Telerik.WinControls.UI.RadMenuItem menuSaleInvoices;
         private Telerik.WinControls.UI.RadMenuSeparatorItem radMenuSeparatorItem3;
         private Telerik.WinControls.UI.RadMenuItem menuSalesInvoice;
+<<<<<<< HEAD
         private Telerik.WinControls.UI.RadMenuSeparatorItem radMenuSeparatorItem4;
         private Telerik.WinControls.UI.RadMenuItem radMenuPurchase;
         private Telerik.WinControls.UI.RadMenuItem radMenuRetPurchase;
         private Telerik.WinControls.UI.RadMenuSeparatorItem radMenuSeparatorItem5;
+=======
+>>>>>>> 098309e356e61a35e52288eb7f7af42ead4f8c0e
     }
 }
 

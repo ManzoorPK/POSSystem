@@ -92,8 +92,11 @@
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             this.materialBlueGreyTheme1 = new Telerik.WinControls.Themes.MaterialBlueGreyTheme();
             this.office2010BlueTheme1 = new Telerik.WinControls.Themes.Office2010BlueTheme();
+<<<<<<< HEAD
             this.label14 = new System.Windows.Forms.Label();
             this.ddlWarehouse = new Telerik.WinControls.UI.RadDropDownList();
+=======
+>>>>>>> 098309e356e61a35e52288eb7f7af42ead4f8c0e
             ((System.ComponentModel.ISupportInitialize)(this.lblTitle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgItems.MasterTemplate)).BeginInit();
@@ -131,7 +134,10 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox2)).BeginInit();
             this.radGroupBox2.SuspendLayout();
+<<<<<<< HEAD
             ((System.ComponentModel.ISupportInitialize)(this.ddlWarehouse)).BeginInit();
+=======
+>>>>>>> 098309e356e61a35e52288eb7f7af42ead4f8c0e
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -167,7 +173,10 @@
             this.dgItems.TabIndex = 12;
             this.dgItems.ThemeName = "Office2010Blue";
             this.dgItems.CommandCellClick += new Telerik.WinControls.UI.CommandCellClickEventHandler(this.dgItems_CommandCellClick);
+<<<<<<< HEAD
             this.dgItems.ColumnWidthChanging += new System.Windows.Forms.ColumnWidthChangingEventHandler(this.dgItems_ColumnWidthChanging);
+=======
+>>>>>>> 098309e356e61a35e52288eb7f7af42ead4f8c0e
             // 
             // panel1
             // 
@@ -511,8 +520,11 @@
             // 
             this.radGroupBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Grouping;
             this.radGroupBox1.BackColor = System.Drawing.Color.White;
+<<<<<<< HEAD
             this.radGroupBox1.Controls.Add(this.label14);
             this.radGroupBox1.Controls.Add(this.ddlWarehouse);
+=======
+>>>>>>> 098309e356e61a35e52288eb7f7af42ead4f8c0e
             this.radGroupBox1.Controls.Add(this.label7);
             this.radGroupBox1.Controls.Add(this.label6);
             this.radGroupBox1.Controls.Add(this.ddlPaymentMethod);
@@ -549,9 +561,15 @@
             this.label7.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold);
             this.label7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+<<<<<<< HEAD
             this.label7.Location = new System.Drawing.Point(583, 45);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(278, 19);
+=======
+            this.label7.Location = new System.Drawing.Point(627, 45);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(234, 19);
+>>>>>>> 098309e356e61a35e52288eb7f7af42ead4f8c0e
             this.label7.TabIndex = 82;
             this.label7.Text = "Invoice Total";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -606,9 +624,15 @@
             this.lblTotal.BackColor = System.Drawing.Color.White;
             this.lblTotal.Font = new System.Drawing.Font("Segoe UI", 14F, System.Drawing.FontStyle.Bold);
             this.lblTotal.ForeColor = System.Drawing.Color.IndianRed;
+<<<<<<< HEAD
             this.lblTotal.Location = new System.Drawing.Point(583, 68);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(252, 35);
+=======
+            this.lblTotal.Location = new System.Drawing.Point(627, 66);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(220, 35);
+>>>>>>> 098309e356e61a35e52288eb7f7af42ead4f8c0e
             this.lblTotal.TabIndex = 78;
             this.lblTotal.Text = "0";
             this.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -917,6 +941,7 @@
             this.radGroupBox2.TabIndex = 78;
             this.radGroupBox2.ThemeName = "TelerikMetroTouch";
             // 
+<<<<<<< HEAD
             // label14
             // 
             this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -942,6 +967,8 @@
             this.ddlWarehouse.TabIndex = 83;
             this.ddlWarehouse.ThemeName = "Office2010Blue";
             // 
+=======
+>>>>>>> 098309e356e61a35e52288eb7f7af42ead4f8c0e
             // AddEditPurchaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1000,7 +1027,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox2)).EndInit();
             this.radGroupBox2.ResumeLayout(false);
             this.radGroupBox2.PerformLayout();
+<<<<<<< HEAD
             ((System.ComponentModel.ISupportInitialize)(this.ddlWarehouse)).EndInit();
+=======
+>>>>>>> 098309e356e61a35e52288eb7f7af42ead4f8c0e
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 
@@ -1066,7 +1096,10 @@
         private Telerik.WinControls.Themes.TelerikMetroTheme telerikMetroTheme1;
         private Telerik.WinControls.Themes.MaterialBlueGreyTheme materialBlueGreyTheme1;
         private Telerik.WinControls.Themes.Office2010BlueTheme office2010BlueTheme1;
+<<<<<<< HEAD
         private System.Windows.Forms.Label label14;
         private Telerik.WinControls.UI.RadDropDownList ddlWarehouse;
+=======
+>>>>>>> 098309e356e61a35e52288eb7f7af42ead4f8c0e
     }
 }

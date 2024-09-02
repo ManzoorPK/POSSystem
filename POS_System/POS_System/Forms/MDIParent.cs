@@ -573,6 +573,16 @@ namespace POS_System
         private void menuSaleInvoices_Click(object sender, EventArgs e)
         {
             InvoicesList frm = new InvoicesList("Sales Invoice");
+<<<<<<< HEAD
+=======
+            frm.MdiParent = this;
+            frm.Show();
+        }
+
+        private void menuSalesInvoice_Click(object sender, EventArgs e)
+        {
+            InvoicesList frm = new InvoicesList("Sales Return Invoice");
+>>>>>>> 098309e356e61a35e52288eb7f7af42ead4f8c0e
             frm.MdiParent = this;
             frm.Show();
         }

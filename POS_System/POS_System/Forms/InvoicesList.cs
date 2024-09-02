@@ -39,11 +39,13 @@ namespace POS_System.Forms
             if (InvoiceType == "Sales Return Invoice")
                 obj = new InvoiceHelper().GetAllSalesReturnInvoices();
 
+
             if (InvoiceType == "Purchase Order")
                 obj = new InvoiceHelper().GetAllPurchaseInvoices();
 
             if (InvoiceType == "Purchase Return Invoice")
                 obj = new InvoiceHelper().GetAllSalesReturnPurchaseInvoices();
+
 
             var _Data = from a in obj
                         select new
@@ -95,6 +97,7 @@ namespace POS_System.Forms
                 lblTitle.Text = "Sales Return Invoices";
             }
 
+
             if (InvoiceType == "Purchase Order")
             {
                 radButton1.Text = "Add PO";
@@ -106,6 +109,7 @@ namespace POS_System.Forms
                 radButton1.Text = "Add Return PO";
                 lblTitle.Text = "Purchase Orders Return Invoices";
             }
+
 
             this.Text = lblTitle.Text;
             this.WindowState = FormWindowState.Maximized;
@@ -120,6 +124,7 @@ namespace POS_System.Forms
             //MessageBox.Show(_Index.ToString());
             if (_Index == 10)
             {
+
                 if (InvoiceType != "Purchase Order")
                 {
                     AddEditInvoiceForm frm = new AddEditInvoiceForm(this, _Id, InvoiceType);
@@ -132,6 +137,11 @@ namespace POS_System.Forms
                     frm.MdiParent = this.MdiParent;
                     frm.Show();
                 }
+
+                AddEditInvoiceForm frm = new AddEditInvoiceForm(this, _Id, InvoiceType);
+                frm.MdiParent = this.MdiParent;
+                frm.Show();
+
             }
 
             if (_Index == 11)
@@ -156,6 +166,7 @@ namespace POS_System.Forms
 
         private void radButton1_Click(object sender, EventArgs e)
         {
+
             if (InvoiceType != "Purchase Order")
             {
                 AddEditInvoiceForm frm = new AddEditInvoiceForm(this, 0, InvoiceType);
@@ -168,6 +179,11 @@ namespace POS_System.Forms
                 frm.MdiParent = this.MdiParent;
                 frm.Show();
             }
+
+            AddEditInvoiceForm frm = new AddEditInvoiceForm(this, 0, InvoiceType);
+            frm.MdiParent = this.MdiParent;
+            frm.Show();
+
         }
     }
 }
