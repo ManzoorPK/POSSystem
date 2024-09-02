@@ -103,6 +103,26 @@
           <Property Name="Picture" Type="varbinary(max)" />
           <Property Name="TotalQuantity" Type="decimal" Precision="18" Scale="2" StoreGeneratedPattern="Computed" />
         </EntityType>
+        <EntityType Name="Receipts">
+          <Key>
+            <PropertyRef Name="ReceiptId" />
+          </Key>
+          <Property Name="ReceiptId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AccountId" Type="int" />
+          <Property Name="PaymentMethodId" Type="int" />
+          <Property Name="Amount" Type="money" />
+          <Property Name="IncomeType" Type="nvarchar" MaxLength="400" />
+          <Property Name="Remarks" Type="nvarchar" MaxLength="500" />
+          <Property Name="Reference" Type="nvarchar" MaxLength="150" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="IsCheque" Type="bit" />
+          <Property Name="ChequeNo" Type="nvarchar" MaxLength="150" />
+          <Property Name="Bank" Type="nvarchar" MaxLength="500" />
+          <Property Name="ChequeDueDate" Type="datetime" />
+          <Property Name="IsLiquidated" Type="bit" />
+          <Property Name="LiquidDate" Type="datetime" />
+          <Property Name="Type" Type="nvarchar" MaxLength="150" />
+        </EntityType>
         <EntityType Name="Store">
           <Key>
             <PropertyRef Name="StoreId" />
@@ -215,6 +235,33 @@ warning 6002: The table/view 'POS_System.dbo.InvoiceV' does not have a primary k
           <Property Name="InvoiceType" Type="nvarchar" MaxLength="50" />
         </EntityType>
         <!--Errors Found During Generation:
+warning 6002: The table/view 'POS_System.dbo.ReceiptV' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="ReceiptV">
+          <Key>
+            <PropertyRef Name="ReceiptId" />
+          </Key>
+          <Property Name="ReceiptId" Type="int" Nullable="false" />
+          <Property Name="AccountId" Type="int" />
+          <Property Name="PaymentMethodId" Type="int" />
+          <Property Name="Amount" Type="money" />
+          <Property Name="IncomeType" Type="nvarchar" MaxLength="400" />
+          <Property Name="Remarks" Type="nvarchar" MaxLength="500" />
+          <Property Name="Reference" Type="nvarchar" MaxLength="150" />
+          <Property Name="Date" Type="datetime" />
+          <Property Name="IsCheque" Type="bit" />
+          <Property Name="ChequeNo" Type="nvarchar" MaxLength="150" />
+          <Property Name="Bank" Type="nvarchar" MaxLength="500" />
+          <Property Name="ChequeDueDate" Type="datetime" />
+          <Property Name="IsLiquidated" Type="bit" />
+          <Property Name="LiquidDate" Type="datetime" />
+          <Property Name="Type" Type="nvarchar" MaxLength="150" />
+          <Property Name="AccountCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="Title" Type="nvarchar" MaxLength="500" />
+          <Property Name="Email" Type="nvarchar" MaxLength="150" />
+          <Property Name="CellNo" Type="nvarchar" MaxLength="150" />
+          <Property Name="PaymentMethod" Type="nvarchar" MaxLength="300" />
+        </EntityType>
+        <!--Errors Found During Generation:
 warning 6002: The table/view 'POS_System.dbo.StorewiseQuantityV' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="StorewiseQuantityV">
           <Key>
@@ -238,6 +285,7 @@ warning 6002: The table/view 'POS_System.dbo.StorewiseQuantityV' does not have a
           <EntitySet Name="InvoicePayments" EntityType="Self.InvoicePayments" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="PaymentOptions" EntityType="Self.PaymentOptions" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Receipts" EntityType="Self.Receipts" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Store" EntityType="Self.Store" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="StorewiseQuantity" EntityType="Self.StorewiseQuantity" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Warehouse" EntityType="Self.Warehouse" Schema="dbo" store:Type="Tables" />
@@ -302,6 +350,30 @@ warning 6002: The table/view 'POS_System.dbo.StorewiseQuantityV' does not have a
     [InvoiceV].[InvoiceType] AS [InvoiceType]
     FROM [dbo].[InvoiceV] AS [InvoiceV]</DefiningQuery>
           </EntitySet>
+          <EntitySet Name="ReceiptV" EntityType="Self.ReceiptV" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [ReceiptV].[ReceiptId] AS [ReceiptId], 
+    [ReceiptV].[AccountId] AS [AccountId], 
+    [ReceiptV].[PaymentMethodId] AS [PaymentMethodId], 
+    [ReceiptV].[Amount] AS [Amount], 
+    [ReceiptV].[IncomeType] AS [IncomeType], 
+    [ReceiptV].[Remarks] AS [Remarks], 
+    [ReceiptV].[Reference] AS [Reference], 
+    [ReceiptV].[Date] AS [Date], 
+    [ReceiptV].[IsCheque] AS [IsCheque], 
+    [ReceiptV].[ChequeNo] AS [ChequeNo], 
+    [ReceiptV].[Bank] AS [Bank], 
+    [ReceiptV].[ChequeDueDate] AS [ChequeDueDate], 
+    [ReceiptV].[IsLiquidated] AS [IsLiquidated], 
+    [ReceiptV].[LiquidDate] AS [LiquidDate], 
+    [ReceiptV].[Type] AS [Type], 
+    [ReceiptV].[AccountCode] AS [AccountCode], 
+    [ReceiptV].[Title] AS [Title], 
+    [ReceiptV].[Email] AS [Email], 
+    [ReceiptV].[CellNo] AS [CellNo], 
+    [ReceiptV].[PaymentMethod] AS [PaymentMethod]
+    FROM [dbo].[ReceiptV] AS [ReceiptV]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="StorewiseQuantityV" EntityType="Self.StorewiseQuantityV" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
     [StorewiseQuantityV].[StoreQuantityId] AS [StoreQuantityId], 
@@ -355,6 +427,8 @@ warning 6002: The table/view 'POS_System.dbo.StorewiseQuantityV' does not have a
           <EntitySet Name="Invoices" EntityType="POS_SystemModel.Invoice" />
           <EntitySet Name="InvoiceVs" EntityType="POS_SystemModel.InvoiceV" />
           <EntitySet Name="WarehouseWiseQuantities" EntityType="POS_SystemModel.WarehouseWiseQuantity" />
+          <EntitySet Name="Receipts" EntityType="POS_SystemModel.Receipt" />
+          <EntitySet Name="ReceiptVs" EntityType="POS_SystemModel.ReceiptV" />
         </EntityContainer>
         <EntityType Name="Category">
           <Key>
@@ -554,6 +628,51 @@ warning 6002: The table/view 'POS_System.dbo.StorewiseQuantityV' does not have a
           <Property Name="Quantity" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="InvoiceItemId" Type="Int32" />
  
+        </EntityType>
+        <EntityType Name="Receipt">
+          <Key>
+            <PropertyRef Name="ReceiptId" />
+          </Key>
+          <Property Name="ReceiptId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AccountId" Type="Int32" />
+          <Property Name="PaymentMethodId" Type="Int32" />
+          <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="IncomeType" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Reference" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="IsCheque" Type="Boolean" />
+          <Property Name="ChequeNo" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Bank" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ChequeDueDate" Type="DateTime" Precision="3" />
+          <Property Name="IsLiquidated" Type="Boolean" />
+          <Property Name="LiquidDate" Type="DateTime" Precision="3" />
+          <Property Name="Type" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="ReceiptV">
+          <Key>
+            <PropertyRef Name="ReceiptId" />
+          </Key>
+          <Property Name="ReceiptId" Type="Int32" Nullable="false" />
+          <Property Name="AccountId" Type="Int32" />
+          <Property Name="PaymentMethodId" Type="Int32" />
+          <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="IncomeType" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+          <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Reference" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="3" />
+          <Property Name="IsCheque" Type="Boolean" />
+          <Property Name="ChequeNo" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Bank" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="ChequeDueDate" Type="DateTime" Precision="3" />
+          <Property Name="IsLiquidated" Type="Boolean" />
+          <Property Name="LiquidDate" Type="DateTime" Precision="3" />
+          <Property Name="Type" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="AccountCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="CellNo" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="PaymentMethod" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -788,6 +907,53 @@ warning 6002: The table/view 'POS_System.dbo.StorewiseQuantityV' does not have a
                 <ScalarProperty Name="ProductId" ColumnName="ProductId" />
                 <ScalarProperty Name="WarehouseId" ColumnName="WarehouseId" />
                 <ScalarProperty Name="WarehouseQuantityId" ColumnName="WarehouseQuantityId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Receipts">
+            <EntityTypeMapping TypeName="POS_SystemModel.Receipt">
+              <MappingFragment StoreEntitySet="Receipts">
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="LiquidDate" ColumnName="LiquidDate" />
+                <ScalarProperty Name="IsLiquidated" ColumnName="IsLiquidated" />
+                <ScalarProperty Name="ChequeDueDate" ColumnName="ChequeDueDate" />
+                <ScalarProperty Name="Bank" ColumnName="Bank" />
+                <ScalarProperty Name="ChequeNo" ColumnName="ChequeNo" />
+                <ScalarProperty Name="IsCheque" ColumnName="IsCheque" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Reference" ColumnName="Reference" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="IncomeType" ColumnName="IncomeType" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="PaymentMethodId" ColumnName="PaymentMethodId" />
+                <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+                <ScalarProperty Name="ReceiptId" ColumnName="ReceiptId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ReceiptVs">
+            <EntityTypeMapping TypeName="POS_SystemModel.ReceiptV">
+              <MappingFragment StoreEntitySet="ReceiptV">
+                <ScalarProperty Name="PaymentMethod" ColumnName="PaymentMethod" />
+                <ScalarProperty Name="CellNo" ColumnName="CellNo" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Title" ColumnName="Title" />
+                <ScalarProperty Name="AccountCode" ColumnName="AccountCode" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="LiquidDate" ColumnName="LiquidDate" />
+                <ScalarProperty Name="IsLiquidated" ColumnName="IsLiquidated" />
+                <ScalarProperty Name="ChequeDueDate" ColumnName="ChequeDueDate" />
+                <ScalarProperty Name="Bank" ColumnName="Bank" />
+                <ScalarProperty Name="ChequeNo" ColumnName="ChequeNo" />
+                <ScalarProperty Name="IsCheque" ColumnName="IsCheque" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Reference" ColumnName="Reference" />
+                <ScalarProperty Name="Remarks" ColumnName="Remarks" />
+                <ScalarProperty Name="IncomeType" ColumnName="IncomeType" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="PaymentMethodId" ColumnName="PaymentMethodId" />
+                <ScalarProperty Name="AccountId" ColumnName="AccountId" />
+                <ScalarProperty Name="ReceiptId" ColumnName="ReceiptId" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

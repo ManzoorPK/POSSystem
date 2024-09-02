@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition1 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition2 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem1 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.RadListDataItem radListDataItem2 = new Telerik.WinControls.UI.RadListDataItem();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition3 = new Telerik.WinControls.UI.TableViewDefinition();
-            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition4 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition5 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition6 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem3 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.RadListDataItem radListDataItem4 = new Telerik.WinControls.UI.RadListDataItem();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition7 = new Telerik.WinControls.UI.TableViewDefinition();
+            Telerik.WinControls.UI.TableViewDefinition tableViewDefinition8 = new Telerik.WinControls.UI.TableViewDefinition();
             this.lblTitle = new Telerik.WinControls.UI.RadLabel();
             this.dgItems = new Telerik.WinControls.UI.RadGridView();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -64,6 +64,8 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
             this.radGroupBox1 = new Telerik.WinControls.UI.RadGroupBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.ddlWarehouse = new Telerik.WinControls.UI.RadDropDownList();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.ddlPaymentMethod = new Telerik.WinControls.UI.RadDropDownList();
@@ -92,8 +94,6 @@
             this.telerikMetroTheme1 = new Telerik.WinControls.Themes.TelerikMetroTheme();
             this.materialBlueGreyTheme1 = new Telerik.WinControls.Themes.MaterialBlueGreyTheme();
             this.office2010BlueTheme1 = new Telerik.WinControls.Themes.Office2010BlueTheme();
-            this.label14 = new System.Windows.Forms.Label();
-            this.ddlWarehouse = new Telerik.WinControls.UI.RadDropDownList();
             ((System.ComponentModel.ISupportInitialize)(this.lblTitle)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgItems)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgItems.MasterTemplate)).BeginInit();
@@ -114,6 +114,7 @@
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).BeginInit();
             this.radGroupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ddlWarehouse)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlPaymentMethod)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtInvoiceDate)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddItem)).BeginInit();
@@ -131,7 +132,6 @@
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox2)).BeginInit();
             this.radGroupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ddlWarehouse)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this)).BeginInit();
             this.SuspendLayout();
             // 
@@ -161,7 +161,7 @@
             this.dgItems.MasterTemplate.AllowEditRow = false;
             this.dgItems.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             this.dgItems.MasterTemplate.EnableFiltering = true;
-            this.dgItems.MasterTemplate.ViewDefinition = tableViewDefinition1;
+            this.dgItems.MasterTemplate.ViewDefinition = tableViewDefinition5;
             this.dgItems.Name = "dgItems";
             this.dgItems.Size = new System.Drawing.Size(1750, 701);
             this.dgItems.TabIndex = 12;
@@ -236,7 +236,7 @@
             this.dgInvoicePayments.MasterTemplate.AllowEditRow = false;
             this.dgInvoicePayments.MasterTemplate.AutoSizeColumnsMode = Telerik.WinControls.UI.GridViewAutoSizeColumnsMode.Fill;
             this.dgInvoicePayments.MasterTemplate.EnableFiltering = true;
-            this.dgInvoicePayments.MasterTemplate.ViewDefinition = tableViewDefinition2;
+            this.dgInvoicePayments.MasterTemplate.ViewDefinition = tableViewDefinition6;
             this.dgInvoicePayments.Name = "dgInvoicePayments";
             this.dgInvoicePayments.Size = new System.Drawing.Size(388, 425);
             this.dgInvoicePayments.TabIndex = 13;
@@ -543,6 +543,31 @@
             this.radGroupBox1.TabIndex = 76;
             this.radGroupBox1.ThemeName = "TelerikMetroTouch";
             // 
+            // label14
+            // 
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Segoe UI", 10F);
+            this.label14.Location = new System.Drawing.Point(723, 18);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(77, 19);
+            this.label14.TabIndex = 84;
+            this.label14.Text = "Warehouse";
+            // 
+            // ddlWarehouse
+            // 
+            this.ddlWarehouse.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.ddlWarehouse.BackColor = System.Drawing.Color.Transparent;
+            this.ddlWarehouse.DropDownAnimationEnabled = true;
+            this.ddlWarehouse.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
+            this.ddlWarehouse.Font = new System.Drawing.Font("Segoe UI", 12F);
+            this.ddlWarehouse.ForeColor = System.Drawing.Color.Black;
+            this.ddlWarehouse.Location = new System.Drawing.Point(583, 13);
+            this.ddlWarehouse.Name = "ddlWarehouse";
+            this.ddlWarehouse.Size = new System.Drawing.Size(139, 27);
+            this.ddlWarehouse.TabIndex = 83;
+            this.ddlWarehouse.ThemeName = "Office2010Blue";
+            // 
             // label7
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -577,10 +602,10 @@
             this.ddlPaymentMethod.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
             this.ddlPaymentMethod.Font = new System.Drawing.Font("Segoe UI", 12F);
             this.ddlPaymentMethod.ForeColor = System.Drawing.Color.Black;
-            radListDataItem1.Text = "Regular";
-            radListDataItem2.Text = "Whole Sale";
-            this.ddlPaymentMethod.Items.Add(radListDataItem1);
-            this.ddlPaymentMethod.Items.Add(radListDataItem2);
+            radListDataItem3.Text = "Regular";
+            radListDataItem4.Text = "Whole Sale";
+            this.ddlPaymentMethod.Items.Add(radListDataItem3);
+            this.ddlPaymentMethod.Items.Add(radListDataItem4);
             this.ddlPaymentMethod.Location = new System.Drawing.Point(869, 66);
             this.ddlPaymentMethod.Name = "ddlPaymentMethod";
             this.ddlPaymentMethod.Size = new System.Drawing.Size(157, 36);
@@ -676,7 +701,7 @@
             this.ddlProducts.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.ddlProducts.EditorControl.MasterTemplate.EnableGrouping = false;
             this.ddlProducts.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.ddlProducts.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition3;
+            this.ddlProducts.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition7;
             this.ddlProducts.EditorControl.Name = "NestedRadGridView";
             this.ddlProducts.EditorControl.ReadOnly = true;
             this.ddlProducts.EditorControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -855,7 +880,7 @@
             this.ddlCustomer.EditorControl.MasterTemplate.AllowColumnChooser = false;
             this.ddlCustomer.EditorControl.MasterTemplate.EnableGrouping = false;
             this.ddlCustomer.EditorControl.MasterTemplate.ShowFilteringRow = false;
-            this.ddlCustomer.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition4;
+            this.ddlCustomer.EditorControl.MasterTemplate.ViewDefinition = tableViewDefinition8;
             this.ddlCustomer.EditorControl.Name = "NestedRadGridView";
             this.ddlCustomer.EditorControl.ReadOnly = true;
             this.ddlCustomer.EditorControl.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -917,31 +942,6 @@
             this.radGroupBox2.TabIndex = 78;
             this.radGroupBox2.ThemeName = "TelerikMetroTouch";
             // 
-            // label14
-            // 
-            this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.label14.Location = new System.Drawing.Point(723, 18);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(77, 19);
-            this.label14.TabIndex = 84;
-            this.label14.Text = "Warehouse";
-            // 
-            // ddlWarehouse
-            // 
-            this.ddlWarehouse.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.ddlWarehouse.BackColor = System.Drawing.Color.Transparent;
-            this.ddlWarehouse.DropDownAnimationEnabled = true;
-            this.ddlWarehouse.DropDownStyle = Telerik.WinControls.RadDropDownStyle.DropDownList;
-            this.ddlWarehouse.Font = new System.Drawing.Font("Segoe UI", 12F);
-            this.ddlWarehouse.ForeColor = System.Drawing.Color.Black;
-            this.ddlWarehouse.Location = new System.Drawing.Point(583, 13);
-            this.ddlWarehouse.Name = "ddlWarehouse";
-            this.ddlWarehouse.Size = new System.Drawing.Size(139, 27);
-            this.ddlWarehouse.TabIndex = 83;
-            this.ddlWarehouse.ThemeName = "Office2010Blue";
-            // 
             // AddEditPurchaseForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -982,6 +982,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox1)).EndInit();
             this.radGroupBox1.ResumeLayout(false);
             this.radGroupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.ddlWarehouse)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ddlPaymentMethod)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtInvoiceDate)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnAddItem)).EndInit();
@@ -1000,7 +1001,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.radGroupBox2)).EndInit();
             this.radGroupBox2.ResumeLayout(false);
             this.radGroupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ddlWarehouse)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this)).EndInit();
             this.ResumeLayout(false);
 

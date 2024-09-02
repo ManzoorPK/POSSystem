@@ -1,4 +1,5 @@
-﻿using System;
+﻿using POS_System.Model;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -51,7 +52,13 @@ namespace POS_System.Forms
         }
         void LoadInvoices()
         {
-            var _Data = new InvoiceHelper().GetAllInvoices();
+            List<InvoiceV> _Data = null;
+
+            if (AF == null)
+                _Data = new InvoiceHelper().GetAllInvoices();
+            else
+                _Data = new InvoiceHelper().GetAllPurchaseInvoices();
+
             _Data.Insert(0, new Model.InvoiceV { Title = "" });
 
             var obj = (from a in _Data
@@ -63,14 +70,11 @@ namespace POS_System.Forms
                            Code = a.AccountCode,
                            a.Type,
                            Total = Common.GetAsMoneyWithComma(a.FinalTotal),
-                           Searcho = a.InvoiceId.ToString() + " " + a.Title + " " + a.AccountCode,
-                           a.InvoiceType
+                           Searcho = a.InvoiceId.ToString() + " " + a.Title + " " + a.AccountCode
+                          
                        }).ToList();
 
-            if (AF != null)
-                ddlInvoices.DataSource = obj.Where(x => x.InvoiceType == "Purchase Order").ToList();
-            else
-                ddlInvoices.DataSource = obj;
+            ddlInvoices.DataSource = obj;
 
             this.ddlInvoices.AutoFilter = true;
             this.ddlInvoices.DisplayMember = "Title";
@@ -136,7 +140,7 @@ namespace POS_System.Forms
                 }
                 if (AF != null)
                 {
-                    AI.GetItemsToReturn(ids);
+                    AF.GetItemsToReturn(ids);
                     this.Close();
                 }
 

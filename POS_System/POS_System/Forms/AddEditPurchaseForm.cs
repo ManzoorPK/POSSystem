@@ -80,7 +80,7 @@ namespace POS_System.Forms
                 btnReturnWizard.Visible = false;
             }
 
-            if (InvoiceType == "Purchase Order Return")
+            if (InvoiceType == "Purchase Return Invoice")
             {
                 lblTitle.Text = "Return Purchase Order";
                 btnAddPayment.Visible = false;
@@ -695,7 +695,14 @@ namespace POS_System.Forms
                     });
                     //}
                     if (ob.IsReturned == null || ob.IsReturned == false)
-                        new StorewiseQuantityHelper().ReturnQuantity(_ProductId, Convert.ToDecimal(item.Cells[4].Value), InvoiceType);
+                        new WarehouseHelper().SaveEditQuantity(new WarehouseWiseQuantity
+                        {
+                            ProductId = _ProductId,
+                            InvoiceItemId = itm.InvoiceItemId,
+                            Quantity = -Convert.ToDecimal(item.Cells[4].Value),
+                            WarehouseId = Convert.ToInt32(ddlWarehouse.SelectedValue) 
+                        });
+
 
                 }
             }

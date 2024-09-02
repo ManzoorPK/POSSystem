@@ -20,6 +20,8 @@
         <EntityTypeShape EntityType="POS_SystemModel.Invoice" Width="1.5" PointX="8.875" PointY="0.75" />
         <EntityTypeShape EntityType="POS_SystemModel.InvoiceV" Width="1.5" PointX="10.5" PointY="0.75" />
         <EntityTypeShape EntityType="POS_SystemModel.WarehouseWiseQuantity" Width="1.75" PointX="12.125" PointY="6.25" />
+        <EntityTypeShape EntityType="POS_SystemModel.Receipt" Width="1.5" PointX="2.375" PointY="4" />
+        <EntityTypeShape EntityType="POS_SystemModel.ReceiptV" Width="1.5" PointX="4" PointY="5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -167,22 +167,19 @@ namespace POS_System.Forms
         private void radButton1_Click(object sender, EventArgs e)
         {
 
-            if (InvoiceType != "Purchase Order")
-            {
-                AddEditInvoiceForm frm = new AddEditInvoiceForm(this, 0, InvoiceType);
-                frm.MdiParent = this.MdiParent;
-                frm.Show();
-            }
-            else
+            if (InvoiceType.Contains("Purchase"))
             {
                 AddEditPurchaseForm frm = new AddEditPurchaseForm(this, 0, InvoiceType);
                 frm.MdiParent = this.MdiParent;
                 frm.Show();
             }
-
-            //AddEditInvoiceForm frm = new AddEditInvoiceForm(this, 0, InvoiceType);
-            //frm.MdiParent = this.MdiParent;
-            //frm.Show();
+            else
+            {
+                AddEditInvoiceForm frm = new AddEditInvoiceForm(this, 0, InvoiceType);
+                frm.MdiParent = this.MdiParent;
+                frm.Show();
+            }
+            
 
         }
     }

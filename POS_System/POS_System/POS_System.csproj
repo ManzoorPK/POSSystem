@@ -161,6 +161,12 @@
     <Compile Include="Forms\PaymentOptionsList.Designer.cs">
       <DependentUpon>PaymentOptionsList.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\ReceiptList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\ReceiptList.Designer.cs">
+      <DependentUpon>ReceiptList.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\StoreList.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -186,6 +192,7 @@
     <Compile Include="Helpers\AccountHelper.cs" />
     <Compile Include="Helpers\InvoiceHelper.cs" />
     <Compile Include="Helpers\Templates\BottomView.cs" />
+    <Compile Include="Helpers\ReceiptHelper.cs" />
     <Compile Include="Helpers\WarehousHelper.cs" />
     <Compile Include="Helpers\StorewiseQuantityHelper.cs" />
     <Compile Include="Helpers\StoreHelper.cs" />
@@ -232,6 +239,12 @@
       <DependentUpon>POSModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="Model\Product.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Receipt.cs">
+      <DependentUpon>POSModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model\ReceiptV.cs">
       <DependentUpon>POSModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Model\Store.cs">
@@ -297,6 +310,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\PaymentOptionsList.resx">
       <DependentUpon>PaymentOptionsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\ReceiptList.resx">
+      <DependentUpon>ReceiptList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\StoreList.resx">
       <DependentUpon>StoreList.cs</DependentUpon>
