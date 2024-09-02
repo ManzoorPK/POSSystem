@@ -30,23 +30,18 @@ namespace POS_System.Forms
         string InvoiceType;
         InvoicesList IL;
 
-<<<<<<< HEAD
         public AddEditPurchaseForm(InvoicesList iL, int _InvoiceId, string invoiceType)
-=======
-        public AddEditPurchaseForm()
->>>>>>> 098309e356e61a35e52288eb7f7af42ead4f8c0e
         {
             InitializeComponent();
             dtInvoiceDate.Value = DateTime.Now;
             int h = Screen.PrimaryScreen.WorkingArea.Height;
             int w = Screen.PrimaryScreen.WorkingArea.Width;
             this.ClientSize = new System.Drawing.Size(w, h);
-<<<<<<< HEAD
             IL = iL;
             InvoiceID = _InvoiceId;
             InvoiceType = invoiceType;
         }
-        public AddEditPurchaseForm(string _type= "Purchase Order")
+        public AddEditPurchaseForm(string _type = "Purchase Order")
         {
             InitializeComponent();
             dtInvoiceDate.Value = DateTime.Now;
@@ -54,8 +49,6 @@ namespace POS_System.Forms
             int w = Screen.PrimaryScreen.WorkingArea.Width;
             this.ClientSize = new System.Drawing.Size(w, h);
             InvoiceType = _type;
-=======
->>>>>>> 098309e356e61a35e52288eb7f7af42ead4f8c0e
         }
 
         private void radButtonCancel_Click(object sender, EventArgs e)
@@ -70,10 +63,7 @@ namespace POS_System.Forms
             LoadDropdownButtons();
             LoadPaymentMethod();
             LoadInvoiceDetails();
-<<<<<<< HEAD
             LoadWarehouses();
-=======
->>>>>>> 098309e356e61a35e52288eb7f7af42ead4f8c0e
 
             new GridHelper().SetButton(btnAddItem, "add1.png", 30, 30);
             btnAddItem.ImageAlignment = ContentAlignment.MiddleCenter;
@@ -104,15 +94,12 @@ namespace POS_System.Forms
                 LoadInvoiceItems();
         }
 
-<<<<<<< HEAD
         public void LoadWarehouses()
         {
             ddlWarehouse.DataSource = new WarehouseHelper().GetAllWarehoues();
             ddlWarehouse.DisplayMember = "Warehouse1";
             ddlWarehouse.ValueMember = "WarehouseId";
         }
-=======
->>>>>>> 098309e356e61a35e52288eb7f7af42ead4f8c0e
         public void LoadInvoiceItems()
         {
 
@@ -178,10 +165,6 @@ namespace POS_System.Forms
                 });
             }
 
-<<<<<<< HEAD
-=======
-
->>>>>>> 098309e356e61a35e52288eb7f7af42ead4f8c0e
             if (SaveOnlyInvoice == false)
             {
                 //add line item to invoice
@@ -195,17 +178,13 @@ namespace POS_System.Forms
                     StoreId = new StorewiseQuantityHelper().GetAllStoresQuantity(Convert.ToInt32(ddlProducts.SelectedValue)).Take(1).FirstOrDefault().StoreId,
                 });
                 if (!InvoiceType.Contains("Return"))
-<<<<<<< HEAD
                     new WarehouseHelper().SaveEditQuantity(new WarehouseWiseQuantity
                     {
-                         ProductId = Convert.ToInt32(ddlProducts.SelectedValue),
-                         Quantity = Convert.ToDecimal(txtQty.Text),
-                         WarehouseId = Convert.ToInt32(ddlWarehouse.SelectedValue),
-                         InvoiceItemId = item.InvoiceItemId
+                        ProductId = Convert.ToInt32(ddlProducts.SelectedValue),
+                        Quantity = Convert.ToDecimal(txtQty.Text),
+                        WarehouseId = Convert.ToInt32(ddlWarehouse.SelectedValue),
+                        InvoiceItemId = item.InvoiceItemId
                     });
-=======
-                    new StorewiseQuantityHelper().ManageStoreQuantity(Convert.ToInt32(ddlProducts.SelectedValue), Convert.ToDecimal(txtQty.Text));
->>>>>>> 098309e356e61a35e52288eb7f7af42ead4f8c0e
                 //else
                 //    new StorewiseQuantityHelper().ReturnQuantity(Convert.ToInt32(ddlProducts.SelectedValue), Convert.ToDecimal(txtQty.Text), InvoiceType);
             }
@@ -321,7 +300,7 @@ namespace POS_System.Forms
                 ddlCustomer.SelectedValue = Convert.ToInt32(obj.AccountId);
                 this.Text = "Sales Invoice | Inv # :" + obj.InvoiceId.ToString();
                 dtInvoiceDate.Value = Convert.ToDateTime(obj.Date);
-               
+
             }
 
             LoadInvoicePayments();
@@ -383,11 +362,7 @@ namespace POS_System.Forms
         }
         private void button1_Click(object sender, EventArgs e)
         {
-<<<<<<< HEAD
             AddEditAccount frm = new AddEditAccount(this, 0, "Purchase");
-=======
-            AddEditAccount frm = new AddEditAccount(this, 0, "Invoice");
->>>>>>> 098309e356e61a35e52288eb7f7af42ead4f8c0e
             frm.ShowDialog();
         }
         private void button2_Click(object sender, EventArgs e)
@@ -416,17 +391,10 @@ namespace POS_System.Forms
             var obj = new ProductHelper().GetProductById(Id);
             if (obj != null)
             {
-<<<<<<< HEAD
                 //if (ddlInvoiceType.SelectedIndex == 0)
                 //    txtSalePrice.Text = obj.SalePrice == null ? "0" : obj.SalePrice.ToString().Split('.')[0].ToString();
                 //else
                 //    txtSalePrice.Text = obj.WholeSalePrice == null ? "0" : obj.WholeSalePrice.ToString().Split('.')[0].ToString();
-=======
-                if (ddlInvoiceType.SelectedIndex == 0)
-                    txtSalePrice.Text = obj.SalePrice == null ? "0" : obj.SalePrice.ToString().Split('.')[0].ToString();
-                else
-                    txtSalePrice.Text = obj.WholeSalePrice == null ? "0" : obj.WholeSalePrice.ToString().Split('.')[0].ToString();
->>>>>>> 098309e356e61a35e52288eb7f7af42ead4f8c0e
 
                 MinPrice = Convert.ToDecimal(obj.MinSalePrice);
                 _AQty = Convert.ToDecimal(obj.TotalQuantity);
@@ -560,22 +528,14 @@ namespace POS_System.Forms
             }
             if (txtSalePrice.Text == "")
             {
-<<<<<<< HEAD
                 MessageBox.Show("Enter Purchase Price!");
-=======
-                MessageBox.Show("Enter Sale Price!");
->>>>>>> 098309e356e61a35e52288eb7f7af42ead4f8c0e
                 txtSalePrice.Focus();
                 return;
             }
 
             if (txtQty.Text == "")
             {
-<<<<<<< HEAD
                 MessageBox.Show("Enter Purchase Quantity!");
-=======
-                MessageBox.Show("Enter Sale Quantity!");
->>>>>>> 098309e356e61a35e52288eb7f7af42ead4f8c0e
                 txtQty.Focus();
                 return;
             }
@@ -583,7 +543,6 @@ namespace POS_System.Forms
             {
                 if (Convert.ToDecimal(txtQty.Text) == 0)
                 {
-<<<<<<< HEAD
                     MessageBox.Show("Purchase Quantity must be greater than 0");
                     txtQty.Focus();
                     return;
@@ -591,48 +550,12 @@ namespace POS_System.Forms
             }
             if (Convert.ToDecimal(txtSalePrice.Text) > 0)
             {
-                    SaveInvoice();
-                    LoadInvoiceItems();
+                SaveInvoice();
+                LoadInvoiceItems();
             }
             else
             {
                 MessageBox.Show("Purchase Price must be not 0.");
-=======
-                    MessageBox.Show("Sale Quantity must be greater than 0");
-                    txtQty.Focus();
-                    return;
-                }
-                else
-                {
-                    if (Convert.ToDecimal(txtQty.Text) > _AQty)
-                    {
-                        MessageBox.Show("Entred Sale Quantity is greater than available quantity in stores.");
-                        txtQty.Focus();
-                        return;
-                    }
-                }
-            }
-            if (Convert.ToDecimal(txtSalePrice.Text) > 0)
-            {
-                if (Convert.ToDecimal(txtSalePrice.Text) < MinPrice)
-                {
-                    DialogResult dialogResult = MessageBox.Show("Sale Price is less than the Min Sale Price for this item, you want to continue?", "Sale Price", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                    if (dialogResult == DialogResult.Yes)
-                    {
-                        SaveInvoice();
-                        LoadInvoiceItems();
-                    }
-                }
-                else
-                {
-                    SaveInvoice();
-                    LoadInvoiceItems();
-                }
-            }
-            else
-            {
-                MessageBox.Show("Sale Price must be not 0.");
->>>>>>> 098309e356e61a35e52288eb7f7af42ead4f8c0e
                 txtSalePrice.Focus();
             }
         }
@@ -855,10 +778,7 @@ namespace POS_System.Forms
                     var obj = new InvoiceItemHelper().DeleteInvoiceItem(_Id, InvoiceType);
                     if (obj == true)
                     {
-<<<<<<< HEAD
                         var d = new WarehouseHelper().DeleteWarehouseQuantity(_Id);
-=======
->>>>>>> 098309e356e61a35e52288eb7f7af42ead4f8c0e
                         LoadInvoiceDetails();
                         LoadInvoiceItems();
                         LoadInvoicePayments();
@@ -872,13 +792,10 @@ namespace POS_System.Forms
 
             }
         }
-<<<<<<< HEAD
 
         private void dgItems_ColumnWidthChanging(object sender, ColumnWidthChangingEventArgs e)
         {
 
         }
-=======
->>>>>>> 098309e356e61a35e52288eb7f7af42ead4f8c0e
     }
 }

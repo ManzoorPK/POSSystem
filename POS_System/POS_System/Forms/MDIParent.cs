@@ -1,5 +1,5 @@
 ﻿
- 
+
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -81,7 +81,7 @@ namespace POS_System
             SetToolBarImage(toolBarCustomers, "customers.png", "View All Customers");
             SetToolBarImage(toolbarViewReturnInvoices, "returnInvoice.png", "View Return Invoices");
             SetToolBarImage(toolbarAddnewReturnInvoice, "addreturninvoice.png", "Add Return Invoice");
-            
+
             //LoadPO();
             LoadSuppliers();
             LoadCustomers();
@@ -121,84 +121,84 @@ namespace POS_System
         }
         void LoadSuppliers()
         {
-        //    var cust = new SupplierHelper().GetAllSuppliers();
-        //    cust.Insert(0, new SupplierV { Address = "", CellNo = "", ContactPerson = "", Note = "", PhoneNo = "", Supplier = "", SupplierId = 0 });
-        //    ddlSupLedgers.DataSource = cust;
-        //    this.ddlSupLedgers.AutoFilter = true;
-        //    this.ddlSupLedgers.ValueMember = "SupplierId";
-        //    this.ddlSupLedgers.DisplayMember = "Supplier";
+            //    var cust = new SupplierHelper().GetAllSuppliers();
+            //    cust.Insert(0, new SupplierV { Address = "", CellNo = "", ContactPerson = "", Note = "", PhoneNo = "", Supplier = "", SupplierId = 0 });
+            //    ddlSupLedgers.DataSource = cust;
+            //    this.ddlSupLedgers.AutoFilter = true;
+            //    this.ddlSupLedgers.ValueMember = "SupplierId";
+            //    this.ddlSupLedgers.DisplayMember = "Supplier";
 
-        //    FilterDescriptor filter = new FilterDescriptor();
-        //    filter.PropertyName = this.ddlSupLedgers.DisplayMember;
-        //    filter.Operator = FilterOperator.Contains;
-        //    this.ddlSupLedgers.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
-        //    //this.ddlSuppliers.AutoSizeDropDownToBestFit = true;
+            //    FilterDescriptor filter = new FilterDescriptor();
+            //    filter.PropertyName = this.ddlSupLedgers.DisplayMember;
+            //    filter.Operator = FilterOperator.Contains;
+            //    this.ddlSupLedgers.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
+            //    //this.ddlSuppliers.AutoSizeDropDownToBestFit = true;
 
-        //    foreach (var col in this.ddlSupLedgers.Columns)
-        //    {
-        //        col.Width = 150;
-        //        col.TextAlignment = ContentAlignment.MiddleLeft;
-        //        col.HeaderTextAlignment = ContentAlignment.MiddleLeft;
-        //    }
+            //    foreach (var col in this.ddlSupLedgers.Columns)
+            //    {
+            //        col.Width = 150;
+            //        col.TextAlignment = ContentAlignment.MiddleLeft;
+            //        col.HeaderTextAlignment = ContentAlignment.MiddleLeft;
+            //    }
 
-        //    ddlSupLedgers.Columns[0].IsVisible = false;
-        //    ddlSupLedgers.Columns[6].IsVisible = false;
-        //    ddlSupLedgers.Columns[8].IsVisible = false;
-        //    ddlSupLedgers.Columns[1].HeaderText = "Name";
-        //    ddlSupLedgers.Columns[2].HeaderText = "Ph #";
-        //    ddlSupLedgers.Columns[3].HeaderText = "Mobile #";
-        //    ddlSupLedgers.Columns[5].HeaderText = "Contact Person";
-        //    ddlSupLedgers.Columns[7].HeaderText = "Closing Balance";
-        //    ddlSupLedgers.Columns[7].FormatString = Common.StringFormat();
-        //    ddlSupLedgers.Columns[2].Width = 80;
-        //    ddlSupLedgers.Columns[3].Width = 80;
+            //    ddlSupLedgers.Columns[0].IsVisible = false;
+            //    ddlSupLedgers.Columns[6].IsVisible = false;
+            //    ddlSupLedgers.Columns[8].IsVisible = false;
+            //    ddlSupLedgers.Columns[1].HeaderText = "Name";
+            //    ddlSupLedgers.Columns[2].HeaderText = "Ph #";
+            //    ddlSupLedgers.Columns[3].HeaderText = "Mobile #";
+            //    ddlSupLedgers.Columns[5].HeaderText = "Contact Person";
+            //    ddlSupLedgers.Columns[7].HeaderText = "Closing Balance";
+            //    ddlSupLedgers.Columns[7].FormatString = Common.StringFormat();
+            //    ddlSupLedgers.Columns[2].Width = 80;
+            //    ddlSupLedgers.Columns[3].Width = 80;
 
-        //    ddlSupLedgers.SelectedValue = 0;
-        //}
+            //    ddlSupLedgers.SelectedValue = 0;
+            //}
 
-        //void LoadPO()
-        //{
-        //    var _Data = new POHelper().GetAllPOs();
-        //    _Data.Insert(0, new Models.PurchaseOrderV { POID = 0 });
+            //void LoadPO()
+            //{
+            //    var _Data = new POHelper().GetAllPOs();
+            //    _Data.Insert(0, new Models.PurchaseOrderV { POID = 0 });
 
-        //    var obj = (from a in  _Data
-        //               select new
-        //               {
-        //                   a.POID,
-        //                   Date = Convert.ToDateTime(a.Date).ToString("dd/MM/yyyy"),
-        //                   a.Supplier,
-        //                   a.ReferenceNo,
-        //                   Total = "Rs. " + Common.GetAsMoneyWithComma(a.TotalAmount).ToString(),
-        //                   Paid = "Rs. " + Common.GetAsMoneyWithComma(a.TotalPaid).ToString(),
-        //                   Balance = "Rs. " + Common.GetAsMoneyWithComma(a.Net),
-        //                   Searcho = a.POID.ToString() + " " + a.Supplier
-        //               }).ToList();
+            //    var obj = (from a in  _Data
+            //               select new
+            //               {
+            //                   a.POID,
+            //                   Date = Convert.ToDateTime(a.Date).ToString("dd/MM/yyyy"),
+            //                   a.Supplier,
+            //                   a.ReferenceNo,
+            //                   Total = "Rs. " + Common.GetAsMoneyWithComma(a.TotalAmount).ToString(),
+            //                   Paid = "Rs. " + Common.GetAsMoneyWithComma(a.TotalPaid).ToString(),
+            //                   Balance = "Rs. " + Common.GetAsMoneyWithComma(a.Net),
+            //                   Searcho = a.POID.ToString() + " " + a.Supplier
+            //               }).ToList();
 
-        //    ddlSearchPO.DataSource = obj;
-        //    this.ddlSearchPO.AutoFilter = true;
-        //    this.ddlSearchPO.ValueMember = "POID";
-        //    this.ddlSearchPO.DisplayMember = "Supplier";
+            //    ddlSearchPO.DataSource = obj;
+            //    this.ddlSearchPO.AutoFilter = true;
+            //    this.ddlSearchPO.ValueMember = "POID";
+            //    this.ddlSearchPO.DisplayMember = "Supplier";
 
-        //    FilterDescriptor filter = new FilterDescriptor();
-        //    filter.PropertyName = "Searcho"; //this.ddlSearchPO.DisplayMember;
-        //    filter.Operator = FilterOperator.Contains;
-        //    this.ddlSearchPO.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
+            //    FilterDescriptor filter = new FilterDescriptor();
+            //    filter.PropertyName = "Searcho"; //this.ddlSearchPO.DisplayMember;
+            //    filter.Operator = FilterOperator.Contains;
+            //    this.ddlSearchPO.EditorControl.MasterTemplate.FilterDescriptors.Add(filter);
 
 
-        //    foreach (var col in this.ddlSearchPO.Columns)
-        //    {
-        //        col.Width = 80;
-        //        col.TextAlignment = ContentAlignment.MiddleLeft;
-        //        col.HeaderTextAlignment = ContentAlignment.MiddleLeft;
-        //    }
-           
-        //    ddlSearchPO.Columns[0].HeaderText = "PO #";
-        //    ddlSearchPO.Columns[3].HeaderText = "Ref #";
+            //    foreach (var col in this.ddlSearchPO.Columns)
+            //    {
+            //        col.Width = 80;
+            //        col.TextAlignment = ContentAlignment.MiddleLeft;
+            //        col.HeaderTextAlignment = ContentAlignment.MiddleLeft;
+            //    }
 
-        //    ddlSearchPO.Columns[2].Width = 170;
-        //    ddlSearchPO.Columns[7].IsVisible = false;
+            //    ddlSearchPO.Columns[0].HeaderText = "PO #";
+            //    ddlSearchPO.Columns[3].HeaderText = "Ref #";
 
-        //    ddlSearchPO.SelectedValue = 0;
+            //    ddlSearchPO.Columns[2].Width = 170;
+            //    ddlSearchPO.Columns[7].IsVisible = false;
+
+            //    ddlSearchPO.SelectedValue = 0;
         }
 
         void LoadInvoices()
@@ -284,12 +284,12 @@ namespace POS_System
 
         private void radRibbonBarGroup16_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void radButtonElementPOLedger_Click(object sender, EventArgs e)
         {
-             
+
         }
 
         private void radMenuItem1_Click(object sender, EventArgs e)
@@ -417,12 +417,12 @@ namespace POS_System
 
         private void ddlSearchPO_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void ddlSearchPO_KeyUp(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 //AddEditPO frm = new AddEditPO(null, Convert.ToInt32(ddlSearchPO.SelectedValue),this);
                 //frm.MdiParent = this;
@@ -565,7 +565,7 @@ namespace POS_System
 
         private void menuWarehouse_Click(object sender, EventArgs e)
         {
-            WarehouseList frm = new WarehouseList();    
+            WarehouseList frm = new WarehouseList();
             frm.MdiParent = this;
             frm.Show();
         }
@@ -573,16 +573,6 @@ namespace POS_System
         private void menuSaleInvoices_Click(object sender, EventArgs e)
         {
             InvoicesList frm = new InvoicesList("Sales Invoice");
-<<<<<<< HEAD
-=======
-            frm.MdiParent = this;
-            frm.Show();
-        }
-
-        private void menuSalesInvoice_Click(object sender, EventArgs e)
-        {
-            InvoicesList frm = new InvoicesList("Sales Return Invoice");
->>>>>>> 098309e356e61a35e52288eb7f7af42ead4f8c0e
             frm.MdiParent = this;
             frm.Show();
         }

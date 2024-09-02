@@ -127,9 +127,9 @@ namespace POS_System.Forms
 
                 if (InvoiceType != "Purchase Order")
                 {
-                    AddEditInvoiceForm frm = new AddEditInvoiceForm(this, _Id, InvoiceType);
-                    frm.MdiParent = this.MdiParent;
-                    frm.Show();
+                    AddEditInvoiceForm frm1 = new AddEditInvoiceForm(this, _Id, InvoiceType);
+                    frm1.MdiParent = this.MdiParent;
+                    frm1.Show();
                 }
                 else
                 {
@@ -138,9 +138,9 @@ namespace POS_System.Forms
                     frm.Show();
                 }
 
-                AddEditInvoiceForm frm = new AddEditInvoiceForm(this, _Id, InvoiceType);
-                frm.MdiParent = this.MdiParent;
-                frm.Show();
+                //AddEditInvoiceForm frm = new AddEditInvoiceForm(this, _Id, InvoiceType);
+                //frm.MdiParent = this.MdiParent;
+                //frm.Show();
 
             }
 
@@ -180,9 +180,9 @@ namespace POS_System.Forms
                 frm.Show();
             }
 
-            AddEditInvoiceForm frm = new AddEditInvoiceForm(this, 0, InvoiceType);
-            frm.MdiParent = this.MdiParent;
-            frm.Show();
+            //AddEditInvoiceForm frm = new AddEditInvoiceForm(this, 0, InvoiceType);
+            //frm.MdiParent = this.MdiParent;
+            //frm.Show();
 
         }
     }

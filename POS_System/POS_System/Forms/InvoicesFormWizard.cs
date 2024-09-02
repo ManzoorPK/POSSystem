@@ -16,7 +16,6 @@ namespace POS_System.Forms
     public partial class InvoicesFormWizard : Telerik.WinControls.UI.RadForm
     {
         AddEditInvoiceForm AI;
-<<<<<<< HEAD
         AddEditPurchaseForm AF;
         public InvoicesFormWizard(AddEditInvoiceForm ai)
         {
@@ -28,15 +27,6 @@ namespace POS_System.Forms
             InitializeComponent();
             AF = af;
         }
-=======
-
-        public InvoicesFormWizard(AddEditInvoiceForm ai)
-        {
-            InitializeComponent();
-            AI = ai;    
-        }
-
->>>>>>> 098309e356e61a35e52288eb7f7af42ead4f8c0e
         private void radButton2_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -73,7 +63,6 @@ namespace POS_System.Forms
                            Code = a.AccountCode,
                            a.Type,
                            Total = Common.GetAsMoneyWithComma(a.FinalTotal),
-<<<<<<< HEAD
                            Searcho = a.InvoiceId.ToString() + " " + a.Title + " " + a.AccountCode,
                            a.InvoiceType
                        }).ToList();
@@ -83,12 +72,6 @@ namespace POS_System.Forms
             else
                 ddlInvoices.DataSource = obj;
 
-=======
-                           Searcho = a.InvoiceId.ToString() + " " + a.Title + " " + a.AccountCode
-                       }).ToList();
-
-            ddlInvoices.DataSource = obj;
->>>>>>> 098309e356e61a35e52288eb7f7af42ead4f8c0e
             this.ddlInvoices.AutoFilter = true;
             this.ddlInvoices.DisplayMember = "Title";
             this.ddlInvoices.ValueMember = "InvoiceId";
@@ -106,11 +89,7 @@ namespace POS_System.Forms
 
             ddlInvoices.Columns[6].IsVisible = false;
             ddlInvoices.Columns[0].HeaderText = "Inv #";
-<<<<<<< HEAD
             ddlInvoices.Columns[3].HeaderText = "Title";
-=======
-            ddlInvoices.Columns[3].HeaderText = "Customer";
->>>>>>> 098309e356e61a35e52288eb7f7af42ead4f8c0e
         }
 
         private void InvoicesFormWizard_Load(object sender, EventArgs e)
@@ -150,7 +129,6 @@ namespace POS_System.Forms
             }
             else
             {
-<<<<<<< HEAD
                 if (AI != null)
                 {
                     AI.GetItemsToReturn(ids);
@@ -162,10 +140,6 @@ namespace POS_System.Forms
                     this.Close();
                 }
 
-=======
-                AI.GetItemsToReturn(ids);
-                this.Close();   
->>>>>>> 098309e356e61a35e52288eb7f7af42ead4f8c0e
             }
         }
     }

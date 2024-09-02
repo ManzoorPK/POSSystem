@@ -37,7 +37,7 @@ public class InvoiceHelper
     public List<InvoiceV> GetAllSalesReturnInvoices()
     {
         var lst = _Entity.InvoiceVs.Where(x => x.InvoiceType == "Sales Return Invoice").ToList();
-<<<<<<< HEAD
+ 
         return lst;
     }
 
@@ -49,8 +49,6 @@ public class InvoiceHelper
     public List<InvoiceV> GetAllPurchaseInvoices()
     {
         var lst = _Entity.InvoiceVs.Where(x => x.InvoiceType == "Purchase Order").ToList();
-=======
->>>>>>> 098309e356e61a35e52288eb7f7af42ead4f8c0e
         return lst;
     }
     public bool DeleteInvoice(int Id)

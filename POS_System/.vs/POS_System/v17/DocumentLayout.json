@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "D:\\My Products\\POSSystem\\POS_System\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{794BBF90-EAAA-497F-AC8C-802B3A8827E4}|POS_System\\POS_System.csproj|D:\\My Products\\POSSystem\\POS_System\\pos_system\\forms\\invoicesformwizard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{794BBF90-EAAA-497F-AC8C-802B3A8827E4}|POS_System\\POS_System.csproj|solutionrelative:pos_system\\forms\\invoicesformwizard.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{794BBF90-EAAA-497F-AC8C-802B3A8827E4}|POS_System\\POS_System.csproj|d:\\my products\\possystem\\pos_system\\pos_system\\forms\\mdiparent.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{794BBF90-EAAA-497F-AC8C-802B3A8827E4}|POS_System\\POS_System.csproj|solutionrelative:pos_system\\forms\\mdiparent.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{794BBF90-EAAA-497F-AC8C-802B3A8827E4}|POS_System\\POS_System.csproj|d:\\my products\\possystem\\pos_system\\pos_system\\forms\\invoiceslist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{794BBF90-EAAA-497F-AC8C-802B3A8827E4}|POS_System\\POS_System.csproj|solutionrelative:pos_system\\forms\\invoiceslist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{794BBF90-EAAA-497F-AC8C-802B3A8827E4}|POS_System\\POS_System.csproj|d:\\my products\\possystem\\pos_system\\pos_system\\forms\\mdiparent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{794BBF90-EAAA-497F-AC8C-802B3A8827E4}|POS_System\\POS_System.csproj|solutionrelative:pos_system\\forms\\mdiparent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{794BBF90-EAAA-497F-AC8C-802B3A8827E4}|POS_System\\POS_System.csproj|d:\\my products\\possystem\\pos_system\\pos_system\\forms\\mdiparent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{794BBF90-EAAA-497F-AC8C-802B3A8827E4}|POS_System\\POS_System.csproj|solutionrelative:pos_system\\forms\\mdiparent.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 18,
+          "SelectedChildIndex": 17,
           "Children": [
             {
               "$type": "Bookmark",
@@ -90,29 +94,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "InvoicesList.cs",
-              "DocumentMoniker": "D:\\My Products\\POSSystem\\POS_System\\POS_System\\Forms\\InvoicesList.cs",
-              "RelativeDocumentMoniker": "POS_System\\Forms\\InvoicesList.cs",
-              "ToolTip": "D:\\My Products\\POSSystem\\POS_System\\POS_System\\Forms\\InvoicesList.cs",
-              "RelativeToolTip": "POS_System\\Forms\\InvoicesList.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAACkAAAAAAAAA",
+              "DocumentIndex": 0,
+              "Title": "MDIParent.Designer.cs",
+              "DocumentMoniker": "D:\\My Products\\POSSystem\\POS_System\\POS_System\\Forms\\MDIParent.Designer.cs",
+              "RelativeDocumentMoniker": "POS_System\\Forms\\MDIParent.Designer.cs",
+              "ToolTip": "D:\\My Products\\POSSystem\\POS_System\\POS_System\\Forms\\MDIParent.Designer.cs",
+              "RelativeToolTip": "POS_System\\Forms\\MDIParent.Designer.cs",
+              "ViewState": "AQIAAJsDAAAAAAAAAADwv0YEAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-02T05:30:01.474Z",
+              "WhenOpened": "2024-09-02T05:57:04.523Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "InvoicesFormWizard.cs",
-              "DocumentMoniker": "D:\\My Products\\POSSystem\\POS_System\\POS_System\\Forms\\InvoicesFormWizard.cs",
-              "RelativeDocumentMoniker": "POS_System\\Forms\\InvoicesFormWizard.cs",
-              "ToolTip": "D:\\My Products\\POSSystem\\POS_System\\POS_System\\Forms\\InvoicesFormWizard.cs",
-              "RelativeToolTip": "POS_System\\Forms\\InvoicesFormWizard.cs",
-              "ViewState": "AQIAAEcAAAAAAAAAAAAqwHAAAAAAAAAA",
+              "DocumentIndex": 2,
+              "Title": "MDIParent.cs",
+              "DocumentMoniker": "D:\\My Products\\POSSystem\\POS_System\\POS_System\\Forms\\MDIParent.cs",
+              "RelativeDocumentMoniker": "POS_System\\Forms\\MDIParent.cs",
+              "ToolTip": "D:\\My Products\\POSSystem\\POS_System\\POS_System\\Forms\\MDIParent.cs",
+              "RelativeToolTip": "POS_System\\Forms\\MDIParent.cs",
+              "ViewState": "AQIAADUCAAAAAAAAAADwv1kCAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-02T05:29:50.409Z",
+              "WhenOpened": "2024-09-02T05:53:23.298Z",
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MDIParent.cs [Design]",
+              "DocumentMoniker": "D:\\My Products\\POSSystem\\POS_System\\POS_System\\Forms\\MDIParent.cs",
+              "RelativeDocumentMoniker": "POS_System\\Forms\\MDIParent.cs",
+              "ToolTip": "D:\\My Products\\POSSystem\\POS_System\\POS_System\\Forms\\MDIParent.cs [Design]",
+              "RelativeToolTip": "POS_System\\Forms\\MDIParent.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-02T05:53:11.923Z",
+              "EditorCaption": " [Design]"
             }
           ]
         },
