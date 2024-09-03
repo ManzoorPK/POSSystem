@@ -113,6 +113,12 @@
     <Compile Include="Forms\AddEditPurchaseForm.Designer.cs">
       <DependentUpon>AddEditPurchaseForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\AddEditReceiptForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddEditReceiptForm.Designer.cs">
+      <DependentUpon>AddEditReceiptForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\AddEditStore.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -286,6 +292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddEditPurchaseForm.resx">
       <DependentUpon>AddEditPurchaseForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddEditReceiptForm.resx">
+      <DependentUpon>AddEditReceiptForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\AddEditStore.resx">
       <DependentUpon>AddEditStore.cs</DependentUpon>

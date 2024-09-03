@@ -1,14 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "D:\\My Products\\POSSystem\\POS_System\\",
+  "WorkspaceRootPath": "F:\\My Products\\POSSystem\\POS_System\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{794BBF90-EAAA-497F-AC8C-802B3A8827E4}|POS_System\\POS_System.csproj|d:\\my products\\possystem\\pos_system\\pos_system\\forms\\receiptlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{794BBF90-EAAA-497F-AC8C-802B3A8827E4}|POS_System\\POS_System.csproj|solutionrelative:pos_system\\forms\\receiptlist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{794BBF90-EAAA-497F-AC8C-802B3A8827E4}|POS_System\\POS_System.csproj|f:\\my products\\possystem\\pos_system\\pos_system\\forms\\addeditreceiptform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{794BBF90-EAAA-497F-AC8C-802B3A8827E4}|POS_System\\POS_System.csproj|solutionrelative:pos_system\\forms\\addeditreceiptform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{794BBF90-EAAA-497F-AC8C-802B3A8827E4}|POS_System\\POS_System.csproj|d:\\my products\\possystem\\pos_system\\pos_system\\forms\\storelist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{794BBF90-EAAA-497F-AC8C-802B3A8827E4}|POS_System\\POS_System.csproj|solutionrelative:pos_system\\forms\\storelist.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{794BBF90-EAAA-497F-AC8C-802B3A8827E4}|POS_System\\POS_System.csproj|f:\\my products\\possystem\\pos_system\\pos_system\\forms\\addeditinvoiceform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{794BBF90-EAAA-497F-AC8C-802B3A8827E4}|POS_System\\POS_System.csproj|solutionrelative:pos_system\\forms\\addeditinvoiceform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{794BBF90-EAAA-497F-AC8C-802B3A8827E4}|POS_System\\POS_System.csproj|f:\\my products\\possystem\\pos_system\\pos_system\\forms\\addeditreceiptform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{794BBF90-EAAA-497F-AC8C-802B3A8827E4}|POS_System\\POS_System.csproj|solutionrelative:pos_system\\forms\\addeditreceiptform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,110 +22,44 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 18,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{65ddf8c3-8f89-4077-a6c6-dbb8853aab13}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:1:0:{65ddf8c3-8f89-4077-a6c6-dbb8853aab13}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:14:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:15:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:16:0:{2456bd12-ecf7-4988-a4a6-67d49173f565}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{0ad07096-bba9-4900-a651-0598d26f6d24}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:129:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:131:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:135:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:129:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:130:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:132:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:133:0:{1fc202d4-d401-403c-9834-5b218574bb67}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:131:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "StoreList.cs",
-              "DocumentMoniker": "D:\\My Products\\POSSystem\\POS_System\\POS_System\\Forms\\StoreList.cs",
-              "RelativeDocumentMoniker": "POS_System\\Forms\\StoreList.cs",
-              "ToolTip": "D:\\My Products\\POSSystem\\POS_System\\POS_System\\Forms\\StoreList.cs",
-              "RelativeToolTip": "POS_System\\Forms\\StoreList.cs",
-              "ViewState": "AQIAABsAAAAAAAAAAAAowCgAAAAkAAAA",
+              "Title": "AddEditInvoiceForm.cs [Design]",
+              "DocumentMoniker": "F:\\My Products\\POSSystem\\POS_System\\POS_System\\Forms\\AddEditInvoiceForm.cs",
+              "RelativeDocumentMoniker": "POS_System\\Forms\\AddEditInvoiceForm.cs",
+              "ToolTip": "F:\\My Products\\POSSystem\\POS_System\\POS_System\\Forms\\AddEditInvoiceForm.cs [Design]",
+              "RelativeToolTip": "POS_System\\Forms\\AddEditInvoiceForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-02T09:06:40.273Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-02T10:50:12.708Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "ReceiptList.cs [Design]",
-              "DocumentMoniker": "D:\\My Products\\POSSystem\\POS_System\\POS_System\\Forms\\ReceiptList.cs",
-              "RelativeDocumentMoniker": "POS_System\\Forms\\ReceiptList.cs",
-              "ToolTip": "D:\\My Products\\POSSystem\\POS_System\\POS_System\\Forms\\ReceiptList.cs [Design]",
-              "RelativeToolTip": "POS_System\\Forms\\ReceiptList.cs [Design]",
+              "Title": "AddEditReceiptForm.cs [Design]",
+              "DocumentMoniker": "F:\\My Products\\POSSystem\\POS_System\\POS_System\\Forms\\AddEditReceiptForm.cs",
+              "RelativeDocumentMoniker": "POS_System\\Forms\\AddEditReceiptForm.cs",
+              "ToolTip": "F:\\My Products\\POSSystem\\POS_System\\POS_System\\Forms\\AddEditReceiptForm.cs [Design]",
+              "RelativeToolTip": "POS_System\\Forms\\AddEditReceiptForm.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-02T09:05:08.1Z",
+              "WhenOpened": "2024-09-02T10:41:56.557Z",
               "EditorCaption": " [Design]"
-            }
-          ]
-        },
-        {
-          "DockedWidth": 200,
-          "SelectedChildIndex": -1,
-          "Children": [
+            },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AddEditReceiptForm.cs",
+              "DocumentMoniker": "F:\\My Products\\POSSystem\\POS_System\\POS_System\\Forms\\AddEditReceiptForm.cs",
+              "RelativeDocumentMoniker": "POS_System\\Forms\\AddEditReceiptForm.cs",
+              "ToolTip": "F:\\My Products\\POSSystem\\POS_System\\POS_System\\Forms\\AddEditReceiptForm.cs",
+              "RelativeToolTip": "POS_System\\Forms\\AddEditReceiptForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-02T10:41:51.377Z",
+              "EditorCaption": ""
             }
           ]
         }

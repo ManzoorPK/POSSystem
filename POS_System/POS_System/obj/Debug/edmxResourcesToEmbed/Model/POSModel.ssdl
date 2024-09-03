@@ -98,6 +98,26 @@
     <Property Name="Picture" Type="varbinary(max)" />
     <Property Name="TotalQuantity" Type="decimal" Precision="18" Scale="2" StoreGeneratedPattern="Computed" />
   </EntityType>
+  <EntityType Name="Receipts">
+    <Key>
+      <PropertyRef Name="ReceiptId" />
+    </Key>
+    <Property Name="ReceiptId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="AccountId" Type="int" />
+    <Property Name="PaymentMethodId" Type="int" />
+    <Property Name="Amount" Type="money" />
+    <Property Name="IncomeType" Type="nvarchar" MaxLength="400" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="500" />
+    <Property Name="Reference" Type="nvarchar" MaxLength="150" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="IsCheque" Type="bit" />
+    <Property Name="ChequeNo" Type="nvarchar" MaxLength="150" />
+    <Property Name="Bank" Type="nvarchar" MaxLength="500" />
+    <Property Name="ChequeDueDate" Type="datetime" />
+    <Property Name="IsLiquidated" Type="bit" />
+    <Property Name="LiquidDate" Type="datetime" />
+    <Property Name="Type" Type="nvarchar" MaxLength="150" />
+  </EntityType>
   <EntityType Name="Store">
     <Key>
       <PropertyRef Name="StoreId" />
@@ -210,6 +230,33 @@ warning 6002: The table/view 'POS_System.dbo.InvoiceV' does not have a primary k
     <Property Name="InvoiceType" Type="nvarchar" MaxLength="50" />
   </EntityType>
   <!--Errors Found During Generation:
+warning 6002: The table/view 'POS_System.dbo.ReceiptV' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="ReceiptV">
+    <Key>
+      <PropertyRef Name="ReceiptId" />
+    </Key>
+    <Property Name="ReceiptId" Type="int" Nullable="false" />
+    <Property Name="AccountId" Type="int" />
+    <Property Name="PaymentMethodId" Type="int" />
+    <Property Name="Amount" Type="money" />
+    <Property Name="IncomeType" Type="nvarchar" MaxLength="400" />
+    <Property Name="Remarks" Type="nvarchar" MaxLength="500" />
+    <Property Name="Reference" Type="nvarchar" MaxLength="150" />
+    <Property Name="Date" Type="datetime" />
+    <Property Name="IsCheque" Type="bit" />
+    <Property Name="ChequeNo" Type="nvarchar" MaxLength="150" />
+    <Property Name="Bank" Type="nvarchar" MaxLength="500" />
+    <Property Name="ChequeDueDate" Type="datetime" />
+    <Property Name="IsLiquidated" Type="bit" />
+    <Property Name="LiquidDate" Type="datetime" />
+    <Property Name="Type" Type="nvarchar" MaxLength="150" />
+    <Property Name="AccountCode" Type="nvarchar" MaxLength="50" />
+    <Property Name="Title" Type="nvarchar" MaxLength="500" />
+    <Property Name="Email" Type="nvarchar" MaxLength="150" />
+    <Property Name="CellNo" Type="nvarchar" MaxLength="150" />
+    <Property Name="PaymentMethod" Type="nvarchar" MaxLength="300" />
+  </EntityType>
+  <!--Errors Found During Generation:
 warning 6002: The table/view 'POS_System.dbo.StorewiseQuantityV' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
   <EntityType Name="StorewiseQuantityV">
     <Key>
@@ -233,6 +280,7 @@ warning 6002: The table/view 'POS_System.dbo.StorewiseQuantityV' does not have a
     <EntitySet Name="InvoicePayments" EntityType="Self.InvoicePayments" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PaymentOptions" EntityType="Self.PaymentOptions" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Receipts" EntityType="Self.Receipts" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Store" EntityType="Self.Store" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="StorewiseQuantity" EntityType="Self.StorewiseQuantity" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Warehouse" EntityType="Self.Warehouse" Schema="dbo" store:Type="Tables" />
@@ -296,6 +344,30 @@ warning 6002: The table/view 'POS_System.dbo.StorewiseQuantityV' does not have a
     [InvoiceV].[FinalTotal] AS [FinalTotal], 
     [InvoiceV].[InvoiceType] AS [InvoiceType]
     FROM [dbo].[InvoiceV] AS [InvoiceV]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ReceiptV" EntityType="Self.ReceiptV" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [ReceiptV].[ReceiptId] AS [ReceiptId], 
+    [ReceiptV].[AccountId] AS [AccountId], 
+    [ReceiptV].[PaymentMethodId] AS [PaymentMethodId], 
+    [ReceiptV].[Amount] AS [Amount], 
+    [ReceiptV].[IncomeType] AS [IncomeType], 
+    [ReceiptV].[Remarks] AS [Remarks], 
+    [ReceiptV].[Reference] AS [Reference], 
+    [ReceiptV].[Date] AS [Date], 
+    [ReceiptV].[IsCheque] AS [IsCheque], 
+    [ReceiptV].[ChequeNo] AS [ChequeNo], 
+    [ReceiptV].[Bank] AS [Bank], 
+    [ReceiptV].[ChequeDueDate] AS [ChequeDueDate], 
+    [ReceiptV].[IsLiquidated] AS [IsLiquidated], 
+    [ReceiptV].[LiquidDate] AS [LiquidDate], 
+    [ReceiptV].[Type] AS [Type], 
+    [ReceiptV].[AccountCode] AS [AccountCode], 
+    [ReceiptV].[Title] AS [Title], 
+    [ReceiptV].[Email] AS [Email], 
+    [ReceiptV].[CellNo] AS [CellNo], 
+    [ReceiptV].[PaymentMethod] AS [PaymentMethod]
+    FROM [dbo].[ReceiptV] AS [ReceiptV]</DefiningQuery>
     </EntitySet>
     <EntitySet Name="StorewiseQuantityV" EntityType="Self.StorewiseQuantityV" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 

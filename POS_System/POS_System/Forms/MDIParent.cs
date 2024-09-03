@@ -598,5 +598,12 @@ namespace POS_System
             frm.Show();
 
         }
+
+        private void radMenuItem9_Click(object sender, EventArgs e)
+        {
+            ReceiptList frm = new ReceiptList();
+            frm.MdiParent = this;
+            frm.Show();
+        }
     }
 }

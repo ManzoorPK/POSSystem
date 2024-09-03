@@ -36,6 +36,8 @@
     <EntitySet Name="Invoices" EntityType="POS_SystemModel.Invoice" />
     <EntitySet Name="InvoiceVs" EntityType="POS_SystemModel.InvoiceV" />
     <EntitySet Name="WarehouseWiseQuantities" EntityType="POS_SystemModel.WarehouseWiseQuantity" />
+    <EntitySet Name="Receipts" EntityType="POS_SystemModel.Receipt" />
+    <EntitySet Name="ReceiptVs" EntityType="POS_SystemModel.ReceiptV" />
   </EntityContainer>
   <EntityType Name="Category">
     <Key>
@@ -233,5 +235,50 @@
     <Property Name="ProductId" Type="Int32" />
     <Property Name="Quantity" Type="Decimal" Precision="18" Scale="2" />
     <Property Name="InvoiceItemId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Receipt">
+    <Key>
+      <PropertyRef Name="ReceiptId" />
+    </Key>
+    <Property Name="ReceiptId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="AccountId" Type="Int32" />
+    <Property Name="PaymentMethodId" Type="Int32" />
+    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="IncomeType" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Reference" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="IsCheque" Type="Boolean" />
+    <Property Name="ChequeNo" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Bank" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ChequeDueDate" Type="DateTime" Precision="3" />
+    <Property Name="IsLiquidated" Type="Boolean" />
+    <Property Name="LiquidDate" Type="DateTime" Precision="3" />
+    <Property Name="Type" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="ReceiptV">
+    <Key>
+      <PropertyRef Name="ReceiptId" />
+    </Key>
+    <Property Name="ReceiptId" Type="Int32" Nullable="false" />
+    <Property Name="AccountId" Type="Int32" />
+    <Property Name="PaymentMethodId" Type="Int32" />
+    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="IncomeType" Type="String" MaxLength="400" FixedLength="false" Unicode="true" />
+    <Property Name="Remarks" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Reference" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Date" Type="DateTime" Precision="3" />
+    <Property Name="IsCheque" Type="Boolean" />
+    <Property Name="ChequeNo" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Bank" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="ChequeDueDate" Type="DateTime" Precision="3" />
+    <Property Name="IsLiquidated" Type="Boolean" />
+    <Property Name="LiquidDate" Type="DateTime" Precision="3" />
+    <Property Name="Type" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="AccountCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Title" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="CellNo" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="PaymentMethod" Type="String" MaxLength="300" FixedLength="false" Unicode="true" />
   </EntityType>
 </Schema>

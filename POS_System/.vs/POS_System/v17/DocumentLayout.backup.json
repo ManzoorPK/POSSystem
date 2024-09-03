@@ -1,0 +1,69 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "F:\\My Products\\POSSystem\\POS_System\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{794BBF90-EAAA-497F-AC8C-802B3A8827E4}|POS_System\\POS_System.csproj|f:\\my products\\possystem\\pos_system\\pos_system\\forms\\addeditreceiptform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{794BBF90-EAAA-497F-AC8C-802B3A8827E4}|POS_System\\POS_System.csproj|solutionrelative:pos_system\\forms\\addeditreceiptform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{794BBF90-EAAA-497F-AC8C-802B3A8827E4}|POS_System\\POS_System.csproj|f:\\my products\\possystem\\pos_system\\pos_system\\forms\\addeditinvoiceform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{794BBF90-EAAA-497F-AC8C-802B3A8827E4}|POS_System\\POS_System.csproj|solutionrelative:pos_system\\forms\\addeditinvoiceform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{794BBF90-EAAA-497F-AC8C-802B3A8827E4}|POS_System\\POS_System.csproj|f:\\my products\\possystem\\pos_system\\pos_system\\forms\\addeditreceiptform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{794BBF90-EAAA-497F-AC8C-802B3A8827E4}|POS_System\\POS_System.csproj|solutionrelative:pos_system\\forms\\addeditreceiptform.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "AddEditInvoiceForm.cs [Design]",
+              "DocumentMoniker": "F:\\My Products\\POSSystem\\POS_System\\POS_System\\Forms\\AddEditInvoiceForm.cs",
+              "RelativeDocumentMoniker": "POS_System\\Forms\\AddEditInvoiceForm.cs",
+              "ToolTip": "F:\\My Products\\POSSystem\\POS_System\\POS_System\\Forms\\AddEditInvoiceForm.cs [Design]",
+              "RelativeToolTip": "POS_System\\Forms\\AddEditInvoiceForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-02T10:50:12.708Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AddEditReceiptForm.cs [Design]",
+              "DocumentMoniker": "F:\\My Products\\POSSystem\\POS_System\\POS_System\\Forms\\AddEditReceiptForm.cs",
+              "RelativeDocumentMoniker": "POS_System\\Forms\\AddEditReceiptForm.cs",
+              "ToolTip": "F:\\My Products\\POSSystem\\POS_System\\POS_System\\Forms\\AddEditReceiptForm.cs [Design]",
+              "RelativeToolTip": "POS_System\\Forms\\AddEditReceiptForm.cs [Design]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-02T10:41:56.557Z",
+              "EditorCaption": " [Design]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "AddEditReceiptForm.cs",
+              "DocumentMoniker": "F:\\My Products\\POSSystem\\POS_System\\POS_System\\Forms\\AddEditReceiptForm.cs",
+              "RelativeDocumentMoniker": "POS_System\\Forms\\AddEditReceiptForm.cs",
+              "ToolTip": "F:\\My Products\\POSSystem\\POS_System\\POS_System\\Forms\\AddEditReceiptForm.cs",
+              "RelativeToolTip": "POS_System\\Forms\\AddEditReceiptForm.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-02T10:41:51.377Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
